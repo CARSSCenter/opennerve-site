@@ -94,3 +94,189 @@
 .on-availability--illustrative {
   border-style: dashed;
 }
+
+/*
+ * Platform block diagram.
+ *
+ * Used on two pages — the landing page (docs/index.md) and
+ * start/architecture.md — so it lives in the shared stylesheet rather than
+ * home.css, per the split rule documented in CLAUDE.md §7: extra.css holds
+ * anything used on more than one page, home.css holds landing-page-only
+ * rules.
+ *
+ * The IPG is the hub; every other block is a link to its component page, so
+ * this diagram doubles as navigation. Signal paths are distinguished by line
+ * style, not color (solid = wired, dashed = wireless/inductive) — this is
+ * how real block diagrams do it, and it's colorblind-safe. Desktop renders a
+ * 5x5 grid (node / connector / hub / connector / node on the middle row,
+ * with a node+connector above and below); below 600px it collapses to a
+ * single stacked column via `order`, and every connector switches to the
+ * horizontal-rule style regardless of its desktop orientation.
+ */
+
+.on-diagram {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) 2.5rem minmax(9rem, 1.3fr) 2.5rem minmax(8rem, 1fr);
+  grid-template-rows: auto auto auto auto auto;
+  align-items: center;
+  margin: 1.75rem 0;
+  gap: 0.25rem;
+}
+
+.on-diagram__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.on-diagram__group-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.1rem;
+}
+
+.on-diagram__node {
+  display: block;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--md-code-bg-color);
+  font-size: 0.85rem;
+  text-decoration: none !important;
+  color: var(--md-typeset-color) !important;
+}
+
+.on-diagram__node:hover {
+  border-color: var(--md-primary-fg-color);
+}
+
+.on-diagram__node--hub {
+  text-align: center;
+  padding: 1.1rem 0.75rem;
+  font-family: var(--md-code-font);
+  font-weight: 700;
+  font-size: 1rem;
+  border-width: 2px;
+  border-color: var(--md-primary-fg-color);
+}
+
+.on-diagram__node-tag {
+  display: block;
+  font-family: var(--md-code-font);
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.15rem;
+}
+
+.on-diagram--top { grid-column: 3; grid-row: 1; }
+.on-diagram--conn-top { grid-column: 3; grid-row: 2; }
+.on-diagram--left { grid-column: 1; grid-row: 3; }
+.on-diagram--conn-left { grid-column: 2; grid-row: 3; }
+.on-diagram--hub { grid-column: 3; grid-row: 3; }
+.on-diagram--conn-right { grid-column: 4; grid-row: 3; }
+.on-diagram--right { grid-column: 5; grid-row: 3; }
+.on-diagram--conn-bottom { grid-column: 3; grid-row: 4; }
+.on-diagram--bottom { grid-column: 3; grid-row: 5; }
+
+.on-diagram__connector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  font-family: var(--md-code-font);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
+}
+
+.on-diagram__connector-label {
+  position: relative;
+  z-index: 1;
+  background: var(--md-default-bg-color);
+  padding: 0.15rem 0.4rem;
+}
+
+.on-diagram__connector--h::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 2px solid var(--md-default-fg-color--lighter);
+}
+
+.on-diagram__connector--v {
+  min-height: 3.5rem;
+}
+
+.on-diagram__connector--v::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 2px solid var(--md-default-fg-color--lighter);
+}
+
+.on-diagram__connector--wireless.on-diagram__connector--h::before {
+  border-top-style: dashed;
+}
+
+.on-diagram__connector--wireless.on-diagram__connector--v::before {
+  border-left-style: dashed;
+}
+
+@media (max-width: 600px) {
+  .on-diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .on-diagram--top,
+  .on-diagram--conn-top,
+  .on-diagram--left,
+  .on-diagram--conn-left,
+  .on-diagram--hub,
+  .on-diagram--conn-right,
+  .on-diagram--right,
+  .on-diagram--conn-bottom,
+  .on-diagram--bottom {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  /* Reading order down a single column: control software, IPG, leads,
+     charger, sensors. Every connector renders as a horizontal rule between
+     stacked cards, regardless of whether it was a horizontal or vertical
+     connector on the desktop grid. */
+  .on-diagram--top { order: 1; }
+  .on-diagram--conn-top { order: 2; }
+  .on-diagram--hub { order: 3; }
+  .on-diagram--conn-left { order: 4; }
+  .on-diagram--left { order: 5; }
+  .on-diagram--conn-right { order: 6; }
+  .on-diagram--right { order: 7; }
+  .on-diagram--conn-bottom { order: 8; }
+  .on-diagram--bottom { order: 9; }
+
+  .on-diagram__connector--v {
+    min-height: 2.75rem;
+  }
+
+  .on-diagram__connector--v::before {
+    top: 50%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    border-left: none;
+    border-top: 2px solid var(--md-default-fg-color--lighter);
+  }
+
+  .on-diagram__connector--wireless.on-diagram__connector--v::before {
+    border-top-style: dashed;
+  }
+}

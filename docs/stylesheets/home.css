@@ -1,0 +1,178 @@
+/*
+ * Landing page layout (docs/index.md only).
+ *
+ * Anything used on more than one page belongs in extra.css instead — see the
+ * split rule recorded in CLAUDE.md §7. This file is hero/section/card
+ * rhythm and the maturity-scale explainer, none of which appears anywhere
+ * else on the site.
+ *
+ * Color still comes entirely from Material's palette custom properties
+ * (--md-primary-fg-color, --md-default-fg-color--light, --md-code-bg-color),
+ * so light/dark switching needs no rules here.
+ */
+
+.on-draftbar {
+  margin: -1.2rem -1.2rem 1.75rem;
+  padding: 0.55rem 1.2rem;
+  background: var(--md-code-bg-color);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.on-draftbar strong {
+  color: var(--md-default-fg-color);
+}
+
+.on-hero {
+  padding: 1.5rem 0 0.5rem;
+}
+
+.on-hero__title {
+  font-size: 2.15rem;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 0.85rem;
+  max-width: 22ch;
+}
+
+.on-hero__subhead {
+  font-size: 1.05rem;
+  max-width: 58ch;
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 1.25rem;
+}
+
+.on-hero__subhead code {
+  font-size: 0.9em;
+}
+
+.on-hero__reg {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding: 0.75rem 0;
+  margin: 0 0 1.5rem;
+  font-size: 0.88rem;
+}
+
+.on-hero__reg a {
+  white-space: nowrap;
+}
+
+.on-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.on-section {
+  margin: 3rem 0;
+}
+
+.on-section--tight {
+  margin-top: 2rem;
+}
+
+.on-section__heading {
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.on-section__lede {
+  color: var(--md-default-fg-color--light);
+  max-width: 68ch;
+  margin: 0 0 1.25rem;
+}
+
+.on-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.on-col {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+  padding: 1rem 1.15rem;
+}
+
+.on-col__heading {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 0.6rem;
+}
+
+.on-col ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.on-col li {
+  margin-bottom: 0.45rem;
+  font-size: 0.9rem;
+}
+
+.on-col li:last-child {
+  margin-bottom: 0;
+}
+
+.on-col code {
+  font-size: 0.85em;
+}
+
+/* Maturity-scale explainer: shows the shape of each axis without assigning
+   a level to anything, so it doesn't run into CLAUDE.md §6 ("do not guess
+   levels") — no step is ever marked filled/current here. */
+.on-scale {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0;
+}
+
+.on-scale__row {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.on-scale__axis {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--md-default-fg-color--light);
+}
+
+.on-scale__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.on-scale__step {
+  border: 1px dashed var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.6rem;
+  font-family: var(--md-code-font);
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .on-hero__title {
+    font-size: 1.7rem;
+    max-width: none;
+  }
+
+  .on-scale__row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}

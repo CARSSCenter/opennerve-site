@@ -6,16 +6,51 @@ title: Platform architecture
 
 ## Components and how they connect
 
-```
-                 BLE                    inductive (300 kHz)
-  Windows app  <------->   IPG   <-------------------------  Charger
-  (ONrecorder)             |  |
-  Android app              |  I2C
-  (in development)         |  |
-                       Leads  Sensors
-                   (stimulation/     (mechanical, chemical
-                    recording)        biomarker)
-```
+<div class="on-diagram" markdown>
+
+<div class="on-diagram--top on-diagram__group" markdown>
+<span class="on-diagram__group-label">Control software</span>
+[Windows app<span class="on-diagram__node-tag">ONrecorder</span>](../software/windows.md){: .on-diagram__node }
+[Android app<span class="on-diagram__node-tag">in development</span>](../software/android.md){: .on-diagram__node }
+</div>
+
+<div class="on-diagram--conn-top on-diagram__connector on-diagram__connector--v on-diagram__connector--wireless" markdown>
+<span class="on-diagram__connector-label">BLE</span>
+</div>
+
+<div class="on-diagram--left on-diagram__group" markdown>
+<span class="on-diagram__group-label">Leads</span>
+[Standard Leads](../components/standard-leads.md){: .on-diagram__node }
+[Sub-mm Parylene Cuff](../components/parylene-cuff.md){: .on-diagram__node }
+</div>
+
+<div class="on-diagram--conn-left on-diagram__connector on-diagram__connector--h" markdown>
+<span class="on-diagram__connector-label">stim / record</span>
+</div>
+
+[IPG<span class="on-diagram__node-tag">Gen1 · Gen2 PCBA</span>](../components/ipg.md){: .on-diagram--hub .on-diagram__node .on-diagram__node--hub }
+
+<div class="on-diagram--conn-right on-diagram__connector on-diagram__connector--h on-diagram__connector--wireless" markdown>
+<span class="on-diagram__connector-label">inductive</span>
+</div>
+
+[Charger<span class="on-diagram__node-tag">300 kHz</span>](../components/charger.md){: .on-diagram--right .on-diagram__node }
+
+<div class="on-diagram--conn-bottom on-diagram__connector on-diagram__connector--v" markdown>
+<span class="on-diagram__connector-label">I2C</span>
+</div>
+
+<div class="on-diagram--bottom on-diagram__group" markdown>
+<span class="on-diagram__group-label">Sensors</span>
+[Mechanical Sensors](../components/mechanical-sensors.md){: .on-diagram__node }
+[Chemical Sensors](../components/chemical-sensors.md){: .on-diagram__node }
+</div>
+
+</div>
+
+Same diagram as the [landing page](../index.md#the-platform); shared styling
+lives in `docs/stylesheets/extra.css` since it's used on both pages (see
+`CLAUDE.md` §7).
 
 - The **IPG** is the hub: current-based bipolar stimulation, multiple analog
   front ends for biosignal recording, and an in-body I2C bus for third-party
@@ -58,4 +93,3 @@ This is a stub. It does not yet cover:
   [IPG component page](../components/ipg.md).
 - The authentication/encryption model in enough detail to be useful to a new
   integrator (see the IPG's encryption guide, linked from the same page).
-- A real block diagram (the ASCII sketch above is provisional).
