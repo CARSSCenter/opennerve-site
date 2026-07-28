@@ -1,0 +1,33 @@
+# Explicit allow-list of upstream files to pull onto this site.
+# Read by tools/sync_docs.py. See CLAUDE.md §7 for why this replaces
+# mkdocs-multirepo-plugin.
+#
+# Add files ONE AT A TIME by exact path. Never use globs here: several
+# upstream repos vendor third-party code with their own markdown (e.g.
+# OpenNerve-Charger's Firmware/Source-Code/ tree contains the Nordic nRF5 SDK
+# and mbedTLS, complete with their own README.md/CHANGELOG.md files) that must
+# never end up published on this site under OpenNerve branding.
+#
+# `files` maps: <path in upstream repo> -> <path under docs/, relative to docs_dir>
+
+sources:
+  - org: CARSSCenter
+    repo: OpenNerve-Implantable-Pulse-Generator
+    ref: main
+    files:
+      Docs/Getting-Started.md: components/ipg/getting-started.md
+      Docs/MCU-Flashing-Guide.md: components/ipg/mcu-flashing.md
+      Docs/BLE-Flashing-Guide.md: components/ipg/ble-flashing.md
+      Docs/OTA-Firmware-Update-Guide.md: components/ipg/ota-updates.md
+      Docs/IPG-Logging-Guide.md: components/ipg/logging.md
+      Docs/Magnetic-Switch-Guide.md: components/ipg/magnetic-switch.md
+      Docs/encryption-instructions.md: components/ipg/encryption.md
+      Docs/CAR-212-IPG-Charging.md: components/ipg/charging.md
+      Docs/WPT-Implementation-Report.md: components/ipg/wpt-report.md
+      Docs/Impedance Measurement Strategy.md: components/ipg/impedance.md
+
+  - org: CARSSCenter
+    repo: OpenNerve-Charger
+    ref: main
+    files:
+      Firmware/Charger-Firmware-Report.md: components/charger/firmware-report.md

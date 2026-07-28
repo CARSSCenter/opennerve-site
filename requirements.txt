@@ -1,0 +1,11 @@
+# Pinned direct dependencies for building the OpenNerve site.
+# This site must still build in three years with minimal maintenance;
+# see CLAUDE.md §7. Keep the plugin list minimal — every plugin here
+# is justified in CLAUDE.md.
+#
+# Full transitive closure is pinned in requirements.lock.txt
+# (generated via `pip freeze` after installing this file).
+
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-git-revision-date-localized-plugin==1.5.3

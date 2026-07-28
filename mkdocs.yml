@@ -1,0 +1,127 @@
+site_name: OpenNerve
+site_description: >-
+  Open source bioelectronic medicine platform: an implantable pulse generator,
+  stimulation/recording/sensing leads, wireless charger, and control software.
+# site_url: TBD. During the draft phase this is served from Cloudflare Pages
+# behind Cloudflare Access; set this once a public URL is settled (see
+# CLAUDE.md §7, Hosting).
+
+repo_name: opennerve-site
+repo_url: https://github.com/axbaldwin1/opennerve-site
+# NOTE: update repo_url/edit_uri if/when this repo moves to the CARSSCenter org.
+edit_uri: edit/main/docs/
+
+copyright: >-
+  Content licensed CC-BY-4.0 unless noted otherwise. See CLAUDE.md §9 —
+  licensing is under active review and may change on a repo-by-repo basis.
+
+# Local build-time hook. Not a plugin dependency (no pip package, no
+# requirements.txt entry) — this is the mechanism CLAUDE.md §7 asks for so
+# "Edit this page" on a federated/synced page points at the correct upstream
+# repo instead of this one. See hooks/synced_edit_url.py.
+hooks:
+  - hooks/synced_edit_url.py
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - content.action.edit
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+# Keep this list minimal — every plugin here is a piece of future breakage
+# for a small team (CLAUDE.md §7). Two entries:
+#   - search: MkDocs builtin, no extra dependency.
+#   - git-revision-date-localized: gives every page a real "last updated"
+#     date instead of a hand-maintained one, which matters for the
+#     "Last reviewed" field CLAUDE.md §5 requires on component pages.
+# Federated docs are NOT handled by a plugin (mkdocs-multirepo-plugin was
+# considered and rejected — see CLAUDE.md §7 for why) but by
+# tools/sync_docs.py, run out-of-band before `mkdocs build`.
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      enable_creation_date: false
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    absolute_links: ignore
+    unrecognized_links: warn
+
+nav:
+  - Home: index.md
+  - Start here:
+      - What is OpenNerve: start/overview.md
+      - Is this right for my work: start/fit.md
+      - Platform architecture: start/architecture.md
+  - Components:
+      - Overview & maturity table: components/index.md
+      - Implantable Pulse Generator:
+          - Overview: components/ipg.md
+          - Getting started: components/ipg/getting-started.md
+          - MCU flashing guide: components/ipg/mcu-flashing.md
+          - BLE flashing guide: components/ipg/ble-flashing.md
+          - OTA firmware update guide: components/ipg/ota-updates.md
+          - Logging guide: components/ipg/logging.md
+          - Magnetic switch guide: components/ipg/magnetic-switch.md
+          - Encryption instructions: components/ipg/encryption.md
+          - Charging (CAR-212): components/ipg/charging.md
+          - WPT implementation report: components/ipg/wpt-report.md
+          - Impedance measurement strategy: components/ipg/impedance.md
+      - Standard Leads: components/standard-leads.md
+      - Sub-mm Parylene Cuff: components/parylene-cuff.md
+      - Charger:
+          - Overview: components/charger.md
+          - Firmware report: components/charger/firmware-report.md
+      - Mechanical Sensors: components/mechanical-sensors.md
+      - Chemical Sensors: components/chemical-sensors.md
+  - Software:
+      - Windows (ONrecorder): software/windows.md
+      - Android: software/android.md
+  - Data:
+      - Publications: data/publications.md
+      - Animal data: data/animal-data.md
+  - Regulatory & safety:
+      - Status and disclaimers: regulatory/status.md
+      - Maturity level definitions: regulatory/maturity.md
+  - Contribute:
+      - How to contribute: contribute/index.md
+      - Hardware contributions: contribute/hardware.md
+      - Governance: contribute/governance.md
+  - Community: community/index.md
