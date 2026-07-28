@@ -64,6 +64,9 @@ plugins:
       fallback_to_build_date: true
       enable_creation_date: false
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
   - toc:
       permalink: true
@@ -94,6 +97,8 @@ nav:
       - Overview & maturity table: components/index.md
       - Implantable Pulse Generator:
           - Overview: components/ipg.md
+          - Gen2 PCBA: components/ipg-gen2.md
+          - Gen1 PCBA: components/ipg-gen1.md
           - Getting started: components/ipg/getting-started.md
           - MCU flashing guide: components/ipg/mcu-flashing.md
           - BLE flashing guide: components/ipg/ble-flashing.md

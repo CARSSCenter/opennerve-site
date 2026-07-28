@@ -16,7 +16,7 @@ surface. Definitions: [Maturity level definitions](../regulatory/maturity.md).
 
 | Component | Repo | Documentation (D) | Evidence (E) | Manufacturing (M) | Availability |
 |---|---|---|---|---|---|
-| [Implantable Pulse Generator](ipg.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | ? |
+| [Implantable Pulse Generator](ipg.md) — [Gen2](ipg-gen2.md) / [Gen1](ipg-gen1.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | ? |
 | [Standard Leads](standard-leads.md) | [OpenNerve-Standard-Leads](https://github.com/CARSSCenter/OpenNerve-Standard-Leads) | ? | ? | ? | ? |
 | [Sub-mm Parylene Cuff](parylene-cuff.md) | [Sub-mm-Parylene-Cuff-Electrode](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode) | ? | ? | ? | ? |
 | [Charger](charger.md) | [OpenNerve-Charger](https://github.com/CARSSCenter/OpenNerve-Charger) | ? | ? | ? | ? |
@@ -27,6 +27,13 @@ surface. Definitions: [Maturity level definitions](../regulatory/maturity.md).
 
 Mechanical Sensors and Chemical Sensors were added to the site nav alongside
 this table; see the note in `CLAUDE.md` §7.
+
+The IPG's two hardware revisions (Gen1, Gen2) each carry their own maturity
+badges rather than sharing the single row above — see the
+[Gen1 vs. Gen2 comparison](ipg.md#gen1-vs-gen2). Those per-revision badges are
+currently illustrative placeholders for page-design review, not real
+assessments; the `?` in this table remains the accurate summary until
+maintainers assign real levels.
 
 Every component page carries **Applies to revision** and **Last reviewed**
 fields, and the same standing disclaimer required by `CLAUDE.md` §5: these

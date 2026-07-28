@@ -5,7 +5,9 @@ title: Implantable Pulse Generator
 # Implantable Pulse Generator (IPG)
 
 **Repo:** [CARSSCenter/OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator)
-**Applies to revision:** not yet assigned per revision — see [Platform architecture](../start/architecture.md) for Gen1 vs. Gen2 differences
+**Applies to revision:** this page is revision-independent — maturity, evidence,
+and BOM/fab claims are made per-revision on the [Gen2 PCBA](ipg-gen2.md) and
+[Gen1 PCBA](ipg-gen1.md) pages, not here (`CLAUDE.md` §5).
 **Last reviewed:** not yet reviewed
 
 !!! danger "Not approved for human use"
@@ -22,17 +24,31 @@ used: an nRF52810 for BLE, and an STM32 ("MCU") for most other functions.
 ([source](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/README.md))
 
 Two PCB revisions exist with different channel counts and stimulation
-capability — see [Platform architecture](../start/architecture.md#two-ipg-hardware-generations)
-for the specifics of each.
+capability. Each has its own maturity, evidence, and BOM/fab-notes page — see
+[Gen1 vs. Gen2](#gen1-vs-gen2) below. Also see
+[Platform architecture](../start/architecture.md#two-ipg-hardware-generations).
+
+## Gen1 vs. Gen2
+
+| | [Gen2 PCBA](ipg-gen2.md) | [Gen1 PCBA](ipg-gen1.md) |
+|---|---|---|
+| Stimulation channels | 2 fully independent bipolar (square wave to 1200 Hz, or low-frequency sine) | 8 pseudo-independent monopolar (configurable as 4 bipolar) |
+| Biosignal AFEs | 4 configurable | 2 differential (ECG/EMG/eCAP) |
+| MCU firmware | `Gen2 PCBA/FW-MCU-H2/` — revision-specific | `Gen1 PCBA/FW-MCU-H1-251201.hex` — revision-specific |
+| BLE firmware | `FW-BLE/` — shared with Gen1 | `FW-BLE/` — shared with Gen2 |
+| Design-output completeness | Schematic+layout, BOM, STEP, Altium source. **No** separate assembly or fabrication drawing, no test-point document. | Schematics, layout, BOM, **assembly drawing, fabrication drawing, test-point deck**, Altium source (incl. rendered assembly/fab drawing-exchange files). |
+| Maturity, evidence, BOM/fab detail | [Gen2 page](ipg-gen2.md#maturity) | [Gen1 page](ipg-gen1.md#maturity) |
+
+Both revisions share the same enclosure family (versioned independently, current
+rev 0.7 — see either revision page), the same BLE firmware, and the same control
+software.
 
 ## Maturity
 
-| Axis | Level | Notes |
-|---|---|---|
-| Documentation (D) | ? | Not yet assigned by maintainers |
-| Evidence (E) | ? | Not yet assigned by maintainers |
-| Manufacturing readiness (M) | ? | Not yet assigned by maintainers |
-| Availability | ? | Not yet assigned |
+Maturity, evidence, and availability are assigned **per PCB revision**, never
+combined — see [Gen2 PCBA maturity](ipg-gen2.md#maturity) and
+[Gen1 PCBA maturity](ipg-gen1.md#maturity). Both currently show illustrative,
+not-yet-assigned values used only to review page layout; see each page's banner.
 
 See [Maturity level definitions](../regulatory/maturity.md).
 

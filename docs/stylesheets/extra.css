@@ -1,0 +1,96 @@
+/*
+ * Maturity badge component (CLAUDE.md §5).
+ *
+ * Deliberate exception to the "images/assets live alongside their page"
+ * convention in CLAUDE.md §8: this stylesheet is shared across every
+ * component page, so it lives once under docs/stylesheets/ instead of being
+ * duplicated per page. Registered via `extra_css:` in mkdocs.yml — plain CSS,
+ * no plugin, no new dependency.
+ *
+ * Three axes (Documentation / Evidence / Manufacturing) render as separate
+ * cards, deliberately never merged into one score. Availability renders
+ * underneath as its own strip — CLAUDE.md §5 is explicit that it is a
+ * separate field, not a fourth maturity level.
+ */
+
+.on-maturity {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.on-badge {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--md-code-bg-color);
+}
+
+.on-badge__axis {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.3rem;
+}
+
+.on-badge__level {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--md-primary-fg-color);
+  font-family: var(--md-code-font);
+}
+
+.on-badge__label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.15rem;
+}
+
+/* Unassigned: level not yet set by maintainers. Muted, no illustrative tint. */
+.on-badge--unassigned {
+  background: transparent;
+  border-style: dashed;
+}
+
+.on-badge--unassigned .on-badge__level {
+  color: var(--md-default-fg-color--light);
+}
+
+/* Illustrative: placeholder values used only for layout review (see the
+ * ILLUSTRATIVE ONLY banner that must accompany any use of this modifier).
+ * Dashed border + tint so the badge alone still reads as provisional even if
+ * screenshotted apart from the banner text. */
+.on-badge--illustrative {
+  border-style: dashed;
+  border-color: var(--md-primary-fg-color);
+  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, var(--md-code-bg-color));
+}
+
+.on-availability {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+  padding: 0.6rem 0.9rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.85rem;
+}
+
+.on-availability__label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--md-default-fg-color--light);
+  margin-right: 0.5rem;
+}
+
+.on-availability--unassigned,
+.on-availability--illustrative {
+  border-style: dashed;
+}
