@@ -24,12 +24,19 @@ platform:
 
 ([source](https://github.com/CARSSCenter/Mechanical-Sensors/blob/main/README.md))
 
-A strain-sensor troubleshooting guide exists in the repo:
-[Strain_sensor_troubleshooting.md](https://github.com/CARSSCenter/Mechanical-Sensors/blob/main/Strain%20Sensor/Strain_sensor_troubleshooting.md).
-It is not yet synced onto this site.
-
 This component was added to the site nav alongside the sensor row already
 present in `CLAUDE.md` §6; see the note in `CLAUDE.md` §7.
+
+## Documentation synced from the upstream repo
+
+The pages below are pulled from the Mechanical-Sensors repo by
+`tools/sync_docs.py` — each carries a banner recording the exact upstream
+commit it reflects. Edit them upstream, not here.
+
+- [Strain sensor troubleshooting](mechanical-sensors/strain-troubleshooting.md)
+- [Strain sensor: CapSense PCB integration](mechanical-sensors/strain-capsense-integration.md)
+- [Temperature sensor calibration & characterization](mechanical-sensors/temperature-calibration.md)
+- [Temperature sensor design & fabrication](mechanical-sensors/temperature-fabrication.md)
 
 ## Maturity
 

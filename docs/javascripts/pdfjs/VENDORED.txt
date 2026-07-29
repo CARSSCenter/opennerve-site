@@ -1,0 +1,35 @@
+# Vendored: pdf.js
+
+- **Upstream:** https://github.com/mozilla/pdf.js
+- **Version:** v6.2.108 (generic build, `pdfjs-6.2.108-dist.zip`)
+- **License:** Apache-2.0 — see `LICENSE` in this directory
+- **Vendored:** 2026-07-29
+- **Why:** in-page PDF viewing — see `CLAUDE.md` §7, "PDF viewer"
+
+This is the official release zip with the following removed to cut footprint
+(21 MB → 8.3 MB). Nothing under `build/` or `web/` was hand-edited — only
+whole files/directories deleted, so re-vendoring a newer version is just
+"repeat this list against the new zip":
+
+- All `.map` sourcemap files (`build/*.map`, `web/viewer.mjs.map`)
+- `web/compressed.tracemonkey-pldi-09.pdf` (pdf.js's own demo file — unused;
+  our viewer.html is never opened without a `?file=` param)
+- `web/debugger.mjs` / `web/debugger.css` (pdf.js's internal debug tool,
+  gated behind a `pdfBug` flag we never set)
+- `web/locale/` trimmed from 114 languages to `en-US` only, `locale.json`
+  edited to match (this site is English-only; untrimmed languages would
+  just 404 harmlessly, but a directory of 113 dead entries is confusing to
+  a future maintainer)
+
+To upgrade: download the new version's `-dist.zip`, apply the same
+deletions, diff against this directory, and update the version/date above.
+
+## How this is used
+
+`docs/javascripts/pdf-embed.js` (registered via `extra_javascript:` in
+`mkdocs.yml`) finds `.on-pdf__embed[data-pdf-src]` elements in the built
+pages and points an `<iframe>` at `web/viewer.html?file=<data-pdf-src>`.
+`data-pdf-src` is always an external `raw.githubusercontent.com` URL — see
+the `.on-pdf` component doc-comment in `docs/stylesheets/extra.css` for the
+full markup pattern and the reasoning for fetching live rather than syncing
+PDF bytes into this repo.

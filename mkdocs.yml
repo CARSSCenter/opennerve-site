@@ -68,6 +68,11 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/home.css
 
+# Vendored, pinned pdf.js build (docs/javascripts/pdfjs/) plus a small wrapper
+# script — no CDN, no new pip/npm dependency. See CLAUDE.md §7 "PDF viewer".
+extra_javascript:
+  - javascripts/pdf-embed.js
+
 markdown_extensions:
   - toc:
       permalink: true
@@ -110,13 +115,23 @@ nav:
           - Charging (CAR-212): components/ipg/charging.md
           - WPT implementation report: components/ipg/wpt-report.md
           - Impedance measurement strategy: components/ipg/impedance.md
+          - "Tools: sine wave generator": components/ipg/tools-sine-wave-generator.md
+          - "Tools: OTA updater user guide": components/ipg/tools-ota-updater.md
       - Standard Leads: components/standard-leads.md
       - Sub-mm Parylene Cuff: components/parylene-cuff.md
       - Charger:
           - Overview: components/charger.md
           - Firmware report: components/charger/firmware-report.md
-      - Mechanical Sensors: components/mechanical-sensors.md
-      - Chemical Sensors: components/chemical-sensors.md
+      - Mechanical Sensors:
+          - Overview: components/mechanical-sensors.md
+          - Strain sensor troubleshooting: components/mechanical-sensors/strain-troubleshooting.md
+          - "Strain sensor: CapSense PCB integration": components/mechanical-sensors/strain-capsense-integration.md
+          - Temperature sensor calibration & characterization: components/mechanical-sensors/temperature-calibration.md
+          - Temperature sensor design & fabrication: components/mechanical-sensors/temperature-fabrication.md
+      - Chemical Sensors:
+          - Overview: components/chemical-sensors.md
+          - Characterization of echem sensors: components/chemical-sensors/characterization.md
+          - Fabrication of echem sensors: components/chemical-sensors/fabrication.md
   - Software:
       - Windows (ONrecorder): software/windows.md
       - Android: software/android.md

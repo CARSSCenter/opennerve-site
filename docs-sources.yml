@@ -15,19 +15,51 @@ sources:
     repo: OpenNerve-Implantable-Pulse-Generator
     ref: main
     files:
-      Docs/Getting-Started.md: components/ipg/getting-started.md
+      # Docs/Getting-Started.md: REMOVED upstream in commit de50024
+      # ("Reorganized documentation", 2026-07-29) with no replacement file —
+      # not a rename, `git log --follow` shows nothing later touches this
+      # content. Left commented out rather than silently dropped: this repo's
+      # `docs/components/ipg/getting-started.md` still holds the last-synced
+      # content, and the nav entry ("Getting started") still points at it, so
+      # the page keeps displaying stale content with no live source behind it
+      # until the team confirms whether the removal was intentional. Flagged
+      # in CLAUDE.md §9 2026-07-29 — do not silently re-add or delete this
+      # without that confirmation.
       Docs/MCU-Flashing-Guide.md: components/ipg/mcu-flashing.md
       Docs/BLE-Flashing-Guide.md: components/ipg/ble-flashing.md
       Docs/OTA-Firmware-Update-Guide.md: components/ipg/ota-updates.md
       Docs/IPG-Logging-Guide.md: components/ipg/logging.md
       Docs/Magnetic-Switch-Guide.md: components/ipg/magnetic-switch.md
       Docs/encryption-instructions.md: components/ipg/encryption.md
-      Docs/CAR-212-IPG-Charging.md: components/ipg/charging.md
+      # Path updated 2026-07-29: same "Reorganized documentation" commit
+      # (de50024) moved this file from Docs/ into Docs/Firmware-Design-History-Files/.
+      Docs/Firmware-Design-History-Files/CAR-212-IPG-Charging.md: components/ipg/charging.md
       Docs/WPT-Implementation-Report.md: components/ipg/wpt-report.md
       Docs/Impedance Measurement Strategy.md: components/ipg/impedance.md
+      # Tools/ is a separate top-level directory from Docs/ (bench utilities,
+      # not the main firmware/hardware guides) — added 2026-07-29 after a
+      # repo audit found it wasn't covered by any existing entry.
+      Tools/SineWaveGenerator/Readme.md: components/ipg/tools-sine-wave-generator.md
+      Tools/ota_updater/user-guide.md: components/ipg/tools-ota-updater.md
 
   - org: CARSSCenter
     repo: OpenNerve-Charger
     ref: main
     files:
       Firmware/Charger-Firmware-Report.md: components/charger/firmware-report.md
+
+  - org: CARSSCenter
+    repo: Mechanical-Sensors
+    ref: main
+    files:
+      Strain Sensor/Strain_sensor_troubleshooting.md: components/mechanical-sensors/strain-troubleshooting.md
+      Strain Sensor/Capsense-pcb-integration-with-strain-sensor-instructions.md: components/mechanical-sensors/strain-capsense-integration.md
+      Temperature Sensor/temperature-sensor-calibration-and-characterization.md: components/mechanical-sensors/temperature-calibration.md
+      Temperature Sensor/temperature-sensor-design-and-fabrication.md: components/mechanical-sensors/temperature-fabrication.md
+
+  - org: CARSSCenter
+    repo: Chemical-Sensors
+    ref: main
+    files:
+      characterization-of-echem-sensors.md: components/chemical-sensors/characterization.md
+      fabrication-of-echem-sensors.md: components/chemical-sensors/fabrication.md

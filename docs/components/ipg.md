@@ -72,6 +72,10 @@ commit it reflects. Edit them upstream, not here.
 - [Charging (CAR-212)](ipg/charging.md)
 - [WPT implementation report](ipg/wpt-report.md)
 - [Impedance measurement strategy](ipg/impedance.md)
+- [Tools: sine wave generator](ipg/tools-sine-wave-generator.md) — bench tool for
+  testing neuromodulation hardware, from the repo's `Tools/` directory
+- [Tools: OTA updater user guide](ipg/tools-ota-updater.md) — CLI tool for
+  wireless Gen2 firmware updates over BLE, also from `Tools/`
 
 ## Software
 

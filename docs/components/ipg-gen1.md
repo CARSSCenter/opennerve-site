@@ -115,15 +115,72 @@ below for why D3 is currently unreachable):
 ## Testing and regulatory status
 
 `Docs/Testing-Protocols/` contains eight PDFs, each named "Hornet IPG … DVT
-Protocol":
-[accelerated aging](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20Accelerated%20Aging%20DVT%20Protocol.pdf){ target="_blank" } ·
-[drop & impact](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20Drop%20%26%20Impact%20%20DVT%20Protocol.pdf){ target="_blank" } ·
-[heating during normal operation](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20Heating%20Test%20During%20Normal%20Operation%20DVT%20Protocol.pdf){ target="_blank" } ·
-[hermeticity](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20Hermeticity%20DVT%20Protocol.pdf){ target="_blank" } ·
-[minor mechanical shock](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20Minor%20Mechanical%20Shock%20DVT%20Protocol.pdf){ target="_blank" } ·
-[RGA](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20RGA%20DVT%20Protocol.pdf){ target="_blank" } ·
-[shear force](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20Shear%20Force%20DVT%20Protocol.pdf){ target="_blank" } ·
-[vibration mechanical force](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/Testing-Protocols/Hornet%20IPG%20Vibration%20Mechanical%20Force%20DVT%20Protocol.pdf){ target="_blank" }.
+Protocol". Each viewer below fetches its PDF live from the repo's default
+branch (`CLAUDE.md` §7, "PDF viewer") — click a title to expand it:
+
+<details class="on-pdf-details" markdown>
+<summary>Accelerated aging DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Accelerated%20Aging%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Accelerated Aging DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Accelerated%20Aging%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Drop &amp; impact DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Drop%20%26%20Impact%20%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Drop & Impact DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Drop%20%26%20Impact%20%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Heating during normal operation DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Heating%20Test%20During%20Normal%20Operation%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Heating Test During Normal Operation DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Heating%20Test%20During%20Normal%20Operation%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Hermeticity DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Hermeticity%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Hermeticity DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Hermeticity%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Minor mechanical shock DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Minor%20Mechanical%20Shock%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Minor Mechanical Shock DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Minor%20Mechanical%20Shock%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>RGA DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20RGA%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG RGA DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20RGA%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Shear force DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Shear%20Force%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Shear Force DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Shear%20Force%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Vibration mechanical force DVT protocol</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Vibration%20Mechanical%20Force%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Vibration Mechanical Force DVT Protocol"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Vibration%20Mechanical%20Force%20DVT%20Protocol.pdf">Open directly &#8599;</a>
+</div>
+</details>
 
 Two things to be precise about, per `CLAUDE.md` §3:
 
@@ -141,10 +198,63 @@ Two things to be precise about, per `CLAUDE.md` §3:
 Additional documents in `Docs/`, listed as they appear in the repo — acronyms are
 **not** expanded here because their expansions aren't stated anywhere upstream:
 
-- [`CAR-206 IPG SAD.pdf`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/CAR-206%20IPG%20SAD.pdf){ target="_blank" }
-- [`CAR-207 IPG SDS.pdf`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/CAR-207%20IPG%20SDS.pdf){ target="_blank" }
-- [`CAR-211-VVT.pdf`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/CAR-211-VVT.pdf){ target="_blank" }
-- `Docs/DHF-Files/`: [Design Output Review](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Design%20Output%20Review.pdf){ target="_blank" }, [Mechanical Specifications](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Mechanical%20Specifications.pdf){ target="_blank" }, [Test Plan](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20Test%20Plan%20.pdf){ target="_blank" }, [Mechanical Design Images](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger-Mechanical%20Design%20Images.pdf){ target="_blank" }
+<details class="on-pdf-details" markdown>
+<summary><code>CAR-206 IPG SAD.pdf</code></summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-206%20IPG%20SAD.pdf" data-pdf-title="CAR-206 IPG SAD"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-206%20IPG%20SAD.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary><code>CAR-207 IPG SDS.pdf</code></summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-207%20IPG%20SDS.pdf" data-pdf-title="CAR-207 IPG SDS"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-207%20IPG%20SDS.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary><code>CAR-211-VVT.pdf</code></summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-211-VVT.pdf" data-pdf-title="CAR-211-VVT"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-211-VVT.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+`Docs/DHF-Files/`:
+
+<details class="on-pdf-details" markdown>
+<summary>Design Output Review</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Design%20Output%20Review.pdf" data-pdf-title="Nest 1 - IPG and Charger - Design Output Review"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Design%20Output%20Review.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Mechanical Specifications</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Mechanical%20Specifications.pdf" data-pdf-title="Nest 1 - IPG and Charger - Mechanical Specifications"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Mechanical%20Specifications.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Test Plan</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20Test%20Plan%20.pdf" data-pdf-title="Nest 1 - IPG and Charger Test Plan"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20Test%20Plan%20.pdf">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Mechanical Design Images</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger-Mechanical%20Design%20Images.pdf" data-pdf-title="Nest 1 - IPG and Charger - Mechanical Design Images"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger-Mechanical%20Design%20Images.pdf">Open directly &#8599;</a>
+</div>
+</details>
 
 The `Nest 1` naming in these documents and in the enclosure file set is the same
 naming family as the enclosure files above, and appears to be shared across the

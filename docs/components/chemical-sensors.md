@@ -26,6 +26,15 @@ Chemical sensing leads for OpenNerve. Two sensors are described in the repo:
 This component was added to the site nav alongside the sensor row already
 present in `CLAUDE.md` §6; see the note in `CLAUDE.md` §7.
 
+## Documentation synced from the upstream repo
+
+The pages below are pulled from the Chemical-Sensors repo by
+`tools/sync_docs.py` — each carries a banner recording the exact upstream
+commit it reflects. Edit them upstream, not here.
+
+- [Characterization of echem sensors](chemical-sensors/characterization.md)
+- [Fabrication of echem sensors](chemical-sensors/fabrication.md)
+
 ## Maturity
 
 | Axis | Level | Notes |
