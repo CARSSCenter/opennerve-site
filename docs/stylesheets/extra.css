@@ -370,3 +370,91 @@
     border-top-style: dashed;
   }
 }
+
+/*
+ * Header dropdown menus (CLAUDE.md §7 "Header dropdown menus").
+ *
+ * Enables theme.features: navigation.tabs in mkdocs.yml, which renders each
+ * top-level nav: section as a button in the header. docs/javascripts/nav-menu.js
+ * adds a dropdown of that section's immediate sub-pages beneath each button,
+ * built from the sidebar nav tree that Material already renders into every
+ * page — see that script's doc comment for why, and why this is CSS/JS
+ * rather than a Jinja template override (custom_dir).
+ *
+ * Used on every page (the header is site-wide), so this lives in extra.css
+ * rather than home.css per the split rule at the top of this file.
+ *
+ * `.on-navmenu` is appended to <body> and positioned `fixed` by the script,
+ * not nested under the tab item — Material sets `overflow: auto` on
+ * `.md-tabs`/`.md-tabs__list` (so the tab row can scroll horizontally), which
+ * clips any descendant that visually extends past it regardless of that
+ * descendant's own `position`. Visibility is toggled via the
+ * `on-navmenu--visible` class from JS (mouse/focus/touch), not CSS
+ * `:hover`/`:focus-within`, since the menu is no longer a DOM descendant of
+ * the tab item.
+ */
+
+.md-tabs__item--has-menu > .md-tabs__link::after {
+  content: "";
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  margin: 0 0 0.1em 0.4em;
+  border-right: 1px solid currentcolor;
+  border-bottom: 1px solid currentcolor;
+  transform: rotate(45deg);
+  opacity: 0.7;
+}
+
+.on-navmenu {
+  display: none;
+  position: fixed;
+  min-width: 12rem;
+  z-index: 100;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
+  padding: 0.35rem 0;
+}
+
+.on-navmenu.on-navmenu--visible {
+  display: block;
+}
+
+.on-navmenu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.on-navmenu__link {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color);
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.on-navmenu__link:hover,
+.on-navmenu__link:focus {
+  background: var(--md-code-bg-color);
+  color: var(--md-primary-fg-color) !important;
+}
+
+/*
+ * The landing page (and any page that sets `hide: navigation`) suppresses
+ * the left sidebar for a full-width layout. On desktop that sidebar is
+ * redundant with the new header tabs above, but below the breakpoint where
+ * Material collapses the header tabs back into the sidebar's off-canvas
+ * drawer (the same 76.234375em breakpoint Material itself uses), suppressing
+ * it would leave mobile visitors on that page with no navigation at all.
+ * Restoring it only below that width keeps the desktop hero full-width while
+ * giving mobile the drawer back.
+ */
+@media screen and (max-width: 76.234375em) {
+  .md-sidebar--primary[hidden] {
+    display: block;
+  }
+}

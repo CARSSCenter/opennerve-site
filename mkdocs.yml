@@ -38,6 +38,8 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
     - navigation.indexes
@@ -70,8 +72,11 @@ extra_css:
 
 # Vendored, pinned pdf.js build (docs/javascripts/pdfjs/) plus a small wrapper
 # script — no CDN, no new pip/npm dependency. See CLAUDE.md §7 "PDF viewer".
+# nav-menu.js: header dropdown menus for the top-level nav.tabs (CLAUDE.md §7
+# "Header dropdown menus").
 extra_javascript:
   - javascripts/pdf-embed.js
+  - javascripts/nav-menu.js
 
 markdown_extensions:
   - toc:
@@ -138,6 +143,7 @@ nav:
   - Data:
       - Publications: data/publications.md
       - Animal data: data/animal-data.md
+  - News: news/index.md
   - Regulatory & safety:
       - Status and disclaimers: regulatory/status.md
       - Maturity level definitions: regulatory/maturity.md

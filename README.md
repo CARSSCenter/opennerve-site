@@ -16,7 +16,7 @@ covers the "how do I do X" basics.
    the `docs/` folder.
 2. Edit the text file, save it, preview your change, then publish it.
 3. "Publishing" currently means pushing the change to GitHub (see
-   [Making a change live](#making-a-change-live) below).
+   [Making a change live](#5-making-a-change-live) below).
 
 ---
 
@@ -62,7 +62,54 @@ You don't need to know more than that for most edits.
    nobody can navigate to it from the menu — the site's build check
    (`--strict`, see below) will warn you if you forget.
 
-## 3. Previewing your changes before publishing
+## 3. Adding a publication, animal dataset, or news item
+
+These three lists are plain bullet points in a plain text file — no special
+tool needed. Open the right file in `docs/data/` or `docs/news/`, copy the
+pattern of an existing entry, and edit the words.
+
+**To add a publication** (`docs/data/publications.md`):
+
+1. Find the year section it belongs under (add a new `## 2027` heading near
+   the top if it's a new year — newest year goes first).
+2. Copy the format of an existing numbered entry: authors, a bolded title in
+   quotes, the journal/venue and year, then a link to the paper. For example:
+
+   ```
+   15. Author, A., et al. **"Title of the paper."** *Journal Name* (2027).
+       [a short label for the link](https://the-actual-link-to-the-paper)
+   ```
+3. Save the file. That's it — no other file needs to change.
+
+**To add an animal dataset** (`docs/data/animal-data.md`):
+
+1. Copy an existing dataset's whole section (from its `##` heading down to
+   the citation block) as a template.
+2. Update the heading, description, species, file count, license, DOI link,
+   and citation to match the new dataset.
+3. If the dataset has a banner image on its SPARC page, you can show it here
+   too: `![short description](the image's URL)` as the first line of the
+   section, same as the existing entries. If you're not sure whether an
+   image is safe to link to, leave it out and just use the text — that's
+   what `docs/data/publications.md` and `docs/news/index.md` already do,
+   since reusing outside images from those kinds of sources gets legally
+   murky.
+
+**To add a news item** (`docs/news/index.md`):
+
+1. Copy the format of an existing bullet:
+
+   ```
+   - **["Title of the article"](https://link-to-the-article)**
+     — Publication or channel name (year)
+   ```
+2. Add it to the list, newest items near the top.
+
+None of these three files need a `mkdocs.yml` change — they're existing
+pages, so you're only adding a bullet point to a page that's already in the
+menu.
+
+## 4. Previewing your changes before publishing
 
 Don't guess whether a change looks right — preview it on your own computer
 first.
@@ -85,7 +132,7 @@ as you save changes to files — just refresh the browser tab.
 
 Press `Ctrl+C` in the terminal to stop the preview when you're done.
 
-## 4. Making a change live
+## 5. Making a change live
 
 Right now, this repository is **not yet connected** to a live, public
 website — pushing to GitHub does not automatically publish anything yet.
@@ -106,7 +153,7 @@ files and commit changes directly in the browser — open the file on
 github.com, click the pencil (edit) icon, make your change, and use the
 "Commit changes" button at the bottom.
 
-## 5. Special case: pages copied in from other repos
+## 6. Special case: pages copied in from other repos
 
 Some pages (under folders like `components/ipg/`, `components/mechanical-sensors/`)
 are not edited here directly — they're automatically copied in from other
@@ -128,7 +175,7 @@ listed in `docs-sources.yml` — if it's a new file that's never been synced
 before, add a line for it there first (following the pattern of existing
 lines), then run the command above.
 
-## 6. Checking your work before publishing
+## 7. Checking your work before publishing
 
 Before pushing changes, it's worth running this once to catch broken links
 or typos in the menu setup:
@@ -141,7 +188,7 @@ If it finishes with no errors, you're good to push. If it complains, read
 the error — it usually names the exact file and problem (e.g., "page not
 found in nav" or "broken link").
 
-## 7. Getting help
+## 8. Getting help
 
 If something doesn't work as described above, or you're not sure how to
 make a specific kind of change, don't guess — ask whoever set up this

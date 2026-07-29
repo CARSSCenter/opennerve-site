@@ -4,13 +4,97 @@ title: Publications
 
 # Publications
 
-This page is a stub. No publications have been added yet.
+Peer-reviewed publications, conference papers, and protocols from CARSS
+consortium members that are relevant to OpenNerve components. Sourced from
+the consortium's existing publications page,
+[sites.usc.edu/carss/carss-in-publications](https://sites.usc.edu/carss/carss-in-publications/),
+last checked 2026-07-29. This site does not re-host or re-verify the claims
+in these papers — follow each link to the original source.
 
-When populated, each entry should include:
+Not every entry below concerns a component that has shipped, or binds to a
+specific hardware revision (`CLAUDE.md` §5). Several describe sensors or
+leads still under development by consortium members. Read each paper's own
+scope before citing it as evidence for a specific OpenNerve component or
+revision.
 
-- Full citation and a link (DOI preferred)
-- Which component(s) and hardware revision it concerns, per `CLAUDE.md` §5
-  ("maturity claims bind to a hardware revision, not to a component")
-- Whether it's the primary source for any claim made elsewhere on this site —
-  if so, link back to that page (§3: "never state a capability without a
-  source")
+No thumbnail or cover images are included on this page. Unlike the [animal
+data](animal-data.md) below — which links image assets hosted directly by
+the SPARC/Pennsieve data repository at a stable, purpose-built URL — these
+publications are spread across a dozen different journal and preprint
+platforms (IEEE Xplore, ACS, ScienceDirect, PubMed, protocols.io, and more),
+several of which sit behind a paywall or login. Pulling a cover thumbnail
+from each would mean hotlinking journal-branded, copyrighted images from
+sources with inconsistent (and in some cases unclear) reuse terms, for a
+small visual benefit. Text citations with direct links are lower-risk and
+easier to keep correct over time.
+
+## 2026
+
+1. Li, M., et al. **"Scaling beyond the vagus nerve: historical and
+   contemporary progress on electrode-based small-diameter peripheral nerve
+   interfaces."** *Bioelectronic Medicine* (2026).
+   [PMC12949514](https://pmc.ncbi.nlm.nih.gov/articles/PMC12949514/)
+2. Fleting, C. R., et al. **"Proceedings of the 13th annual deep brain
+   stimulation think tank: the evolving landscape."** *Frontiers in Human
+   Neuroscience* (2026).
+   [doi.org/10.3389/fnhum.2026.1770451](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2026.1770451/full)
+
+## 2025
+
+3. Baldwin, A., et al. **"Building and sustaining open source medical device
+   projects."** *IEEE Transactions on Biomedical Engineering* (2025).
+   [ieeexplore.ieee.org/document/10971951](https://ieeexplore.ieee.org/abstract/document/10971951)
+4. Huang, X., et al. **"Stretchable encapsulation for implantable strain
+   sensors."** *ACS Applied Materials & Interfaces* (2025).
+   [doi.org/10.1021/acsami.5c06101](https://pubs.acs.org/doi/full/10.1021/acsami.5c06101)
+5. Li, X., et al. **"Implantable physical sensors for in vivo organ
+   monitoring."** *Med-X* 3.1 (2025): 1–32.
+   [doi.org/10.1007/s44258-024-00047-x](https://link.springer.com/article/10.1007/s44258-024-00047-x)
+6. Elyahoodayan, S., et al. **"Acute stimulation, EMG, and neural recording
+   from a rat sciatic nerve using a self-sizing and soft closing polymer
+   cuff electrode."** protocols.io (2025).
+   [protocols.io/view/acute-stimulation-emg-and-neural-recording-from-a-dukp6uvn](https://slack.protocols.io:8443/view/acute-stimulation-emg-and-neural-recording-from-a-dukp6uvn.html)
+   — the underlying protocol for the [animal data](animal-data.md) sciatic
+   nerve dataset below.
+7. Rezard, Q., et al. **"An open source, microfabricated, self closing cuff
+   electrode with conductive polymer coating for improved electrochemical
+   performance."** IEEE International Conference on Solid-State Sensors and
+   Actuators (TRANSDUCERS) (2025).
+   [ieeexplore.ieee.org/document/11111207](https://ieeexplore.ieee.org/abstract/document/11111207)
+
+## 2024
+
+8. Baldwin, A., et al. **"Recent advances in facilitating the translation of
+   bioelectronic medicine therapies."** *Current Opinion in Biomedical
+   Engineering* (2024): 100575.
+   [doi.org/10.1016/j.cobme.2024.100575](https://www.sciencedirect.com/science/article/pii/S2468451124000552)
+9. Amirghasemi, F., et al. **"Flexible Acetylcholine Neural Probe with a
+   Hydrophobic Laser-Induced Graphene Electrode and a Fluorous-Phase Sensing
+   Membrane."** *ACS Materials Letters* 6.9 (2024): 4158–4167.
+   [pubmed.ncbi.nlm.nih.gov/39309214](https://pubmed.ncbi.nlm.nih.gov/39309214/)
+
+## 2023
+
+10. Thielen, B., and Meng, E. **"Characterization of thin film Parylene C
+    device curvature and the formation of helices via thermoforming."**
+    *Journal of Micromechanics and Microengineering* 33.9 (2023): 095007.
+    [pubmed.ncbi.nlm.nih.gov/37520061](https://pubmed.ncbi.nlm.nih.gov/37520061/)
+11. Amirghasemi, F., et al. **"FAST (Flexible Acetylcholine Sensing Thread):
+    Real-Time Detection of Acetylcholine with a Flexible Solid-Contact
+    Potentiometric Sensor."** *Bioengineering* 10.6 (2023): 655.
+    [pubmed.ncbi.nlm.nih.gov/37370586](https://pubmed.ncbi.nlm.nih.gov/37370586/)
+12. Pikov, V. **"Vagus nerve stimulation and sacral nerve stimulation for
+    inflammatory bowel disease: a systematic review."** *Journal of
+    Translational Gastroenterology* 1.2 (2023): 94.
+    [pubmed.ncbi.nlm.nih.gov/38606364](https://pubmed.ncbi.nlm.nih.gov/38606364/)
+13. Woo, J. Y., Pikov, V., and Chen, J. D. Z. **"Neuromodulation for
+    Gastroesophageal Reflux Disease: A Systematic Review."** *Journal of
+    Translational Gastroenterology* 1.1 (2023): 47.
+    [pubmed.ncbi.nlm.nih.gov/38009094](https://pubmed.ncbi.nlm.nih.gov/38009094/)
+14. Pikov, V. **"Bioelectronic medicine for restoring autonomic balance in
+    autoimmune diseases."** *Gut Microbiota and Integrative Wellness* 1.2
+    (2023).
+    [pubmed.ncbi.nlm.nih.gov/37155473](https://pubmed.ncbi.nlm.nih.gov/37155473/)
+
+See also [News](../news/index.md) for press coverage, talks, and other
+non-peer-reviewed items from the same source page.
