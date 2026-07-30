@@ -87,10 +87,22 @@ extra_css:
 # Vendored, pinned pdf.js build (docs/javascripts/pdfjs/) plus a small wrapper
 # script — no CDN, no new pip/npm dependency. See CLAUDE.md §7 "PDF viewer".
 # nav-menu.js: header dropdown menus for the top-level nav.tabs (CLAUDE.md §7
-# "Header dropdown menus").
+# "Header dropdown menus"). header-icons.js: GitHub/message-board/LinkedIn/
+# email icon links in the header (CLAUDE.md §7 "Header external links").
 extra_javascript:
   - javascripts/pdf-embed.js
   - javascripts/nav-menu.js
+  - javascripts/header-icons.js
+
+# Moves this repo's own GitHub link out of the header (see CLAUDE.md §7
+# "Header external links") and into the standard Material footer icon row
+# instead — a config-only feature (no template override), so it's the
+# built-in mechanism rather than another custom-JS injection.
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/axbaldwin1/opennerve-site
+      name: opennerve-site on GitHub
 
 markdown_extensions:
   - toc:

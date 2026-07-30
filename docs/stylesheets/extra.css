@@ -64,6 +64,112 @@
 }
 
 /*
+ * Header layout fix (2026-07-30) — the header was only ever filling about
+ * half the available width (reported in Firefox, but confirmed with a
+ * headless-Chrome screenshot too, so it's a real cross-browser bug, not a
+ * Firefox quirk). Root cause: Material's `.md-header__inner` is a plain flex
+ * row (logo, title, palette toggle, search, repo-source link), and exactly
+ * ONE item in that row carries `flex-grow` in Material's own compiled CSS —
+ * `.md-header__title`. The rule directly above this comment removes that
+ * element from the flex layout entirely (`display: none`), so nothing is
+ * left to absorb the freed space: every remaining item just sits flush
+ * against the logo, and the right half of the header renders empty.
+ *
+ * Fix: hand that role to the search widget instead of restoring a spacer.
+ * `.md-search` grows to fill the freed space (fixing the emptiness) and its
+ * inner input is stretched to fill it in turn (making it a genuinely bigger
+ * search bar, not just a repositioned one) — one change, two of this
+ * round's asks solved together. Scoped to the same `min-width: 60em`
+ * breakpoint Material itself uses for the desktop search layout, so mobile
+ * (where search is a full-screen overlay opened from an icon button, not an
+ * inline bar) is untouched.
+ */
+@media screen and (min-width: 60em) {
+  .md-header__inner .md-search {
+    flex-grow: 1;
+    max-width: 30rem;
+    margin: 0 1.25rem;
+  }
+
+  .md-search__inner {
+    float: none;
+    width: 100%;
+  }
+
+  .md-search__form {
+    height: 2.3rem;
+  }
+
+  .md-search__input {
+    font-size: 0.9rem;
+  }
+}
+
+/*
+ * Header external links (2026-07-30). Replaces the header's repo-source
+ * link (this site's own GitHub repo — see the `extra.social` entry in
+ * mkdocs.yml, which now surfaces that same link in the footer instead) with
+ * four icon links relevant to visitors rather than contributors to this
+ * docs site specifically: OpenNerve's GitHub org, the community message
+ * board, LinkedIn, and email. Built and appended by
+ * docs/javascripts/header-icons.js — same template-free approach as
+ * nav-menu.js (CLAUDE.md §7), rather than editing Material's header.html
+ * partial.
+ */
+.md-header__source {
+  display: none;
+}
+
+.on-header-icons {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 60em) {
+  .on-header-icons {
+    display: flex;
+  }
+}
+
+.on-header-icons__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  color: currentcolor;
+  opacity: 0.85;
+}
+
+.on-header-icons__link:hover,
+.on-header-icons__link:focus {
+  opacity: 1;
+}
+
+.on-header-icons__link svg {
+  width: 100%;
+  height: 100%;
+  fill: currentcolor;
+}
+
+/*
+ * Header tabs (2026-07-30) — bigger, more evenly spaced text, now that the
+ * fix above gives the row room to breathe instead of clustering against the
+ * logo. Material's defaults are `font-size: .7rem` and `.6rem` of side
+ * padding per item.
+ */
+.md-tabs__link {
+  font-size: 0.8rem;
+}
+
+.md-tabs__item {
+  padding: 0 1rem;
+}
+
+/*
  * Maturity badge component (CLAUDE.md §5).
  *
  * Deliberate exception to the "images/assets live alongside their page"
