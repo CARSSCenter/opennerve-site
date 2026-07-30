@@ -15,6 +15,13 @@ copyright: >-
   Content licensed CC-BY-4.0 unless noted otherwise. See CLAUDE.md §9 —
   licensing is under active review and may change on a repo-by-repo basis.
 
+# docs/images/CREDITS.md documents image provenance for maintainers (CLAUDE.md
+# §8) — not a published page. Excluding it here keeps it out of the built
+# site without needing a nav entry, so --strict's orphaned-page check doesn't
+# flag it.
+exclude_docs: |
+  images/CREDITS.md
+
 # Local build-time hook. Not a plugin dependency (no pip package, no
 # requirements.txt entry) — this is the mechanism CLAUDE.md §7 asks for so
 # "Edit this page" on a federated/synced page points at the correct upstream
@@ -24,16 +31,22 @@ hooks:
 
 theme:
   name: material
+  # Header goes white rather than a primary colour, and Material's Google Fonts
+  # loading is disabled in favour of a self-hosted stack — both are asset-driven
+  # decisions, not stylistic preference. Reasoning in CLAUDE.md §7 ("Visual identity
+  # and header palette").
+  logo: images/logo.png
+  font: false
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: white
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: black
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -67,6 +80,7 @@ plugins:
       enable_creation_date: false
 
 extra_css:
+  - stylesheets/fonts.css
   - stylesheets/extra.css
   - stylesheets/home.css
 

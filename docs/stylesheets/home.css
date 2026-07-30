@@ -2,55 +2,193 @@
  * Landing page layout (docs/index.md only).
  *
  * Anything used on more than one page belongs in extra.css instead — see the
- * split rule recorded in CLAUDE.md §7. This file is hero/section/card
- * rhythm and the maturity-scale explainer, none of which appears anywhere
- * else on the site.
+ * split rule recorded in CLAUDE.md §7. This file is the hero (including the
+ * trace-field background and the framed device photo), the spec strip,
+ * section/card rhythm, and the maturity-scale explainer — none of which
+ * appears anywhere else on the site.
  *
- * Color still comes entirely from Material's palette custom properties
- * (--md-primary-fg-color, --md-default-fg-color--light, --md-code-bg-color),
- * so light/dark switching needs no rules here.
+ * Color comes from Material's palette custom properties
+ * (--md-default-fg-color--light, --md-code-bg-color, --md-default-bg-color)
+ * plus the brand tokens defined in extra.css (--on-navy/--on-cyan/--on-magenta/
+ * --on-accent), so light/dark switching needs no duplicated rules here.
  */
 
+/* The negative left/right margin bleeds this bar to the content column's own
+   edge — but that edge isn't a fixed distance: Material's own
+   .md-content__inner margin is 0.8rem below 1220px width and 1.2rem at and
+   above it. Matching only the wider value here caused a real (if small)
+   horizontal overflow at every narrower width — the bar bled 6.4px past the
+   true edge on each side, just enough to force the whole page to scroll
+   horizontally on mobile. */
 .on-draftbar {
-  margin: -1.2rem -1.2rem 1.75rem;
-  padding: 0.55rem 1.2rem;
+  margin: -1.2rem -0.8rem 1.75rem;
+  padding: 0.55rem 0.8rem;
   background: var(--md-code-bg-color);
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
   font-size: 0.78rem;
   color: var(--md-default-fg-color--light);
 }
 
+@media screen and (min-width: 76.25em) {
+  .on-draftbar {
+    margin-left: -1.2rem;
+    margin-right: -1.2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
 .on-draftbar strong {
   color: var(--md-default-fg-color);
 }
 
+/*
+ * Hero.
+ *
+ * .on-hero__field holds the trace-field SVG (docs/images/hero-field.svg,
+ * inlined directly into the markup rather than referenced with <img> — CSS
+ * animates its individual <path> elements, which isn't possible against an
+ * externally-referenced image). It's a derivation of the logo's own motif:
+ * the wordmark already ends in a cyan waveform tail: this extends that tail
+ * into an ambient field of irregular biphasic (compound-action-potential-
+ * shaped) traces at low opacity. Decorative, not data — nothing here claims
+ * to be a real recording.
+ *
+ * The one animated moment on the page: each trace draws in left-to-right via
+ * stroke-dasharray/stroke-dashoffset (the SVG sets pathLength="1" on every
+ * path specifically so this works without measuring real path length),
+ * staggered slightly per row, ~900ms total. Suppressed entirely under
+ * prefers-reduced-motion.
+ */
+
 .on-hero {
-  padding: 1.5rem 0 0.5rem;
+  position: relative;
+  padding: 2.5rem 0 2.25rem;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--on-cyan) 6%, var(--md-default-bg-color)) 0%,
+    var(--md-default-bg-color) 70%
+  );
+}
+
+.on-hero__field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* python-markdown wraps the inline <svg> in a <p> (it isn't on the parser's
+   block-level HTML tag list) — that <p> needs the same 100% height passed
+   down, or the "absolute, inset: 0" box above it has nothing to stretch. */
+.on-hero__field p {
+  margin: 0;
+  height: 100%;
+}
+
+.on-hero__field svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.on-hero__trace {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: on-hero-draw 0.75s ease-out forwards;
+}
+
+.on-hero__trace:nth-of-type(1) { animation-delay: 0s; }
+.on-hero__trace:nth-of-type(2) { animation-delay: 40ms; }
+.on-hero__trace:nth-of-type(3) { animation-delay: 80ms; }
+.on-hero__trace:nth-of-type(4) { animation-delay: 120ms; }
+.on-hero__trace:nth-of-type(5) { animation-delay: 160ms; }
+
+@keyframes on-hero-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .on-hero__trace {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.on-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* Grid items default to min-width: auto, i.e. "at least as wide as my
+   widest unbreakable content" — the spec strip and the regulatory link
+   both contain nowrap spans, which without this would refuse to shrink
+   below their own content width and force the whole page to overflow
+   horizontally on mobile instead of wrapping. */
+.on-hero__inner > * {
+  min-width: 0;
 }
 
 .on-hero__title {
   font-size: 2.15rem;
   line-height: 1.15;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 0.85rem;
-  max-width: 22ch;
+  max-width: 20ch;
 }
 
 .on-hero__subhead {
   font-size: 1.05rem;
-  max-width: 58ch;
+  max-width: 46ch;
   color: var(--md-default-fg-color--light);
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.1rem;
 }
 
 .on-hero__subhead code {
   font-size: 0.9em;
 }
 
+/* The spec strip: sourced figures, not adjectives (CLAUDE.md §4). Every
+   figure here must trace to start/architecture.md or components/ipg.md —
+   see the (source) link at the end of the strip. */
+.on-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.35rem;
+  margin: 0 0 1.35rem;
+  font-family: var(--md-code-font);
+  font-size: 0.82rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.on-specs__item {
+  white-space: nowrap;
+}
+
+.on-specs__item strong {
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+
+.on-specs__cite {
+  margin: -1rem 0 1.35rem;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Regulatory line: the one place magenta appears on the whole site, as a
+   left-hand marker bar rather than as text color — a UI-component accent
+   clears the contrast bar it needs to (3:1) on both palettes, where magenta
+   text at normal size would not (CLAUDE.md §7 "Visual identity"). */
 .on-hero__reg {
-  border-top: 1px solid var(--md-default-fg-color--lightest);
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
-  padding: 0.75rem 0;
+  border-left: 3px solid var(--on-magenta);
+  padding: 0.15rem 0 0.15rem 1rem;
   margin: 0 0 1.5rem;
   font-size: 0.88rem;
 }
@@ -64,6 +202,35 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
+}
+
+/* The framed device photograph — a "specimen plate," not a hero banner
+   image, to match the datasheet/instrument register the rest of the site
+   is built in (CLAUDE.md §7). */
+.on-hero__frame {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  background: var(--md-code-bg-color);
+}
+
+.on-hero__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
+}
+
+.on-hero__caption {
+  margin: 0.6rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
+}
+
+.on-hero__caption code {
+  font-size: 0.95em;
 }
 
 .on-section {
@@ -141,6 +308,13 @@
   align-items: center;
 }
 
+/* Same min-width: auto issue as .on-hero__inner above — the step chips are
+   nowrap, so without this the 1fr column refuses to shrink and forces
+   horizontal overflow instead of wrapping to a second line. */
+.on-scale__steps {
+  min-width: 0;
+}
+
 .on-scale__axis {
   font-size: 0.78rem;
   font-weight: 700;
@@ -163,6 +337,21 @@
   font-size: 0.72rem;
   color: var(--md-default-fg-color--light);
   white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  /* Photo above text below ~800px — the brief's own hard requirement is
+     that this page reads well on a phone, and a two-column hero doesn't. */
+  .on-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .on-hero__photo-col {
+    order: -1;
+    max-width: 22rem;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 600px) {

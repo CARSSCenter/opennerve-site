@@ -10,8 +10,8 @@ title: Platform architecture
 
 <div class="on-diagram--top on-diagram__group" markdown>
 <span class="on-diagram__group-label">Control software</span>
-[Windows app<span class="on-diagram__node-tag">ONrecorder</span>](../software/windows.md){: .on-diagram__node }
-[Android app<span class="on-diagram__node-tag">in development</span>](../software/android.md){: .on-diagram__node }
+[<span class="on-diagram__node-body">Windows app<span class="on-diagram__node-tag">ONrecorder</span></span>](../software/windows.md){: .on-diagram__node }
+[<span class="on-diagram__node-body">Android app<span class="on-diagram__node-tag">in development</span></span>](../software/android.md){: .on-diagram__node }
 </div>
 
 <div class="on-diagram--conn-top on-diagram__connector on-diagram__connector--v on-diagram__connector--wireless" markdown>
@@ -20,21 +20,25 @@ title: Platform architecture
 
 <div class="on-diagram--left on-diagram__group" markdown>
 <span class="on-diagram__group-label">Leads</span>
-[Standard Leads](../components/standard-leads.md){: .on-diagram__node }
-[Sub-mm Parylene Cuff](../components/parylene-cuff.md){: .on-diagram__node }
+[![Standard Leads: bipolar cuff, EMG/ECG, and 4x4 tined lead assemblies](../images/lead-standard.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Standard Leads</span>](../components/standard-leads.md){: .on-diagram__node }
+[![Sub-mm Parylene Cuff electrode](../images/lead-cuff.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Sub-mm Parylene Cuff</span>](../components/parylene-cuff.md){: .on-diagram__node }
 </div>
 
 <div class="on-diagram--conn-left on-diagram__connector on-diagram__connector--h" markdown>
 <span class="on-diagram__connector-label">stim / record</span>
 </div>
 
-[IPG<span class="on-diagram__node-tag">Gen1 · Gen2 PCBA</span>](../components/ipg.md){: .on-diagram--hub .on-diagram__node .on-diagram__node--hub }
+<div class="on-diagram--hub" markdown>
+[<span class="on-diagram__node-body">IPG<span class="on-diagram__node-tag">Gen1 · Gen2 PCBA</span></span>](../components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
+</div>
 
 <div class="on-diagram--conn-right on-diagram__connector on-diagram__connector--h on-diagram__connector--wireless" markdown>
 <span class="on-diagram__connector-label">inductive</span>
 </div>
 
-[Charger<span class="on-diagram__node-tag">300 kHz</span>](../components/charger.md){: .on-diagram--right .on-diagram__node }
+<div class="on-diagram--right" markdown>
+[<span class="on-diagram__node-body">Charger<span class="on-diagram__node-tag">300 kHz</span></span>](../components/charger.md){: .on-diagram__node }
+</div>
 
 <div class="on-diagram--conn-bottom on-diagram__connector on-diagram__connector--v" markdown>
 <span class="on-diagram__connector-label">I2C</span>
@@ -42,15 +46,13 @@ title: Platform architecture
 
 <div class="on-diagram--bottom on-diagram__group" markdown>
 <span class="on-diagram__group-label">Sensors</span>
-[Mechanical Sensors](../components/mechanical-sensors.md){: .on-diagram__node }
-[Chemical Sensors](../components/chemical-sensors.md){: .on-diagram__node }
+[![Mechanical strain sensor, two sizes shown with 1 cm scale](../images/sensor-mechanical.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Mechanical Sensors</span>](../components/mechanical-sensors.md){: .on-diagram__node }
+[![Electrochemical neurotransmitter sensor, cyclic-voltammetry trace](../images/sensor-chemical.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Chemical Sensors</span>](../components/chemical-sensors.md){: .on-diagram__node }
 </div>
 
 </div>
 
-Same diagram as the [landing page](../index.md#the-platform); shared styling
-lives in `docs/stylesheets/extra.css` since it's used on both pages (see
-`CLAUDE.md` §7).
+Same diagram as the [landing page](../index.md#the-platform).
 
 - The **IPG** is the hub: current-based bipolar stimulation, multiple analog
   front ends for biosignal recording, and an in-body I2C bus for third-party

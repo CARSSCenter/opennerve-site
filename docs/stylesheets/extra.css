@@ -1,4 +1,34 @@
 /*
+ * Brand tokens, sampled directly from docs/images/logo.png rather than
+ * invented: navy #2B3990, cyan #0BC1F9, magenta #F40B75. Held separately from
+ * Material's own --md-* chrome variables (theme.palette.primary is now
+ * "white"/"black" — see CLAUDE.md §7) so the two never collide.
+ *
+ * Contrast, not preference, decides which raw token is safe where: navy on
+ * a light surface is ~10:1, but ~1.7:1 on a dark one; cyan is the reverse
+ * (~8:1 dark, ~2:1 light). Neither works unconditionally, so --on-accent is
+ * a scheme-aware alias — navy in the default (light) scheme, cyan in slate
+ * (dark) — for anything (badge numerals, hub border, hover states) that
+ * needs to read as "brand-colored and legible" regardless of which palette
+ * the visitor is using. Magenta is rationed to exactly one job everywhere
+ * on the site: the regulatory/status marker. It is used as a border/bar
+ * accent (3:1 UI-component contrast, which it clears on both schemes), not
+ * as body text color (it falls short of 4.5:1 for normal text on a light
+ * background).
+ */
+
+:root {
+  --on-navy: #2b3990;
+  --on-cyan: #0bc1f9;
+  --on-magenta: #f40b75;
+  --on-accent: var(--on-navy);
+}
+
+[data-md-color-scheme="slate"] {
+  --on-accent: var(--on-cyan);
+}
+
+/*
  * Maturity badge component (CLAUDE.md §5).
  *
  * Deliberate exception to the "images/assets live alongside their page"
@@ -42,7 +72,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.1;
-  color: var(--md-primary-fg-color);
+  color: var(--on-accent);
   font-family: var(--md-code-font);
 }
 
@@ -69,8 +99,8 @@
  * screenshotted apart from the banner text. */
 .on-badge--illustrative {
   border-style: dashed;
-  border-color: var(--md-primary-fg-color);
-  background: color-mix(in srgb, var(--md-primary-fg-color) 8%, var(--md-code-bg-color));
+  border-color: var(--on-accent);
+  background: color-mix(in srgb, var(--on-accent) 8%, var(--md-code-bg-color));
 }
 
 .on-availability {
@@ -107,26 +137,46 @@
  * The IPG is the hub; every other block is a link to its component page, so
  * this diagram doubles as navigation. Signal paths are distinguished by line
  * style, not color (solid = wired, dashed = wireless/inductive) — this is
- * how real block diagrams do it, and it's colorblind-safe. Desktop renders a
- * 5x5 grid (node / connector / hub / connector / node on the middle row,
- * with a node+connector above and below); below 600px it collapses to a
- * single stacked column via `order`, and every connector switches to the
- * horizontal-rule style regardless of its desktop orientation.
+ * how real block diagrams do it, and it's colorblind-safe.
+ *
+ * Rebuilt (round 2) from a version that positioned every block with hardcoded
+ * `grid-column`/`grid-row` line numbers duplicated across three places (the
+ * desktop rules, the mobile reset, and the `order` list) that had to be kept
+ * in sync by hand. `grid-template-areas` replaces all three with one
+ * self-documenting map. Two rendering bugs are fixed as part of this rebuild
+ * rather than patched: connector labels wrapped to 3-4 lines and spilled
+ * over the node cards (fixed columns were only 2.5rem wide with no
+ * `white-space: nowrap`); and the connecting line stopped short of the
+ * boxes it connects, because a nonzero grid `gap` sat between the line's
+ * cell and the node's — `gap: 0` plus spacing on the nodes/groups themselves
+ * closes that.
+ *
+ * Nodes may carry a photo (`.on-diagram__node-media`, first child) — used
+ * where a real component photo exists (leads, sensors); the three that don't
+ * (control software, charger) stay text-only, deliberately, rather than
+ * filling the gap with a stock icon. Every node's text sits in
+ * `.on-diagram__node-body` regardless, so the two variants share one layout.
  */
 
 .on-diagram {
   display: grid;
-  grid-template-columns: minmax(8rem, 1fr) 2.5rem minmax(9rem, 1.3fr) 2.5rem minmax(8rem, 1fr);
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: minmax(8rem, 1fr) minmax(3.5rem, auto) minmax(9rem, 1.3fr) minmax(3.5rem, auto) minmax(8rem, 1fr);
+  grid-template-areas:
+    ".    .         top         .          .    "
+    ".    .         conn-top    .          .    "
+    "left conn-left hub         conn-right right"
+    ".    .         conn-bottom .          .    "
+    ".    .         bottom      .          .    ";
   align-items: center;
   margin: 1.75rem 0;
-  gap: 0.25rem;
+  gap: 0;
 }
 
 .on-diagram__group {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
+  padding: 0.35rem;
 }
 
 .on-diagram__group-label {
@@ -139,10 +189,11 @@
 }
 
 .on-diagram__node {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.25rem;
-  padding: 0.55rem 0.75rem;
+  border-radius: 0.35rem;
   background: var(--md-code-bg-color);
   font-size: 0.85rem;
   text-decoration: none !important;
@@ -150,17 +201,33 @@
 }
 
 .on-diagram__node:hover {
-  border-color: var(--md-primary-fg-color);
+  border-color: var(--on-accent);
+}
+
+.on-diagram__node-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.on-diagram__node-body {
+  display: block;
+  padding: 0.55rem 0.75rem;
 }
 
 .on-diagram__node--hub {
   text-align: center;
-  padding: 1.1rem 0.75rem;
   font-family: var(--md-code-font);
   font-weight: 700;
   font-size: 1rem;
   border-width: 2px;
-  border-color: var(--md-primary-fg-color);
+  border-color: var(--on-accent);
+  margin: 0 0.5rem;
+}
+
+.on-diagram__node--hub .on-diagram__node-body {
+  padding: 1.1rem 0.75rem;
 }
 
 .on-diagram__node-tag {
@@ -171,22 +238,45 @@
   margin-top: 0.15rem;
 }
 
-.on-diagram--top { grid-column: 3; grid-row: 1; }
-.on-diagram--conn-top { grid-column: 3; grid-row: 2; }
-.on-diagram--left { grid-column: 1; grid-row: 3; }
-.on-diagram--conn-left { grid-column: 2; grid-row: 3; }
-.on-diagram--hub { grid-column: 3; grid-row: 3; }
-.on-diagram--conn-right { grid-column: 4; grid-row: 3; }
-.on-diagram--right { grid-column: 5; grid-row: 3; }
-.on-diagram--conn-bottom { grid-column: 3; grid-row: 4; }
-.on-diagram--bottom { grid-column: 3; grid-row: 5; }
+.on-diagram--top { grid-area: top; }
+.on-diagram--conn-top { grid-area: conn-top; }
+.on-diagram--left { grid-area: left; }
+.on-diagram--conn-left { grid-area: conn-left; }
+.on-diagram--conn-right { grid-area: conn-right; }
+.on-diagram--conn-bottom { grid-area: conn-bottom; }
+.on-diagram--bottom { grid-area: bottom; }
 
-.on-diagram__connector {
-  position: relative;
+/* .on-diagram--hub and .on-diagram--right wrap a single node each (unlike
+ * the other placement classes above, which sit on a .on-diagram__group of
+ * two) — the wrapper itself must be the grid item, not the <a> inside it:
+ * markdown wraps a bare link that isn't already inside a block-level <div>
+ * in its own <p>, and `grid-area` only has any effect on a direct child of
+ * the grid container. `display: flex` here gives that single-child wrapper
+ * the same fill behavior `.on-diagram__group` gets from being a flex
+ * column, so the node inside sizes the same way either kind of cell would. */
+.on-diagram--hub {
+  grid-area: hub;
   display: flex;
+  margin: 0 0.5rem;
+}
+
+.on-diagram--right {
+  grid-area: right;
+  display: flex;
+  margin: 0.35rem;
+}
+
+/* Label sits above the line rather than knocked out of it with a background
+ * color — the previous mid-line label only worked because the diagram
+ * happened to sit on page background; this doesn't care what it sits on. */
+.on-diagram__connector {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.3rem;
   min-height: 2.75rem;
+  padding: 0.4rem 0.5rem;
   font-family: var(--md-code-font);
   font-size: 0.65rem;
   letter-spacing: 0.03em;
@@ -195,18 +285,16 @@
 }
 
 .on-diagram__connector-label {
-  position: relative;
-  z-index: 1;
-  background: var(--md-default-bg-color);
-  padding: 0.15rem 0.4rem;
+  white-space: nowrap;
 }
 
-.on-diagram__connector--h::before {
+.on-diagram__connector::after {
   content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
+  display: block;
+}
+
+.on-diagram__connector--h::after {
+  width: 100%;
   border-top: 2px solid var(--md-default-fg-color--lighter);
 }
 
@@ -214,20 +302,17 @@
   min-height: 3.5rem;
 }
 
-.on-diagram__connector--v::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
+.on-diagram__connector--v::after {
+  flex: 1;
+  width: 0;
   border-left: 2px solid var(--md-default-fg-color--lighter);
 }
 
-.on-diagram__connector--wireless.on-diagram__connector--h::before {
+.on-diagram__connector--wireless.on-diagram__connector--h::after {
   border-top-style: dashed;
 }
 
-.on-diagram__connector--wireless.on-diagram__connector--v::before {
+.on-diagram__connector--wireless.on-diagram__connector--v::after {
   border-left-style: dashed;
 }
 
@@ -293,7 +378,7 @@
 }
 
 .on-pdf-details summary:hover {
-  color: var(--md-primary-fg-color);
+  color: var(--on-accent);
 }
 
 .on-pdf-details[open] summary {
@@ -322,52 +407,49 @@
 }
 
 @media (max-width: 600px) {
+  /* No drawn connectors at this width — a ruled line at 5-6rem of available
+   * width reads as noise, not signal. The diagram becomes a plain top-to-
+   * bottom stack in DOM order (control software, BLE, leads, stim/record,
+   * IPG hub, inductive, charger, I2C, sensors), which is already the
+   * correct reading order — unlike the previous `order`-based reshuffle,
+   * where the IPG hub rendered 3rd visually but sat 5th in the tab/reading
+   * order. No `order` property is used here, so the two now always match. */
   .on-diagram {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
   }
 
-  .on-diagram--top,
-  .on-diagram--conn-top,
-  .on-diagram--left,
-  .on-diagram--conn-left,
-  .on-diagram--hub,
-  .on-diagram--conn-right,
-  .on-diagram--right,
-  .on-diagram--conn-bottom,
-  .on-diagram--bottom {
-    grid-column: 1;
-    grid-row: auto;
+  /* Each group's two nodes sit side by side rather than stacked, so related
+   * items (the two lead types, the two sensor types) read as a pair. */
+  .on-diagram__group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    padding: 0;
   }
 
-  /* Reading order down a single column: control software, IPG, leads,
-     charger, sensors. Every connector renders as a horizontal rule between
-     stacked cards, regardless of whether it was a horizontal or vertical
-     connector on the desktop grid. */
-  .on-diagram--top { order: 1; }
-  .on-diagram--conn-top { order: 2; }
-  .on-diagram--hub { order: 3; }
-  .on-diagram--conn-left { order: 4; }
-  .on-diagram--left { order: 5; }
-  .on-diagram--conn-right { order: 6; }
-  .on-diagram--right { order: 7; }
-  .on-diagram--conn-bottom { order: 8; }
-  .on-diagram--bottom { order: 9; }
-
-  .on-diagram__connector--v {
-    min-height: 2.75rem;
+  .on-diagram__group-label {
+    grid-column: 1 / -1;
   }
 
-  .on-diagram__connector--v::before {
-    top: 50%;
-    bottom: auto;
-    left: 0;
-    right: 0;
-    border-left: none;
-    border-top: 2px solid var(--md-default-fg-color--lighter);
+  .on-diagram--right {
+    margin: 0;
   }
 
-  .on-diagram__connector--wireless.on-diagram__connector--v::before {
-    border-top-style: dashed;
+  .on-diagram--hub {
+    margin: 0;
+  }
+
+  /* The connector becomes just its label — the protocol name — centered
+   * between the sections it joins, with no line at all. */
+  .on-diagram__connector {
+    min-height: 0;
+    padding: 0;
+  }
+
+  .on-diagram__connector::after {
+    display: none;
   }
 }
 
@@ -440,7 +522,7 @@
 .on-navmenu__link:hover,
 .on-navmenu__link:focus {
   background: var(--md-code-bg-color);
-  color: var(--md-primary-fg-color) !important;
+  color: var(--on-accent) !important;
 }
 
 /*

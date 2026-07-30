@@ -16,7 +16,7 @@ covers the "how do I do X" basics.
    the `docs/` folder.
 2. Edit the text file, save it, preview your change, then publish it.
 3. "Publishing" currently means pushing the change to GitHub (see
-   [Making a change live](#5-making-a-change-live) below).
+   [Making a change live](#6-making-a-change-live) below).
 
 ---
 
@@ -109,7 +109,48 @@ None of these three files need a `mkdocs.yml` change — they're existing
 pages, so you're only adding a bullet point to a page that's already in the
 menu.
 
-## 4. Previewing your changes before publishing
+## 4. Adding or replacing an image
+
+Photos and diagrams that appear on more than one page (or on the home page)
+live in `docs/images/`. A photo that only belongs to one page can go in that
+page's own folder instead — either is fine, just follow the pattern of
+what's already there.
+
+1. Get your image into a reasonably small file first. A phone photo or a
+   screenshot is usually much bigger than a web page needs — a good target
+   is under 1000 pixels wide and under 300 KB. On a Mac, the built-in
+   `sips` tool does this from Terminal without installing anything:
+
+   ```
+   sips -s format jpeg -s formatOptions 80 -Z 1000 "the original file.png" --out docs/images/my-image.jpg
+   ```
+
+   `-Z 1000` shrinks the longest side to 1000 pixels (keeping the original
+   proportions), and `-s format jpeg -s formatOptions 80` saves it as a
+   reasonably compressed JPEG. On Windows, the free "Photos" app or
+   [squoosh.app](https://squoosh.app) (drag a file in, no install, nothing
+   uploaded anywhere) both do the same job.
+2. Reference it from a page with plain Markdown:
+
+   ```
+   ![A short description of what the image shows](images/my-image.jpg)
+   ```
+
+   The description in the brackets isn't just for looks — it's what a
+   screen reader reads aloud, so make it describe the picture, not just
+   restate the caption.
+3. If you're replacing an existing image rather than adding a new one, keep
+   the same filename so you don't have to update every page that links to
+   it.
+
+One thing worth knowing: a handful of images on this site (the platform
+diagram on the home page, for one) are photos of real hardware sourced from
+outside this repository, and `docs/images/CREDITS.md` keeps a record of
+where each one came from. If you add a photo that isn't yours — something
+pulled from a paper, a poster, or another repo — add a line there too, so
+nobody has to guess later whether it's safe to reuse.
+
+## 5. Previewing your changes before publishing
 
 Don't guess whether a change looks right — preview it on your own computer
 first.
@@ -132,7 +173,7 @@ as you save changes to files — just refresh the browser tab.
 
 Press `Ctrl+C` in the terminal to stop the preview when you're done.
 
-## 5. Making a change live
+## 6. Making a change live
 
 Right now, this repository is **not yet connected** to a live, public
 website — pushing to GitHub does not automatically publish anything yet.
@@ -153,7 +194,7 @@ files and commit changes directly in the browser — open the file on
 github.com, click the pencil (edit) icon, make your change, and use the
 "Commit changes" button at the bottom.
 
-## 6. Special case: pages copied in from other repos
+## 7. Special case: pages copied in from other repos
 
 Some pages (under folders like `components/ipg/`, `components/mechanical-sensors/`)
 are not edited here directly — they're automatically copied in from other
@@ -175,7 +216,7 @@ listed in `docs-sources.yml` — if it's a new file that's never been synced
 before, add a line for it there first (following the pattern of existing
 lines), then run the command above.
 
-## 7. Checking your work before publishing
+## 8. Checking your work before publishing
 
 Before pushing changes, it's worth running this once to catch broken links
 or typos in the menu setup:
@@ -188,7 +229,7 @@ If it finishes with no errors, you're good to push. If it complains, read
 the error — it usually names the exact file and problem (e.g., "page not
 found in nav" or "broken link").
 
-## 8. Getting help
+## 9. Getting help
 
 If something doesn't work as described above, or you're not sure how to
 make a specific kind of change, don't guess — ask whoever set up this

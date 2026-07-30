@@ -1,0 +1,38 @@
+/* Self-hosted type — IBM Plex Sans (text) + IBM Plex Mono (designators).
+ * Vendored under stylesheets/fonts/ from the official IBM/plex release (OFL-1.1,
+ * licence text kept alongside in fonts/OFL.txt per the licence's own requirement).
+ * This replaces Material's default runtime Google Fonts call (theme.font: false in
+ * mkdocs.yml) — no external request at view time, consistent with CLAUDE.md §7's
+ * "must build and run with no network access" goal. See CLAUDE.md §7 for why Plex
+ * specifically: its Sans and Mono share a skeleton, which matters on a site that
+ * constantly mixes prose with alphanumeric designators (Gen2 PCBA, nRF52810, D2/E3/M1).
+ */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("fonts/IBMPlexSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/IBMPlexMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --md-text-font: "IBM Plex Sans";
+  --md-code-font: "IBM Plex Mono";
+}
