@@ -29,6 +29,41 @@
 }
 
 /*
+ * Header logo (2026-07-30). docs/images/logo.png is the full wordmark, not a
+ * standalone mark — "OpenNerve" is already drawn into the artwork (see
+ * docs/images/CREDITS.md). Material's default header also renders the site
+ * name as separate text next to it (from `site_name` in mkdocs.yml), which
+ * doubled the word up in the header. Two changes, both scoped to the header
+ * only — the identical site-name text inside the mobile nav drawer
+ * (`.md-nav__title` in the sidebar) and the browser tab title are untouched:
+ *
+ * 1. Logo grows from Material's default 1.2rem to 2.4rem — the header row
+ *    isn't a fixed height (`.md-header__inner` is a plain flex row), so it
+ *    grows to fit the taller image automatically, no extra rule needed.
+ * 2. The whole `.md-header__title` block is hidden, not just the site-name
+ *    topic. Tried hiding only the first (site-name) topic first, keeping
+ *    Material's second, sibling topic that's meant to fade in the current
+ *    page's own heading once you scroll past it (a `.md-header__title--active`
+ *    class toggled in JS). Verified via a real browser (CDP computed-style
+ *    check, not just a screenshot — see CLAUDE.md §9) that on this site's
+ *    landing page specifically, that swap is already active at rest, before
+ *    any scrolling — a pre-existing quirk, not caused by this change, most
+ *    likely from the custom hero markup confusing Material's scroll-position
+ *    tracking. Since the landing page's title also happens to equal the site
+ *    name ("OpenNerve"), the redundant text would have kept showing there
+ *    regardless. Hiding the whole block sidesteps that quirk and is
+ *    consistent on every page, at the cost of losing the scroll-linked
+ *    page-title affordance everywhere, not just the landing page.
+ */
+.md-header__button.md-logo img {
+  height: 2.4rem;
+}
+
+.md-header__title {
+  display: none;
+}
+
+/*
  * Maturity badge component (CLAUDE.md §5).
  *
  * Deliberate exception to the "images/assets live alongside their page"
@@ -139,47 +174,172 @@
  * style, not color (solid = wired, dashed = wireless/inductive) — this is
  * how real block diagrams do it, and it's colorblind-safe.
  *
- * Rebuilt (round 2) from a version that positioned every block with hardcoded
- * `grid-column`/`grid-row` line numbers duplicated across three places (the
- * desktop rules, the mobile reset, and the `order` list) that had to be kept
- * in sync by hand. `grid-template-areas` replaces all three with one
- * self-documenting map. Two rendering bugs are fixed as part of this rebuild
- * rather than patched: connector labels wrapped to 3-4 lines and spilled
- * over the node cards (fixed columns were only 2.5rem wide with no
- * `white-space: nowrap`); and the connecting line stopped short of the
- * boxes it connects, because a nonzero grid `gap` sat between the line's
- * cell and the node's — `gap: 0` plus spacing on the nodes/groups themselves
- * closes that.
+ * Rebuilt (round 3, 2026-07-30) around a body boundary rather than the
+ * previous cross layout (software above, sensors below, leads left, charger
+ * right) — see CLAUDE.md §7's dated entry for the full reasoning. The
+ * previous layout was spatially balanced but arbitrary: nothing about it
+ * explained why two of the four links were drawn dashed. This version splits
+ * the diagram into "outside the body" / "inside the body", with a dashed
+ * `.on-diagram--skin` divider between them — the two dashed (wireless)
+ * links, BLE and the inductive charger link, are exactly the two links that
+ * cross it, so the line style stops needing a legend to decode. The other
+ * two links (stim/record, I2C) are wired and entirely on the implanted side.
  *
- * Nodes may carry a photo (`.on-diagram__node-media`, first child) — used
- * where a real component photo exists (leads, sensors); the three that don't
- * (control software, charger) stay text-only, deliberately, rather than
- * filling the gap with a stock icon. Every node's text sits in
- * `.on-diagram__node-body` regardless, so the two variants share one layout.
+ * This rebuild also fixes a real bug in the previous hub markup on
+ * docs/index.md: a single-underscore class (`on-diagram_node-media`, so it
+ * matched no rule and the photo rendered unstyled), "IPG" printed twice, and
+ * an unmatched closing `</span>`. The hub now carries a proper
+ * `.on-diagram__node-media` (the same hero-ipg.jpg used elsewhere on this
+ * page) so that bug has nowhere to recur.
+ *
+ * Round 4 (2026-07-30, at the site owner's request after reviewing round 3):
+ * every node now carries a photo, not just leads/sensors. Control software
+ * and the charger have no real photo in the asset library (per
+ * docs/images/CREDITS.md), so they use `docs/images/placeholder.jpg` — a
+ * plain generated graphic (diagonal hatch + a generic image glyph), not a
+ * stand-in meant to look like a real product photo, so a reader can't
+ * mistake it for one. Two knock-on changes this round, both aimed at
+ * shrinking how much vertical space the photos take up:
+ *   - `.on-diagram__node-media`'s `aspect-ratio` goes from 4/3 to 5/2 —
+ *     "longer and thinner," per the request — and every node/group gets a
+ *     `max-width` instead of stretching to fill its grid column, so cards
+ *     render smaller outright rather than just proportionally shorter.
+ *   - The hub no longer stretches to fill its two-row span (round 3's
+ *     `align-self: stretch` plus the `.on-diagram--hub > p` height fix are
+ *     both gone). A stretched hub reads fine as a text-only pillar, but
+ *     looks wrong once it has a photo in it — a tall, distorted crop instead
+ *     of a normal card. It's centered within its span instead, the same way
+ *     the leads/sensors groups are centered within theirs.
+ *
+ * Grid structure: 6 columns × 4 rows, named via `grid-template-areas`
+ * (keeping the self-documenting single-source-of-truth the previous rebuild
+ * introduced, instead of hand-kept `grid-column`/`grid-row` line numbers).
+ * `align-items: center` applies to every item, including `--hub` (spans
+ * both device rows) — only `--skin` overrides it to `stretch`, since its
+ * dashed line needs to run continuously top to bottom to read as a wall.
+ *
+ * Connector anatomy — three layered pieces per connector, so a single line
+ * + label + arrowheads work with only one extra span in the markup:
+ *   - `.on-diagram__connector-rule`: the drawn line itself, absolutely
+ *     positioned edge-to-edge of the connector's own grid cell (not inset
+ *     by the cell's padding — an absolutely positioned child is positioned
+ *     against its containing block's *padding* edge, so this always meets
+ *     the flanking node/hub box, which itself carries zero outer
+ *     margin/padding for the same reason). Solid or dashed via the
+ *     `--wireless` modifier.
+ *   - The connector's own `::before`/`::after`: arrowheads (CSS border
+ *     triangles, `currentColor`-free — they use the same fg-color token as
+ *     the rule, so no separate dark-mode rule is needed). Both render by
+ *     default (every link here is bidirectional except one); the
+ *     `--one-way` modifier suppresses the left (outbound) arrowhead for the
+ *     charger's link, which only ever pushes power into the IPG.
+ *   - `.on-diagram__connector-label`: an opaque bordered chip sitting on top
+ *     of the rule (not a background knockout), so it reads correctly
+ *     regardless of what's behind it. The charger's connector reads
+ *     "inductive," not a frequency figure — 300 kHz (still cited correctly
+ *     elsewhere on this site) is a nominal figure; the site owner noted the
+ *     real operating frequency varies with a feedback loop, so a single
+ *     number on the diagram overstates precision the link doesn't have.
+ *     See CLAUDE.md §9 for the other places "300 kHz" still appears, which
+ *     this change deliberately left alone (a sourced prose claim, not part
+ *     of the diagram).
+ *
+ * Markup order is deliberately the mobile reading order (outside-the-body
+ * region → software → BLE → charger → inductive → skin → inside-the-body
+ * region → IPG → stim/record → leads → I2C → sensors), not the desktop
+ * visual order — grid placement is by named area regardless of source
+ * order, but the mobile fallback below is a plain flex column with no
+ * `order` property, so DOM order is what visitors tab through and what a
+ * screen reader encounters. One resulting, accepted tradeoff: on desktop,
+ * keyboard tab order reaches the charger link before the IPG link, because
+ * the hub spans two grid rows and DOM order is optimized for the mobile
+ * stack instead.
  */
 
 .on-diagram {
   display: grid;
-  grid-template-columns: minmax(8rem, 1fr) minmax(3.5rem, auto) minmax(9rem, 1.3fr) minmax(3.5rem, auto) minmax(8rem, 1fr);
+  grid-template-columns:
+    minmax(7rem, 1fr) minmax(3rem, auto) 1.5rem
+    minmax(8rem, 1.1fr) minmax(3rem, auto) minmax(7rem, 1fr);
   grid-template-areas:
-    ".    .         top         .          .    "
-    ".    .         conn-top    .          .    "
-    "left conn-left hub         conn-right right"
-    ".    .         conn-bottom .          .    "
-    ".    .         bottom      .          .    ";
+    "lab-out lab-out .    lab-in lab-in  lab-in "
+    "sw      ble      skin hub    stim    leads  "
+    "chg     pwr      skin hub    i2c     sensors"
+    ".       .        skin .      .       .      ";
   align-items: center;
+  gap: 0.6rem 0;
   margin: 1.75rem 0;
-  gap: 0;
+}
+
+.on-diagram--skin {
+  align-self: stretch;
+}
+
+.on-diagram--lab-out { grid-area: lab-out; }
+.on-diagram--lab-in { grid-area: lab-in; }
+.on-diagram--sw { grid-area: sw; }
+.on-diagram--chg { grid-area: chg; }
+.on-diagram--ble { grid-area: ble; }
+.on-diagram--pwr { grid-area: pwr; }
+.on-diagram--skin { grid-area: skin; }
+.on-diagram--hub { grid-area: hub; }
+.on-diagram--stim { grid-area: stim; }
+.on-diagram--i2c { grid-area: i2c; }
+.on-diagram--leads { grid-area: leads; }
+.on-diagram--sensors { grid-area: sensors; }
+
+/* The hub spans rows 2 and 3 and centers within that combined span (its
+ * center therefore sits exactly on the row 2/3 seam) — but every other item
+ * in row 2 centers within row 2's OWN height, and every item in row 3
+ * centers within row 3's own height, so their natural center is offset from
+ * the hub's by roughly half a row. Left alone, that gap grows with however
+ * much taller the leads/sensors photos make each row than the software/
+ * charger content sharing it, and the connectors end up pointing at empty
+ * space above/below the hub instead of at it. Pulling row 2's items to the
+ * bottom of their row and row 3's items to the top of theirs clusters both
+ * rows' content toward that same seam — hub included — so all four
+ * connectors converge on roughly the hub's actual center, the way lines in
+ * an ordinary hub-and-spoke diagram do. */
+.on-diagram--sw,
+.on-diagram--ble,
+.on-diagram--stim,
+.on-diagram--leads {
+  align-self: end;
+}
+
+.on-diagram--chg,
+.on-diagram--pwr,
+.on-diagram--i2c,
+.on-diagram--sensors {
+  align-self: start;
+}
+
+.on-diagram__region {
+  align-self: end;
+  padding-bottom: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
 }
 
 .on-diagram__group {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem;
 }
 
+/* margin-inline is a safety margin, not decoration: on a narrower content
+ * column (e.g. start/architecture.md, which has a sidebar and a table of
+ * contents eating into the available width), the leads/sensors columns can
+ * shrink close to their own content width, leaving little to no centering
+ * slack — without this, the label can end up sitting close enough to the
+ * neighboring connector's arrowhead that they visually touch. */
 .on-diagram__group-label {
+  margin-inline: 0.4rem;
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -192,6 +352,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 100%;
+  max-width: 9rem;
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 0.35rem;
   background: var(--md-code-bg-color);
@@ -204,11 +366,27 @@
   border-color: var(--on-accent);
 }
 
+/* 5/2 (was 4/3) and a max-width on the card itself (above) are both aimed at
+ * the same problem: the leads/sensors photos were driving rows 2/3 much
+ * taller than the rest of the diagram needed, since every node/group in a
+ * row shares that row's height. A longer, thinner, smaller-overall photo
+ * shrinks that inflation directly, rather than working around it. */
 .on-diagram__node-media {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 5 / 2;
   object-fit: cover;
+}
+
+/* The hub's photo (hero-ipg.jpg, 992×1000 — see docs/images/CREDITS.md) is
+ * the one exception to the shared 5/2 ratio above: it's a full product
+ * shot, not a cropped detail like the leads/sensors photos, so cropping it
+ * to a wide banner would cut off real content. Same width as every other
+ * card, but its own aspect ratio, tall enough to show the whole photo with
+ * no cropping at all (cover vs. contain is moot once the ratio matches
+ * exactly). */
+.on-diagram__node--hub .on-diagram__node-media {
+  aspect-ratio: 992 / 1000;
 }
 
 .on-diagram__node-body {
@@ -223,7 +401,6 @@
   font-size: 1rem;
   border-width: 2px;
   border-color: var(--on-accent);
-  margin: 0 0.5rem;
 }
 
 .on-diagram__node--hub .on-diagram__node-body {
@@ -238,82 +415,120 @@
   margin-top: 0.15rem;
 }
 
-.on-diagram--top { grid-area: top; }
-.on-diagram--conn-top { grid-area: conn-top; }
-.on-diagram--left { grid-area: left; }
-.on-diagram--conn-left { grid-area: conn-left; }
-.on-diagram--conn-right { grid-area: conn-right; }
-.on-diagram--conn-bottom { grid-area: conn-bottom; }
-.on-diagram--bottom { grid-area: bottom; }
-
-/* .on-diagram--hub and .on-diagram--right wrap a single node each (unlike
- * the other placement classes above, which sit on a .on-diagram__group of
- * two) — the wrapper itself must be the grid item, not the <a> inside it:
- * markdown wraps a bare link that isn't already inside a block-level <div>
- * in its own <p>, and `grid-area` only has any effect on a direct child of
- * the grid container. `display: flex` here gives that single-child wrapper
- * the same fill behavior `.on-diagram__group` gets from being a flex
- * column, so the node inside sizes the same way either kind of cell would. */
-.on-diagram--hub {
-  grid-area: hub;
+/* .on-diagram--hub and .on-diagram--chg wrap a single node each (unlike the
+ * group areas above, which hold two) — the wrapper itself must be the grid
+ * item, not the <a> inside it: markdown wraps a bare link that isn't already
+ * inside a block-level <div> in its own <p>, and `grid-area` only has any
+ * effect on a direct child of the grid container. `justify-content: center`
+ * is what actually centers the card: the grid's own `justify-items:
+ * stretch` default makes this wrapper fill its full column width, so
+ * without it the single child would hug the left edge instead of centering
+ * — the same job `.on-diagram__group`'s `align-items: center` does for the
+ * two-node groups. Zero margin/padding on both, deliberately — see the
+ * connector-rule comment above for why that matters. */
+.on-diagram--hub,
+.on-diagram--chg {
   display: flex;
-  margin: 0 0.5rem;
+  justify-content: center;
 }
 
-.on-diagram--right {
-  grid-area: right;
-  display: flex;
-  margin: 0.35rem;
-}
-
-/* Label sits above the line rather than knocked out of it with a background
- * color — the previous mid-line label only worked because the diagram
- * happened to sit on page background; this doesn't care what it sits on. */
-.on-diagram__connector {
+/* The skin boundary: a dashed vertical rule (`::before`, flex-grow so it
+ * fills whatever height `align-self: stretch` gives this column) with a
+ * small caption below it, mirroring how a connector's label sits on its
+ * line. Deliberately not a connector itself — it carries no arrows or
+ * direction, just marks where the two crossing links (BLE, inductive
+ * charging) leave the body. */
+.on-diagram--skin {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  min-height: 2.75rem;
-  padding: 0.4rem 0.5rem;
+}
+
+.on-diagram--skin::before {
+  content: "";
+  flex: 1;
+  width: 0;
+  border-left: 2px dashed var(--md-default-fg-color--lighter);
+}
+
+.on-diagram__skin-label {
+  margin-top: 0.3rem;
   font-family: var(--md-code-font);
   font-size: 0.65rem;
   letter-spacing: 0.03em;
   color: var(--md-default-fg-color--light);
-  text-align: center;
 }
 
-.on-diagram__connector-label {
-  white-space: nowrap;
+.on-diagram__connector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 0.35rem;
 }
 
-.on-diagram__connector::after {
-  content: "";
-  display: block;
+.on-diagram__connector-rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 0;
+  border-top: 2px solid var(--md-default-fg-color--light);
+  transform: translateY(-50%);
 }
 
-.on-diagram__connector--h::after {
-  width: 100%;
-  border-top: 2px solid var(--md-default-fg-color--lighter);
-}
-
-.on-diagram__connector--v {
-  min-height: 3.5rem;
-}
-
-.on-diagram__connector--v::after {
-  flex: 1;
-  width: 0;
-  border-left: 2px solid var(--md-default-fg-color--lighter);
-}
-
-.on-diagram__connector--wireless.on-diagram__connector--h::after {
+.on-diagram__connector--wireless .on-diagram__connector-rule {
   border-top-style: dashed;
 }
 
-.on-diagram__connector--wireless.on-diagram__connector--v::after {
-  border-left-style: dashed;
+/* Arrowheads: plain CSS border triangles on the connector's own
+ * pseudo-elements, so no extra markup is needed for them (only the rule
+ * above needs a real element, since a pseudo-element is already spent on
+ * each arrowhead). Both render by default — every link here is
+ * bidirectional except the charger's, which `--one-way` suppresses the
+ * left (outbound) arrowhead for. */
+.on-diagram__connector::before,
+.on-diagram__connector::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transform: translateY(-50%);
+}
+
+.on-diagram__connector::before {
+  left: 0;
+  border-right: 7px solid var(--md-default-fg-color--light);
+}
+
+.on-diagram__connector::after {
+  right: 0;
+  border-left: 7px solid var(--md-default-fg-color--light);
+}
+
+.on-diagram__connector--one-way::before {
+  content: none;
+}
+
+/* Opaque chip, not a background knockout — reads correctly regardless of
+ * what's behind it (the rule, or page background at the diagram's edges). */
+.on-diagram__connector-label {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  white-space: nowrap;
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  padding: 0.15rem 0.45rem;
+  font-family: var(--md-code-font);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+  color: var(--md-default-fg-color--light);
 }
 
 /*
@@ -407,13 +622,13 @@
 }
 
 @media (max-width: 600px) {
-  /* No drawn connectors at this width — a ruled line at 5-6rem of available
-   * width reads as noise, not signal. The diagram becomes a plain top-to-
-   * bottom stack in DOM order (control software, BLE, leads, stim/record,
-   * IPG hub, inductive, charger, I2C, sensors), which is already the
-   * correct reading order — unlike the previous `order`-based reshuffle,
-   * where the IPG hub rendered 3rd visually but sat 5th in the tab/reading
-   * order. No `order` property is used here, so the two now always match. */
+  /* No drawn grid connectors at this width — a ruled line at 5-6rem of
+   * available width reads as noise, not signal. The diagram becomes a plain
+   * top-to-bottom flex stack in DOM order (outside-the-body label, software,
+   * BLE, charger, inductive, skin, inside-the-body label, IPG hub,
+   * stim/record, leads, I2C, sensors) — already the correct reading order,
+   * per the markup-order comment above `.on-diagram`. No `order` property is
+   * used here, so visual order and tab/reading order always match. */
   .on-diagram {
     display: flex;
     flex-direction: column;
@@ -426,30 +641,69 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.6rem;
-    padding: 0;
   }
 
   .on-diagram__group-label {
     grid-column: 1 / -1;
   }
 
-  .on-diagram--right {
-    margin: 0;
+  /* `align-self: end`/`start` (base rules, on .on-diagram__region and on the
+   * seam-clustering group above it) mean "bottom/top of the grid row" on
+   * desktop — but `align-self` means something else entirely once the
+   * container is a flex column instead of a grid (cross-axis, i.e.
+   * horizontal, alignment), which would otherwise shrink these to their own
+   * content width and shove them against an edge instead of spanning full
+   * width. Reset all of it back to filling the width, and drop the
+   * row-bottom padding .on-diagram__region doesn't need in a flex stack. */
+  .on-diagram__region,
+  .on-diagram--sw,
+  .on-diagram--ble,
+  .on-diagram--stim,
+  .on-diagram--leads,
+  .on-diagram--chg,
+  .on-diagram--pwr,
+  .on-diagram--i2c,
+  .on-diagram--sensors {
+    align-self: stretch;
   }
 
-  .on-diagram--hub {
-    margin: 0;
+  .on-diagram__region {
+    padding-bottom: 0;
   }
 
-  /* The connector becomes just its label — the protocol name — centered
-   * between the sections it joins, with no line at all. */
+  /* The connector keeps its label chip as a plain caption between blocks,
+   * but drops the rule and arrowheads — there's no room for a meaningful
+   * line at this width. */
   .on-diagram__connector {
     min-height: 0;
-    padding: 0;
+    padding: 0.3rem 0;
   }
 
+  .on-diagram__connector-rule,
+  .on-diagram__connector::before,
   .on-diagram__connector::after {
+    content: none;
     display: none;
+  }
+
+  /* The skin boundary rotates from a vertical rule with a caption below it
+   * to a full-width horizontal rule with the caption beside it. */
+  .on-diagram--skin {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+  }
+
+  .on-diagram--skin::before {
+    width: auto;
+    height: 0;
+    border-left: none;
+    border-top: 2px dashed var(--md-default-fg-color--lighter);
+  }
+
+  .on-diagram__skin-label {
+    margin-top: 0;
   }
 }
 

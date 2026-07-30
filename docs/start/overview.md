@@ -34,3 +34,21 @@ this fits a specific research use, see
     OpenNerve components are used in acute and chronic preclinical studies.
     Nothing described on this site has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
+
+## How OpenNerve started
+
+OpenNerve was developed by the Center for Autonomic Recording and Stimulation Systems (CARSS), funded under NIH SPARC HORNET
+[1U41NS129514](https://reporter.nih.gov/project-details/10557000). Members include:
+
+- [**University of Southern California**](https://usc.edu/) — lead institution
+    - [**Biomedical Microsystems Lab, PI Ellis Meng**](https://biomems.usc.edu/) - manages project, system intergration lead, and develops 
+  microfabricated Parylene C cuff for sub-mm peripheral nerves
+    - [**MADLab, PI Maral Mousavi**](https://madlab.usc.edu/) - develops chemical sensing leads for dopamine, serotonin, and pH
+    - [**Zhao Research Group, PI Hangbo Zhao**](https://sites.usc.edu/zhaogroup/) - develops mechanial sensing leads for strain and temperature
+- [**Med-Ally LLC**](https://med-ally.com/) — IPG enclosure, standard leads, QMS/GMP manufacturing
+- [**Medipace Inc.**](https://www.medipaceinc.com/) — IPG PCBA and firmware management, control software, dev board
+  manufacture and distribution
+- [**Focus Uy**](https://focus.uy/) — IPG and Charger PCBA design
+- [**CoForce Ltd**](https://www.coforcemed.com/en/) — IPG firmware development
+
+Our open-source community is currently managed by OpenNerve's developers and contributors. See [Governance](../contribute/governance.md) for more information.

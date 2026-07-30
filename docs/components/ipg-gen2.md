@@ -76,6 +76,10 @@ sensing, and system control (`Gen2 PCBA/FW-MCU-H2/`, revision-specific).
 
 For how Gen2 compares to Gen1, see the [IPG overview](ipg.md#gen1-vs-gen2).
 
+This is the PCB revision used in the [development board](dev-board.md) — the
+same electronics, kept in its manufacturing frame for bench use instead of
+being trimmed down for implantation.
+
 ## Design outputs and BOM/fab notes
 
 | File | Format | Path | Covers |

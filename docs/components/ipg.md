@@ -28,6 +28,11 @@ capability. Each has its own maturity, evidence, and BOM/fab-notes page — see
 [Gen1 vs. Gen2](#gen1-vs-gen2) below. Also see
 [Platform architecture](../start/architecture.md#two-ipg-hardware-generations).
 
+The Gen2 PCBA is also available as a bench-friendly
+[development board](dev-board.md) — the same hardware, retained in its
+manufacturing frame with USB-C power and breakout connectors, rather than
+trimmed down for implantation.
+
 ## Gen1 vs. Gen2
 
 | | [Gen2 PCBA](ipg-gen2.md) | [Gen1 PCBA](ipg-gen1.md) |

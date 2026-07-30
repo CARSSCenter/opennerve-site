@@ -226,6 +226,16 @@
   border-radius: 0.3rem;
 }
 
+/* Development boards section only (2026-07-30) — half the width of the
+ * hero's own photo, which shares the same .on-hero__photo-col/.on-hero__frame
+ * markup and would shrink too without this being scoped to a modifier.
+ * margin-left: auto keeps it anchored to the column's right edge (where the
+ * hero's full-width photo already sits) rather than re-centering it. */
+.on-hero__photo-col--half {
+  max-width: 50%;
+  margin-left: auto;
+}
+
 .on-hero__caption {
   margin: 0.6rem 0 0;
   font-size: 0.72rem;

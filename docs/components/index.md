@@ -17,6 +17,7 @@ surface. Definitions: [Maturity level definitions](../regulatory/maturity.md).
 | Component | Repo | Documentation (D) | Evidence (E) | Manufacturing (M) | Availability |
 |---|---|---|---|---|---|
 | [Implantable Pulse Generator](ipg.md) — [Gen2](ipg-gen2.md) / [Gen1](ipg-gen1.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | ? |
+| [Development board](dev-board.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | Purchasable — contact the consortium |
 | [Standard Leads](standard-leads.md) | [OpenNerve-Standard-Leads](https://github.com/CARSSCenter/OpenNerve-Standard-Leads) | ? | ? | ? | ? |
 | [Sub-mm Parylene Cuff](parylene-cuff.md) | [Sub-mm-Parylene-Cuff-Electrode](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode) | ? | ? | ? | ? |
 | [Charger](charger.md) | [OpenNerve-Charger](https://github.com/CARSSCenter/OpenNerve-Charger) | ? | ? | ? | ? |
@@ -34,6 +35,12 @@ badges rather than sharing the single row above — see the
 currently illustrative placeholders for page-design review, not real
 assessments; the `?` in this table remains the accurate summary until
 maintainers assign real levels.
+
+The **development board** carries the same Gen2 PCBA as the IPG, in its
+manufacturing frame rather than trimmed for implantation — see
+[Development board](dev-board.md). Its Availability cell is filled in because
+that value doesn't depend on a maintainer assessment the way D/E/M do: boards
+are available on request today, regardless of what levels get assigned later.
 
 Every component page carries **Applies to revision** and **Last reviewed**
 fields, and the same standing disclaimer required by `CLAUDE.md` §5: these

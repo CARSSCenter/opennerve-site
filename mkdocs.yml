@@ -138,6 +138,7 @@ nav:
           - Impedance measurement strategy: components/ipg/impedance.md
           - "Tools: sine wave generator": components/ipg/tools-sine-wave-generator.md
           - "Tools: OTA updater user guide": components/ipg/tools-ota-updater.md
+      - Development board: components/dev-board.md
       - Standard Leads: components/standard-leads.md
       - Sub-mm Parylene Cuff: components/parylene-cuff.md
       - Charger:

@@ -8,43 +8,55 @@ title: Platform architecture
 
 <div class="on-diagram" markdown>
 
-<div class="on-diagram--top on-diagram__group" markdown>
+<div class="on-diagram--lab-out on-diagram__region" markdown>Outside the body</div>
+
+<div class="on-diagram--sw on-diagram__group" markdown>
 <span class="on-diagram__group-label">Control software</span>
-[<span class="on-diagram__node-body">Windows app<span class="on-diagram__node-tag">ONrecorder</span></span>](../software/windows.md){: .on-diagram__node }
-[<span class="on-diagram__node-body">Android app<span class="on-diagram__node-tag">in development</span></span>](../software/android.md){: .on-diagram__node }
+[![Placeholder — no Windows app photo published yet](../images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Windows app<span class="on-diagram__node-tag">ONrecorder</span></span>](../software/windows.md){: .on-diagram__node }
+[![Placeholder — no Android app photo published yet](../images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Android app<span class="on-diagram__node-tag">in development</span></span>](../software/android.md){: .on-diagram__node }
 </div>
 
-<div class="on-diagram--conn-top on-diagram__connector on-diagram__connector--v on-diagram__connector--wireless" markdown>
+<div class="on-diagram--ble on-diagram__connector on-diagram__connector--wireless" markdown>
+<span class="on-diagram__connector-rule"></span>
 <span class="on-diagram__connector-label">BLE</span>
 </div>
 
-<div class="on-diagram--left on-diagram__group" markdown>
+<div class="on-diagram--chg on-diagram__group" markdown>
+[![Placeholder — no charger photo published yet](../images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Charger</span>](../components/charger.md){: .on-diagram__node }
+</div>
+
+<div class="on-diagram--pwr on-diagram__connector on-diagram__connector--wireless on-diagram__connector--one-way" markdown>
+<span class="on-diagram__connector-rule"></span>
+<span class="on-diagram__connector-label">inductive</span>
+</div>
+
+<div class="on-diagram--skin" markdown>
+<span class="on-diagram__skin-label">skin</span>
+</div>
+
+<div class="on-diagram--lab-in on-diagram__region" markdown>Inside the body</div>
+
+<div class="on-diagram--hub" markdown>
+[![Photograph of an assembled OpenNerve implantable pulse generator, unit 00000162](../images/hero-ipg.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">IPG<span class="on-diagram__node-tag">Gen1 · Gen2 PCBA</span></span>](../components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
+</div>
+
+<div class="on-diagram--stim on-diagram__connector" markdown>
+<span class="on-diagram__connector-rule"></span>
+<span class="on-diagram__connector-label">stim / record</span>
+</div>
+
+<div class="on-diagram--leads on-diagram__group" markdown>
 <span class="on-diagram__group-label">Leads</span>
 [![Standard Leads: bipolar cuff, EMG/ECG, and 4x4 tined lead assemblies](../images/lead-standard.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Standard Leads</span>](../components/standard-leads.md){: .on-diagram__node }
 [![Sub-mm Parylene Cuff electrode](../images/lead-cuff.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Sub-mm Parylene Cuff</span>](../components/parylene-cuff.md){: .on-diagram__node }
 </div>
 
-<div class="on-diagram--conn-left on-diagram__connector on-diagram__connector--h" markdown>
-<span class="on-diagram__connector-label">stim / record</span>
-</div>
-
-<div class="on-diagram--hub" markdown>
-[<span class="on-diagram__node-body">IPG<span class="on-diagram__node-tag">Gen1 · Gen2 PCBA</span></span>](../components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
-</div>
-
-<div class="on-diagram--conn-right on-diagram__connector on-diagram__connector--h on-diagram__connector--wireless" markdown>
-<span class="on-diagram__connector-label">inductive</span>
-</div>
-
-<div class="on-diagram--right" markdown>
-[<span class="on-diagram__node-body">Charger<span class="on-diagram__node-tag">300 kHz</span></span>](../components/charger.md){: .on-diagram__node }
-</div>
-
-<div class="on-diagram--conn-bottom on-diagram__connector on-diagram__connector--v" markdown>
+<div class="on-diagram--i2c on-diagram__connector" markdown>
+<span class="on-diagram__connector-rule"></span>
 <span class="on-diagram__connector-label">I2C</span>
 </div>
 
-<div class="on-diagram--bottom on-diagram__group" markdown>
+<div class="on-diagram--sensors on-diagram__group" markdown>
 <span class="on-diagram__group-label">Sensors</span>
 [![Mechanical strain sensor, two sizes shown with 1 cm scale](../images/sensor-mechanical.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Mechanical Sensors</span>](../components/mechanical-sensors.md){: .on-diagram__node }
 [![Electrochemical neurotransmitter sensor, cyclic-voltammetry trace](../images/sensor-chemical.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Chemical Sensors</span>](../components/chemical-sensors.md){: .on-diagram__node }
@@ -52,6 +64,8 @@ title: Platform architecture
 
 </div>
 
+Solid lines are wired connections inside the body; dashed lines cross the
+skin (BLE and inductive charging); arrows show data or power direction.
 Same diagram as the [landing page](../index.md#the-opennerve-platform).
 
 - The **IPG** is the hub: current-based bipolar stimulation, multiple analog

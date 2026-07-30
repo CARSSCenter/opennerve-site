@@ -54,7 +54,7 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 </div>
 
 <div class="on-hero__ctas" markdown>
-[Components & maturity](components/index.md){ .md-button .md-button--primary }
+[Ask the community](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button .md-button--primary }
 [View on GitHub](https://github.com/CARSSCenter){ .md-button }
 </div>
 
@@ -75,19 +75,44 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 
 </div>
 
-<div class="on-section on-section--tight" markdown>
+<div class="on-section" markdown>
 
-## Community
+## How to work with OpenNerve
 
-Questions and design proposals happen in GitHub Discussions, in context.
+<div class="on-cols" markdown>
 
-<div class="on-hero__ctas" markdown>
-[Ask a technical question](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button }
-[Propose a design change](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=design-proposals){ .md-button }
+<div class="on-col" markdown>
+<div class="on-col__heading">Learn about OpenNerve</div>
+
+Start with what OpenNerve is, then check the maturity table for the specific
+component and hardware revision you'd rely on.
+
+- [What is OpenNerve](start/overview.md)
+- [Component overview & maturity](components/index.md)
+
 </div>
 
-These links are provisional — see [Community](community/index.md) for the
-target repo and category names still to be confirmed.
+<div class="on-col" markdown>
+<div class="on-col__heading">Get Components</div>
+
+Development boards are available on request today; other components are
+tracked in the maturity table above as their availability is confirmed.
+
+- [Development board](components/dev-board.md)
+- [Regulatory status and disclaimers](regulatory/status.md)
+
+</div>
+
+<div class="on-col" markdown>
+<div class="on-col__heading">Contribute to the Community</div>
+
+Hardware, firmware, software, and documentation all take contributions.
+
+- [How to contribute](contribute/index.md)
+
+</div>
+
+</div>
 
 </div>
 
@@ -103,43 +128,55 @@ Click on each component for documentation and open source code / engineering fil
 
 <div class="on-diagram" markdown>
 
-<div class="on-diagram--top on-diagram__group" markdown>
+<div class="on-diagram--lab-out on-diagram__region" markdown>Outside the body</div>
+
+<div class="on-diagram--sw on-diagram__group" markdown>
 <span class="on-diagram__group-label">Control software</span>
-[<span class="on-diagram__node-body">Windows app</span>](software/windows.md){: .on-diagram__node }
-[<span class="on-diagram__node-body">Android app<span class="on-diagram__node-tag">in development</span></span>](software/android.md){: .on-diagram__node }
+[![Placeholder — no Windows app photo published yet](images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Windows app</span>](software/windows.md){: .on-diagram__node }
+[![Placeholder — no Android app photo published yet](images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Android app<span class="on-diagram__node-tag">in development</span></span>](software/android.md){: .on-diagram__node }
 </div>
 
-<div class="on-diagram--conn-top on-diagram__connector on-diagram__connector--v on-diagram__connector--wireless" markdown>
+<div class="on-diagram--ble on-diagram__connector on-diagram__connector--wireless" markdown>
+<span class="on-diagram__connector-rule"></span>
 <span class="on-diagram__connector-label">BLE</span>
 </div>
 
-<div class="on-diagram--left on-diagram__group" markdown>
+<div class="on-diagram--chg on-diagram__group" markdown>
+[![Placeholder — no charger photo published yet](images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Charger</span>](components/charger.md){: .on-diagram__node }
+</div>
+
+<div class="on-diagram--pwr on-diagram__connector on-diagram__connector--wireless on-diagram__connector--one-way" markdown>
+<span class="on-diagram__connector-rule"></span>
+<span class="on-diagram__connector-label">inductive</span>
+</div>
+
+<div class="on-diagram--skin" markdown>
+<span class="on-diagram__skin-label">skin</span>
+</div>
+
+<div class="on-diagram--lab-in on-diagram__region" markdown>Inside the body</div>
+
+<div class="on-diagram--hub" markdown>
+[![Photograph of an assembled OpenNerve implantable pulse generator, unit 00000162](images/hero-ipg.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">IPG</span>](components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
+</div>
+
+<div class="on-diagram--stim on-diagram__connector" markdown>
+<span class="on-diagram__connector-rule"></span>
+<span class="on-diagram__connector-label">stim / record</span>
+</div>
+
+<div class="on-diagram--leads on-diagram__group" markdown>
 <span class="on-diagram__group-label">Leads</span>
 [![Standard Leads: bipolar cuff, EMG/ECG, and 4x4 tined lead assemblies](images/lead-standard.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Standard Leads</span>](components/standard-leads.md){: .on-diagram__node }
 [![Sub-mm Parylene Cuff electrode](images/lead-cuff.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Sub-mm Parylene Cuff</span>](components/parylene-cuff.md){: .on-diagram__node }
 </div>
 
-<div class="on-diagram--conn-left on-diagram__connector on-diagram__connector--h" markdown>
-<span class="on-diagram__connector-label">stim / record</span>
-</div>
-
-<div class="on-diagram--hub" markdown>
-[<span class="on-diagram__node-body">IPG</span>![Photograph of an assembled OpenNerve implantable pulse generator, unit 00000162](images/hero-ipg.jpg){: .on-diagram_node-media } <span class="on-diagram__node-tag">IPG</span></span>](components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
-</div>
-
-<div class="on-diagram--conn-right on-diagram__connector on-diagram__connector--h on-diagram__connector--wireless" markdown>
-<span class="on-diagram__connector-label">inductive</span>
-</div>
-
-<div class="on-diagram--right" markdown>
-[<span class="on-diagram__node-body">Charger</span>](components/charger.md){: .on-diagram__node }
-</div>
-
-<div class="on-diagram--conn-bottom on-diagram__connector on-diagram__connector--v" markdown>
+<div class="on-diagram--i2c on-diagram__connector" markdown>
+<span class="on-diagram__connector-rule"></span>
 <span class="on-diagram__connector-label">I2C</span>
 </div>
 
-<div class="on-diagram--bottom on-diagram__group" markdown>
+<div class="on-diagram--sensors on-diagram__group" markdown>
 <span class="on-diagram__group-label">Sensors</span>
 [![Mechanical strain sensor, two sizes shown with 1 cm scale](images/sensor-mechanical.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Mechanical Sensors</span>](components/mechanical-sensors.md){: .on-diagram__node }
 [![Electrochemical neurotransmitter sensor, cyclic-voltammetry trace](images/sensor-chemical.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Chemical Sensors</span>](components/chemical-sensors.md){: .on-diagram__node }
@@ -147,7 +184,9 @@ Click on each component for documentation and open source code / engineering fil
 
 </div>
 
-See [Platform architecture](start/architecture.md) for the full write-up,
+Solid lines are wired connections inside the body; dashed lines cross the
+skin (BLE and inductive charging); arrows show data or power direction. See
+[Platform architecture](start/architecture.md) for the full write-up,
 including the two IPG hardware generations and their different channel
 counts.
 
@@ -254,65 +293,36 @@ assessed," not "zero." See the
 
 <div class="on-section" markdown>
 
-## How to work with OpenNerve
+## Development boards
 
-<div class="on-cols" markdown>
+<div class="on-hero__row" markdown>
 
-<div class="on-col" markdown>
-<div class="on-col__heading">Learn about OpenNerve</div>
+<div markdown>
 
-Start with what OpenNerve is, then check the maturity table for the specific
-component and hardware revision you'd rely on.
+A genuine OpenNerve Gen2 PCBA, kept in its manufacturing frame — USB-C power
+and control, 2 mm banana breakouts on all 16 feedthrough contacts, and
+JTAG/SWD headers — instead of being trimmed down for implantation. Real
+hardware for firmware, software, and lead development, or for small-animal
+and acute large-animal studies.
 
-- [What is OpenNerve](start/overview.md)
-- [Component overview & maturity](components/index.md)
+<div class="on-hero__ctas" markdown>
+[Development board specifications](components/dev-board.md){ .md-button .md-button--primary }
+[Contact us about a board](mailto:carss@usc.edu){ .md-button }
+</div>
 
 </div>
 
-<div class="on-col" markdown>
-<div class="on-col__heading">Get Components</div>
+<div class="on-hero__photo-col on-hero__photo-col--half" markdown>
+<div class="on-hero__frame" markdown>
+![Photograph of a green OpenNerve development board PCBA in its manufacturing frame, showing the labeled CH1–CH16 breakout header, a USB-C connector, and BLE/MCU JTAG and SWD header pins](images/dev-board.jpg){: .on-hero__photo }
 
-Regulatory vocabulary used precisely, and a plain statement of what evidence
-exists today and what doesn't.
-
-- [Regulatory status and disclaimers](regulatory/status.md)
+HORNET-1-IPG development board, Rev A Ver 1.4. Illustrates the frame and
+connector layout; boards currently ship as the Gen2 PCBA.
+{: .on-hero__caption }
 
 </div>
-
-<div class="on-col" markdown>
-<div class="on-col__heading">Contribute to the Community</div>
-
-Hardware, firmware, software, and documentation all take contributions.
-
-- [How to contribute](contribute/index.md)
-
 </div>
 
 </div>
 
 </div>
-
-<div class="on-section" markdown>
-
-## How we started
-
-OpenNerve was developed by the Center for Autonomic Recording and Stimulation Systems (CARSS), funded under NIH SPARC HORNET
-[1U41NS129514](https://reporter.nih.gov/project-details/10557000). Members include:
-
-- [**University of Southern California**](https://usc.edu/) — lead institution
-    - [**Biomedical Microsystems Lab, PI Ellis Meng**](https://biomems.usc.edu/) - manages project, system intergration lead, and develops 
-  microfabricated Parylene C cuff for sub-mm peripheral nerves
-    - [**MADLab, PI Maral Mousavi**](https://madlab.usc.edu/) - develops chemical sensing leads for dopamine, serotonin, and pH
-    - [**Zhao Research Group, PI Hangbo Zhao**](https://sites.usc.edu/zhaogroup/) - develops mechanial sensing leads for strain and temperature
-- [**Med-Ally LLC**](https://med-ally.com/) — IPG enclosure, standard leads, QMS/GMP manufacturing
-- [**Medipace Inc.**](https://www.medipaceinc.com/) — IPG PCBA and firmware management, control software, dev board
-  manufacture and distribution
-- [**Focus Uy**](https://focus.uy/) — IPG and Charger PCBA design
-- [**CoForce Ltd**](https://www.coforcemed.com/en/) — IPG firmware development
-
-Our open-source community is currently managed by OpenNerve's developers and contributors. See [Governance](contribute/governance.md) for more information.
-
-</div>
-
-
-
