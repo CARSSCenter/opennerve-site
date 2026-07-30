@@ -31,14 +31,14 @@ not distribute outside the review group.
 
 <div markdown>
 
-Implantable pulse generator, lead library, wireless charger, and control software. All open source.
+Implantable pulse generator, stimulation and recording leads, digital sensors, wireless charger, and control software. All open source.
 {: .on-hero__subhead }
 
 <div class="on-specs" markdown>
 <span class="on-specs__item"><strong>1 - 1200 Hz</strong> square wave stimulation (current-driven)</span>
-<span class="on-specs__item"><strong>1 - 15 Hz</strong> sine wave stimulation</span>
-<span class="on-specs__item"><strong>4</strong> independent biosignal front-ends (EMG, ECG, eCAPs)</span>
-<span class="on-specs__item"><strong>Lead Library</strong> for stimulation and sensing</span>
+<span class="on-specs__item">1 - 15 Hz <strong>sine wave output</strong></span>
+<span class="on-specs__item">4 independent <strong>biosignal front-ends </strong>(EMG, ECG, eCAPs)</span>
+<span class="on-specs__item"><strong>Leads </strong> for stimulation, electrical recording, and biomarker sensing</span>
 <span class="on-specs__item"><strong>Fully Open Source</strong> (CC-BY-4.0)</span>
 </div>
 
@@ -54,7 +54,7 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 </div>
 
 <div class="on-hero__ctas" markdown>
-[Ask the community](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button .md-button--primary }
+[Meet the community](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button .md-button--primary }
 [View on GitHub](https://github.com/CARSSCenter){ .md-button }
 </div>
 
@@ -84,29 +84,29 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 <div class="on-col" markdown>
 <div class="on-col__heading">Learn about OpenNerve</div>
 
-Start with what OpenNerve is, then check the maturity table for the specific
-component and hardware revision you'd rely on.
+Learn more about OpenNerve and explore the components and documentation.
 
-- [What is OpenNerve](start/overview.md)
-- [Component overview & maturity](components/index.md)
-
-</div>
-
-<div class="on-col" markdown>
-<div class="on-col__heading">Get Components</div>
-
-Development boards are available on request today; other components are
-tracked in the maturity table above as their availability is confirmed.
-
-- [Development board](components/dev-board.md)
-- [Regulatory status and disclaimers](regulatory/status.md)
+- [What is OpenNerve?](start/overview.md)
+- [Component overview](components/index.md)
+- [IPG specifications](components/ipg.md)
 
 </div>
 
 <div class="on-col" markdown>
-<div class="on-col__heading">Contribute to the Community</div>
+<div class="on-col__heading">Use OpenNerve Components</div>
 
-Hardware, firmware, software, and documentation all take contributions.
+Contact us for development boards and hardware collaboration, or create your own system using our open-source files.
+
+- [Get a development board](components/dev-board.md)
+- [Contact us for collaborations](mailto:carss@usc.edu)
+- [Clone a repository](https://github.com/CARSSCenter)
+
+</div>
+
+<div class="on-col" markdown>
+<div class="on-col__heading">Join our Community</div>
+
+Contribute to OpenNerve, get technical support, and make neuroscience better. Hardware, firmware, software, and documentation all take contributions.
 
 - [How to contribute](contribute/index.md)
 
@@ -120,11 +120,10 @@ Hardware, firmware, software, and documentation all take contributions.
 
 ## The OpenNerve platform
 
-The implantable pulse generator has 16 Bal-Seal ports (4 stimulation, 8 sensing, 4 I2C digital). 
-Several stimulation / recording leads and digital sensors are under development by OpenNerve.
-Bluetooth Low Energy (BLE) communication allows real-time data streaming and stim control; a custom inductive charger allows safe recharging.
+The core implantable pulse generator (or equivalent development board) provides current-based stimulation, records analog biosignals such as EMG, ECG, and eCAPs, and has digital in-body communication for advanced biosensors or networked devices. 
+Several stimulation / recording leads and digital sensors are being development by OpenNerve, and the platform is compatible with commercial and newly developed leads.
+Bluetooth Low Energy (BLE)  allows real-time data streaming and control; a custom inductive charger allows safe recharging.
 Click on each component for documentation and open source code / engineering files.
-([source](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/README.md))
 
 <div class="on-diagram" markdown>
 
@@ -183,12 +182,13 @@ Click on each component for documentation and open source code / engineering fil
 </div>
 
 </div>
-
+<!--
 Solid lines are wired connections inside the body; dashed lines cross the
 skin (BLE and inductive charging); arrows show data or power direction. See
 [Platform architecture](start/architecture.md) for the full write-up,
 including the two IPG hardware generations and their different channel
 counts.
+-->
 
 </div>
 
@@ -299,9 +299,9 @@ assessed," not "zero." See the
 
 <div markdown>
 
-A genuine OpenNerve Gen2 PCBA, kept in its manufacturing frame — USB-C power
-and control, 2 mm banana breakouts on all 16 feedthrough contacts, and
-JTAG/SWD headers — instead of being trimmed down for implantation. Real
+A genuine OpenNerve PCBA in a frame enabling USB-C power
+and control. Breakouts on all 16 feedthrough contacts for easy lab use, and
+JTAG/SWD headers for flashing and debugging. Real
 hardware for firmware, software, and lead development, or for small-animal
 and acute large-animal studies.
 
@@ -316,8 +316,7 @@ and acute large-animal studies.
 <div class="on-hero__frame" markdown>
 ![Photograph of a green OpenNerve development board PCBA in its manufacturing frame, showing the labeled CH1–CH16 breakout header, a USB-C connector, and BLE/MCU JTAG and SWD header pins](images/dev-board.jpg){: .on-hero__photo }
 
-HORNET-1-IPG development board, Rev A Ver 1.4. Illustrates the frame and
-connector layout; boards currently ship as the Gen2 PCBA.
+OpenNerve development board (Gen1) during an acute large animal study.
 {: .on-hero__caption }
 
 </div>
