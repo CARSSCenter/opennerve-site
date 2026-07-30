@@ -96,5 +96,5 @@ easier to keep correct over time.
     (2023).
     [pubmed.ncbi.nlm.nih.gov/37155473](https://pubmed.ncbi.nlm.nih.gov/37155473/)
 
-See also [News](../news/index.md) for press coverage, talks, and other
+See also [News](../news.md) for press coverage, talks, and other
 non-peer-reviewed items from the same source page.

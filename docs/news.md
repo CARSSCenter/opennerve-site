@@ -8,7 +8,7 @@ Press coverage, talks, and community write-ups about CARSS/OpenNerve.
 Sourced from the consortium's existing publications page,
 [sites.usc.edu/carss/carss-in-publications](https://sites.usc.edu/carss/carss-in-publications/),
 last checked 2026-07-29. These are third-party or informal items, not
-peer-reviewed sources — see [Publications](../data/publications.md) for
+peer-reviewed sources — see [Publications](data/publications.md) for
 those.
 
 - **["Healthware Highlights: OpenNerve"](https://oshwa.org/announcements/healthware-highlights-opennerve/)**
@@ -31,7 +31,7 @@ those.
   — YouTube (2023)
 
 No thumbnail images are included here, for the same reason as
-[Publications](../data/publications.md): these items are spread across
+[Publications](data/publications.md): these items are spread across
 many third-party platforms (YouTube, press-release wires, news outlets)
 with inconsistent image licensing, and a text link is more durable than a
 hotlinked thumbnail.

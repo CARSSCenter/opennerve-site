@@ -25,24 +25,28 @@ not distribute outside the review group.
 
 <div class="on-hero__inner" markdown>
 
+# An open platform for translational neuromodulation research { .on-hero__title }
+
+<div class="on-hero__row" markdown>
+
 <div markdown>
 
-# An open implant for peripheral nerve research { .on-hero__title }
-
-Pulse generator, lead library, wireless charger, and control software for
-Windows and Android. Every repo is CC-BY-4.0.
+Implantable pulse generator, lead library, wireless charger, and control software. All open source.
 {: .on-hero__subhead }
 
 <div class="on-specs" markdown>
-<span class="on-specs__item"><strong>8</strong> stim. channels (Gen1)</span>
-<span class="on-specs__item"><strong>2</strong> independent bipolar (Gen2)</span>
-<span class="on-specs__item"><strong>300 kHz</strong> inductive charging</span>
-<span class="on-specs__item"><strong>CC-BY-4.0</strong></span>
+<span class="on-specs__item"><strong>1 - 1200 Hz</strong> square wave stimulation (current-driven)</span>
+<span class="on-specs__item"><strong>1 - 15 Hz</strong> sine wave stimulation</span>
+<span class="on-specs__item"><strong>4</strong> independent biosignal front-ends (EMG, ECG, eCAPs)</span>
+<span class="on-specs__item"><strong>Lead Library</strong> for stimulation and sensing</span>
+<span class="on-specs__item"><strong>Fully Open Source</strong> (CC-BY-4.0)</span>
 </div>
 
+<!--
 Figures per [Platform architecture](start/architecture.md#two-ipg-hardware-generations)
 and [IPG: Gen1 vs. Gen2](components/ipg.md#gen1-vs-gen2).
 {: .on-specs__cite }
+-->
 
 <div class="on-hero__reg" markdown>
 **Preclinical research use only.** No component has regulatory clearance for
@@ -60,29 +64,48 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 <div class="on-hero__frame" markdown>
 ![Photograph of an assembled OpenNerve implantable pulse generator, unit 00000162](images/hero-ipg.jpg){: .on-hero__photo }
 
-One assembled OpenNerve IPG unit, serial `00000162`.
-{: .on-hero__caption }
+<!-- One assembled OpenNerve IPG unit, serial `00000162`.
+{: .on-hero__caption } -->
 </div>
 </div>
 
 </div>
+
+</div>
+
+</div>
+
+<div class="on-section on-section--tight" markdown>
+
+## Community
+
+Questions and design proposals happen in GitHub Discussions, in context.
+
+<div class="on-hero__ctas" markdown>
+[Ask a technical question](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button }
+[Propose a design change](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=design-proposals){ .md-button }
+</div>
+
+These links are provisional — see [Community](community/index.md) for the
+target repo and category names still to be confirmed.
 
 </div>
 
 <div class="on-section" markdown>
 
-## The platform
+## The OpenNerve platform
 
-The IPG is the hub. Leads and sensors connect to it directly; a controller
-talks to it over Bluetooth Low Energy; a charger replenishes it inductively.
-Every block below links to that component's page.
+The implantable pulse generator has 16 Bal-Seal ports (4 stimulation, 8 sensing, 4 I2C digital). 
+Several stimulation / recording leads and digital sensors are under development by OpenNerve.
+Bluetooth Low Energy (BLE) communication allows real-time data streaming and stim control; a custom inductive charger allows safe recharging.
+Click on each component for documentation and open source code / engineering files.
 ([source](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/README.md))
 
 <div class="on-diagram" markdown>
 
 <div class="on-diagram--top on-diagram__group" markdown>
 <span class="on-diagram__group-label">Control software</span>
-[<span class="on-diagram__node-body">Windows app<span class="on-diagram__node-tag">ONrecorder</span></span>](software/windows.md){: .on-diagram__node }
+[<span class="on-diagram__node-body">Windows app</span>](software/windows.md){: .on-diagram__node }
 [<span class="on-diagram__node-body">Android app<span class="on-diagram__node-tag">in development</span></span>](software/android.md){: .on-diagram__node }
 </div>
 
@@ -101,7 +124,7 @@ Every block below links to that component's page.
 </div>
 
 <div class="on-diagram--hub" markdown>
-[<span class="on-diagram__node-body">IPG<span class="on-diagram__node-tag">Gen1 · Gen2 PCBA</span></span>](components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
+[<span class="on-diagram__node-body">IPG</span>![Photograph of an assembled OpenNerve implantable pulse generator, unit 00000162](images/hero-ipg.jpg){: .on-diagram_node-media } <span class="on-diagram__node-tag">IPG</span></span>](components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
 </div>
 
 <div class="on-diagram--conn-right on-diagram__connector on-diagram__connector--h on-diagram__connector--wireless" markdown>
@@ -109,7 +132,7 @@ Every block below links to that component's page.
 </div>
 
 <div class="on-diagram--right" markdown>
-[<span class="on-diagram__node-body">Charger<span class="on-diagram__node-tag">300 kHz</span></span>](components/charger.md){: .on-diagram__node }
+[<span class="on-diagram__node-body">Charger</span>](components/charger.md){: .on-diagram__node }
 </div>
 
 <div class="on-diagram--conn-bottom on-diagram__connector on-diagram__connector--v" markdown>
@@ -129,6 +152,8 @@ including the two IPG hardware generations and their different channel
 counts.
 
 </div>
+
+<!--
 
 <div class="on-section" markdown>
 
@@ -169,6 +194,9 @@ Detail and sourcing: [Gen2 PCBA](components/ipg-gen2.md),
 
 </div>
 
+-->
+
+<!--
 <div class="on-section" markdown>
 
 ## How maturity is tracked
@@ -222,15 +250,16 @@ assessed," not "zero." See the
 [maturity level definitions](regulatory/maturity.md).
 
 </div>
+-->
 
 <div class="on-section" markdown>
 
-## Find your path
+## How to work with OpenNerve
 
 <div class="on-cols" markdown>
 
 <div class="on-col" markdown>
-<div class="on-col__heading">Evaluating for a study</div>
+<div class="on-col__heading">Learn about OpenNerve</div>
 
 Start with what OpenNerve is, then check the maturity table for the specific
 component and hardware revision you'd rely on.
@@ -241,7 +270,7 @@ component and hardware revision you'd rely on.
 </div>
 
 <div class="on-col" markdown>
-<div class="on-col__heading">Planning animal or human work</div>
+<div class="on-col__heading">Get Components</div>
 
 Regulatory vocabulary used precisely, and a plain statement of what evidence
 exists today and what doesn't.
@@ -251,7 +280,7 @@ exists today and what doesn't.
 </div>
 
 <div class="on-col" markdown>
-<div class="on-col__heading">Contributing</div>
+<div class="on-col__heading">Contribute to the Community</div>
 
 Hardware, firmware, software, and documentation all take contributions.
 
@@ -265,36 +294,25 @@ Hardware, firmware, software, and documentation all take contributions.
 
 <div class="on-section" markdown>
 
-## Who builds it
+## How we started
 
-A three-institution consortium, funded under NIH SPARC award
-[1U41NS129514](https://reporter.nih.gov/project-details/10557000):
+OpenNerve was developed by the Center for Autonomic Recording and Stimulation Systems (CARSS), funded under NIH SPARC HORNET
+[1U41NS129514](https://reporter.nih.gov/project-details/10557000). Members include:
 
-- **University of Southern California** — project lead; advanced sensing and
-  stimulation leads, including a sub-mm Parylene cuff and strain,
-  temperature, pH, and neurotransmitter sensors
-- **Med-Ally LLC** — IPG enclosure, standard leads, QMS/GMP manufacturing
-- **Medipace Inc.** — IPG PCB, firmware, control software, dev board
+- [**University of Southern California**](https://usc.edu/) — lead institution
+    - [**Biomedical Microsystems Lab, PI Ellis Meng**](https://biomems.usc.edu/) - manages project, system intergration lead, and develops 
+  microfabricated Parylene C cuff for sub-mm peripheral nerves
+    - [**MADLab, PI Maral Mousavi**](https://madlab.usc.edu/) - develops chemical sensing leads for dopamine, serotonin, and pH
+    - [**Zhao Research Group, PI Hangbo Zhao**](https://sites.usc.edu/zhaogroup/) - develops mechanial sensing leads for strain and temperature
+- [**Med-Ally LLC**](https://med-ally.com/) — IPG enclosure, standard leads, QMS/GMP manufacturing
+- [**Medipace Inc.**](https://www.medipaceinc.com/) — IPG PCBA and firmware management, control software, dev board
   manufacture and distribution
+- [**Focus Uy**](https://focus.uy/) — IPG and Charger PCBA design
+- [**CoForce Ltd**](https://www.coforcemed.com/en/) — IPG firmware development
 
-See [Governance](contribute/governance.md) for the funding entity name and
-open questions on branding and licensing.
-
-</div>
-
-<div class="on-section on-section--tight" markdown>
-
-## Community
-
-Questions and design proposals happen in GitHub Discussions, in context.
-
-<div class="on-hero__ctas" markdown>
-[Ask a technical question](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button }
-[Propose a design change](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=design-proposals){ .md-button }
-</div>
-
-These links are provisional — see [Community](community/index.md) for the
-target repo and category names still to be confirmed.
+Our open-source community is currently managed by OpenNerve's developers and contributors. See [Governance](contribute/governance.md) for more information.
 
 </div>
+
+
 

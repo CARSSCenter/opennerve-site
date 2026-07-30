@@ -52,7 +52,7 @@ title: Platform architecture
 
 </div>
 
-Same diagram as the [landing page](../index.md#the-platform).
+Same diagram as the [landing page](../index.md#the-opennerve-platform).
 
 - The **IPG** is the hub: current-based bipolar stimulation, multiple analog
   front ends for biosignal recording, and an in-body I2C bus for third-party

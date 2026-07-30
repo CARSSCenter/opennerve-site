@@ -120,6 +120,19 @@
 .on-hero__inner {
   position: relative;
   z-index: 1;
+}
+
+/* Full-width banner line, sitting above the two-column row (text + photo)
+   rather than confined to the text column — spans the whole hero. */
+.on-hero__title {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  max-width: 40ch;
+}
+
+.on-hero__row {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 2.5rem;
@@ -131,16 +144,8 @@
    both contain nowrap spans, which without this would refuse to shrink
    below their own content width and force the whole page to overflow
    horizontally on mobile instead of wrapping. */
-.on-hero__inner > * {
+.on-hero__row > * {
   min-width: 0;
-}
-
-.on-hero__title {
-  font-size: 2.15rem;
-  line-height: 1.15;
-  font-weight: 600;
-  margin: 0 0 0.85rem;
-  max-width: 20ch;
 }
 
 .on-hero__subhead {
@@ -308,7 +313,7 @@
   align-items: center;
 }
 
-/* Same min-width: auto issue as .on-hero__inner above — the step chips are
+/* Same min-width: auto issue as .on-hero__row above — the step chips are
    nowrap, so without this the 1fr column refuses to shrink and forces
    horizontal overflow instead of wrapping to a second line. */
 .on-scale__steps {
@@ -342,7 +347,7 @@
 @media (max-width: 800px) {
   /* Photo above text below ~800px — the brief's own hard requirement is
      that this page reads well on a phone, and a two-column hero doesn't. */
-  .on-hero__inner {
+  .on-hero__row {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }

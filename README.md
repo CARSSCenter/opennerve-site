@@ -91,11 +91,11 @@ pattern of an existing entry, and edit the words.
    too: `![short description](the image's URL)` as the first line of the
    section, same as the existing entries. If you're not sure whether an
    image is safe to link to, leave it out and just use the text — that's
-   what `docs/data/publications.md` and `docs/news/index.md` already do,
+   what `docs/data/publications.md` and `docs/news.md` already do,
    since reusing outside images from those kinds of sources gets legally
    murky.
 
-**To add a news item** (`docs/news/index.md`):
+**To add a news item** (`docs/news.md`):
 
 1. Copy the format of an existing bullet:
 

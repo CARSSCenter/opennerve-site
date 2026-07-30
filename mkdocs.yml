@@ -118,6 +118,8 @@ nav:
       - What is OpenNerve: start/overview.md
       - Is this right for my work: start/fit.md
       - Platform architecture: start/architecture.md
+      - Regulatory status and disclaimers: regulatory/status.md
+      - Maturity level definitions: regulatory/maturity.md
   - Components:
       - Overview & maturity table: components/index.md
       - Implantable Pulse Generator:
@@ -152,17 +154,16 @@ nav:
           - Characterization of echem sensors: components/chemical-sensors/characterization.md
           - Fabrication of echem sensors: components/chemical-sensors/fabrication.md
   - Software:
-      - Windows (ONrecorder): software/windows.md
-      - Android: software/android.md
-  - Data:
+      - Windows App: software/windows.md
+      - Android App: software/android.md
+  - Data & Publications:
       - Publications: data/publications.md
       - Animal data: data/animal-data.md
-  - News: news/index.md
-  - Regulatory & safety:
-      - Status and disclaimers: regulatory/status.md
-      - Maturity level definitions: regulatory/maturity.md
-  - Contribute:
+      - News: news.md
+  - Community:
+      - Overview: community/index.md
       - How to contribute: contribute/index.md
       - Hardware contributions: contribute/hardware.md
       - Governance: contribute/governance.md
-  - Community: community/index.md
+
+  
