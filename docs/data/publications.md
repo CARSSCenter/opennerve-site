@@ -5,28 +5,13 @@ title: Publications
 # Publications
 
 Peer-reviewed publications, conference papers, and protocols from CARSS
-consortium members that are relevant to OpenNerve components. Sourced from
-the consortium's existing publications page,
-[sites.usc.edu/carss/carss-in-publications](https://sites.usc.edu/carss/carss-in-publications/),
-last checked 2026-07-29. This site does not re-host or re-verify the claims
-in these papers — follow each link to the original source.
+consortium members that are relevant to OpenNerve components. 
 
 Not every entry below concerns a component that has shipped, or binds to a
-specific hardware revision (`CLAUDE.md` §5). Several describe sensors or
+specific hardware revision. Several describe sensors or
 leads still under development by consortium members. Read each paper's own
 scope before citing it as evidence for a specific OpenNerve component or
 revision.
-
-No thumbnail or cover images are included on this page. Unlike the [animal
-data](animal-data.md) below — which links image assets hosted directly by
-the SPARC/Pennsieve data repository at a stable, purpose-built URL — these
-publications are spread across a dozen different journal and preprint
-platforms (IEEE Xplore, ACS, ScienceDirect, PubMed, protocols.io, and more),
-several of which sit behind a paywall or login. Pulling a cover thumbnail
-from each would mean hotlinking journal-branded, copyrighted images from
-sources with inconsistent (and in some cases unclear) reuse terms, for a
-small visual benefit. Text citations with direct links are lower-risk and
-easier to keep correct over time.
 
 ## 2026
 
@@ -97,4 +82,4 @@ easier to keep correct over time.
     [pubmed.ncbi.nlm.nih.gov/37155473](https://pubmed.ncbi.nlm.nih.gov/37155473/)
 
 See also [News](../news.md) for press coverage, talks, and other
-non-peer-reviewed items from the same source page.
+non-peer-reviewed items.

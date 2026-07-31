@@ -4,13 +4,16 @@ title: News
 
 # News
 
-Press coverage, talks, and community write-ups about CARSS/OpenNerve.
+Press coverage, talks, and community write-ups about CARSS/OpenNerve.These are third-party or informal items, not peer-reviewed sources — see [Publications](data/publications.md) for
+those.
+<!--
 Sourced from the consortium's existing publications page,
 [sites.usc.edu/carss/carss-in-publications](https://sites.usc.edu/carss/carss-in-publications/),
-last checked 2026-07-29. These are third-party or informal items, not
-peer-reviewed sources — see [Publications](data/publications.md) for
-those.
+last checked 2026-07-29. 
+-->
 
+- **["2025 CARSS Webinar"](https://youtu.be/kFyQUnnWNmY?si=A2pt3015-Tb2UBXn)**
+  — YouTube (2023)
 - **["Healthware Highlights: OpenNerve"](https://oshwa.org/announcements/healthware-highlights-opennerve/)**
   — Open Source Hardware Association (OSHWA)
 - **["Could Open-Source Medical Devices Transform Healthcare?"](https://viterbischool.usc.edu/news/2025/06/could-open-source-medical-devices-transform-healthcare/)**
@@ -30,8 +33,10 @@ those.
 - **["2023 CARSS Webinar"](https://www.youtube.com/watch?v=0oF6iOJcqTM)**
   — YouTube (2023)
 
+<!--
 No thumbnail images are included here, for the same reason as
 [Publications](data/publications.md): these items are spread across
 many third-party platforms (YouTube, press-release wires, news outlets)
 with inconsistent image licensing, and a text link is more durable than a
 hotlinked thumbnail.
+-->

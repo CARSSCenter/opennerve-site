@@ -7,12 +7,10 @@ title: Animal data
 Preclinical (animal) datasets from CARSS consortium members, published on
 the [SPARC Portal](https://sparc.science) (NIH SPARC's public data
 repository). Each dataset below carries its own DOI, license, and full file
-listing on SPARC — this page is a pointer and citation, not a mirror.
+listing on SPARC.
 
 These are raw/processed research datasets, not evidence claims for a
-specific OpenNerve component or hardware revision. If a component's
-Evidence (E) level (`CLAUDE.md` §5) cites one of these datasets directly,
-that citation belongs on the component's own page, linked back here.
+specific OpenNerve component or hardware revision.\
 
 ## Acute stimulation and recording — rat sciatic nerve, cuff electrode
 
@@ -58,6 +56,7 @@ neurotransmitters.
 > and colonic multi-sensor recording from Yucatan minipigs* (Version 1,
 > Revision 1) [Dataset]. SPARC. https://doi.org/10.26275/fqxr-szi4
 
+<!--
 ## About the images above
 
 Both banner images are hotlinked directly from SPARC's own dataset-asset
@@ -67,3 +66,4 @@ page from silently going stale if a dataset is revised, at the cost of this
 page needing network access to SPARC's asset host to render the images
 (consistent with how the PDF viewer already trades a commit-pin for
 freshness on other pages — see `CLAUDE.md` §7).
+-->
