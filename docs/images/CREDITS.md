@@ -14,7 +14,9 @@ verifying re-use rights before these go public.
 | `sensor-mechanical.jpg` | `HORNET/Posters and graphics/StrainSensor.png` | Photo of two strain-sensor sizes with 1 cm scale bar. Resized to 800 px wide, JPEG q80. **Provenance unconfirmed** — this image is figure-styled (annotated, cropped to a panel) and may already be published under a journal's copyright rather than an original consortium photo. Confirm before public launch. |
 | `sensor-chemical.jpg` | `HORNET/Posters and graphics/NeurotransmitterSensor.png` | Cyclic-voltammetry plot for the electrochemical sensor (labelled panel "A"). Resized to 800 px wide, JPEG q80. **Same provenance flag as above** — this is a journal-figure-style plot, not a product photo; confirm re-use rights before public launch. |
 | `dev-board.jpg` | `HORNET/Supplemental pitches/UCLA Study #1 3_19_2025/Images/IMG_4123.JPG` | Bench photo from the March 2025 UCLA acute study, cropped tightly to just the board (original frame also shows a laptop, a DAQ unit, and — on other frames in the same folder, not this one — the surgical site itself; none of that is in this crop). Board is stamped `HORNET-1-IPG Rev A – Ver 1.4`, an earlier hardware revision than the Gen2 PCBA the development board ships as today — captioned accordingly wherever used, per `CLAUDE.md` §5's revision-binding rule. Resized to 1000 px wide, JPEG q80. |
-| `placeholder.jpg` | Not sourced — generated (2026-07-30) | Not a photo of anything. A plain diagonal-hatch pattern plus a generic image glyph, drawn with PIL for the platform diagram (`index.md`, `start/architecture.md`) so the software/charger nodes have something in the photo slot pending real photography, per §7's 2026-07-30 diagram round. Deliberately generic and reused across all three nodes (Windows app, Android app, Charger) rather than three distinct-looking fakes, so nothing about the image itself could be mistaken for a real product photo. 700×280 px (5:2), JPEG q80. |
+| `placeholder.jpg` | Not sourced — generated (2026-07-30) | Not a photo of anything. A plain diagonal-hatch pattern plus a generic image glyph, drawn with PIL for the platform diagram (`index.md`, `start/architecture.md`) so the software/charger nodes have something in the photo slot pending real photography, per §7's 2026-07-30 diagram round. Originally reused across all three nodes (Windows app, Android app, Charger); as of 2026-08-04, only the Android app node still uses it — see `windows-software.jpg` and `charger.jpg` below. 700×280 px (5:2), JPEG q80. |
+| `charger.jpg` | Site owner-supplied, `docs/images/charger.png` (2026-08-04) | CAD render of the charger's internal coil and PCB assembly (top enclosure half and wrist straps visible, coil marked `WE` — a Würth Elektronik part). Not a photo of a built unit. Converted PNG→JPEG (quality 80), resized to 800 px wide. Replaces `placeholder.jpg` on the Charger diagram node in `index.md` and `start/architecture.md`. |
+| `windows-software.jpg` | Site owner-supplied, `docs/images/Windows-software.png` (2026-08-04) | Screenshot of the OpenNerve Controller Windows app (titlebar reads `OpenNerve Controller FW2-260501`), showing a captured waveform and the stimulation-parameter control panel. Converted PNG→JPEG (quality 80), resized to 800 px wide. Replaces `placeholder.jpg` on the Windows app diagram node in `index.md` and `start/architecture.md`. The Android app node is unchanged — still `placeholder.jpg`, no screenshot supplied. |
 
 ## Not used, and why
 
@@ -39,5 +41,8 @@ verifying re-use rights before these go public.
   fine from the PNG). Left as a future improvement if a cleaned single-variant SVG
   is produced upstream.
 - Everything else considered and rejected is listed in the exploration notes behind
-  this round of work — notably no usable charger photograph and no Windows
-  (ONrecorder) app screenshot exist anywhere in the local asset library.
+  this round of work. As of 2026-07-30, no usable charger photograph and no Windows
+  (ONrecorder) app screenshot existed anywhere in the local asset library — both were
+  supplied by the site owner on 2026-08-04, see `charger.jpg` / `windows-software.jpg`
+  above. No Android app screenshot has been supplied; that node still uses
+  `placeholder.jpg`.

@@ -131,7 +131,7 @@ Click on each component for documentation and open source code / engineering fil
 
 <div class="on-diagram--sw on-diagram__group" markdown>
 <span class="on-diagram__group-label">Control software</span>
-[![Placeholder — no Windows app photo published yet](images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Windows app</span>](software/windows.md){: .on-diagram__node }
+[![Screenshot of the OpenNerve Controller Windows app, showing a captured waveform and stimulation parameter controls](images/windows-software.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Windows app</span>](software/windows.md){: .on-diagram__node }
 [![Placeholder — no Android app photo published yet](images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Android app<span class="on-diagram__node-tag">in development</span></span>](software/android.md){: .on-diagram__node }
 </div>
 
@@ -141,7 +141,7 @@ Click on each component for documentation and open source code / engineering fil
 </div>
 
 <div class="on-diagram--chg on-diagram__group" markdown>
-[![Placeholder — no charger photo published yet](images/placeholder.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Charger</span>](components/charger.md){: .on-diagram__node }
+[![CAD render of the charger's internal coil and PCB assembly](images/charger.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Charger</span>](components/charger.md){: .on-diagram__node }
 </div>
 
 <div class="on-diagram--pwr on-diagram__connector on-diagram__connector--wireless on-diagram__connector--one-way" markdown>
