@@ -7,7 +7,7 @@ hide:
 
 <div class="on-draftbar" markdown>
 **Draft — internal review.** This site is a working draft circulated for
-feedback. Branding, licensing, and maturity assignments are not settled. Do
+feedback. Do
 not distribute outside the review group.
 </div>
 
@@ -35,8 +35,8 @@ Implantable pulse generator, stimulation and recording leads, digital sensors, w
 {: .on-hero__subhead }
 
 <div class="on-specs" markdown>
-<span class="on-specs__item"><strong>1 - 1200 Hz</strong> square wave stimulation (current-driven)</span>
-<span class="on-specs__item">1 - 15 Hz <strong>sine wave output</strong></span>
+<span class="on-specs__item">Up to <strong>1200 Hz</strong> square wave stimulation (current-driven)</span>
+<span class="on-specs__item">1 - 15 Hz <strong>sine wave</strong> stimulation or block</span>
 <span class="on-specs__item">4 independent <strong>biosignal front-ends </strong>(EMG, ECG, eCAPs)</span>
 <span class="on-specs__item"><strong>Leads </strong> for stimulation, electrical recording, and biomarker sensing</span>
 <span class="on-specs__item"><strong>Fully Open Source</strong> (CC-BY-4.0)</span>

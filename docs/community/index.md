@@ -14,6 +14,7 @@ attached to the relevant page rather than a generic forum tab.
 
 </div>
 
+<!--
 !!! warning "Provisional links"
     These buttons point at `axbaldwin1/opennerve-site` — the repo this site
     currently builds from during the draft phase. Confirm before launch:
@@ -38,3 +39,4 @@ yet wired in.** giscus needs a repo ID and category ID from
 [giscus.app](https://giscus.app), which requires Discussions to already be
 enabled on the target repo — do that first, then add the giscus theme
 override and script tag to the relevant page templates.
+-->

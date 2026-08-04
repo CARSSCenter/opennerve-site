@@ -20254,6 +20254,13 @@ initCom(PDFViewerApplication);
 PDFPrintServiceFactory.initGlobals(PDFViewerApplication);
 {
   const HOSTED_VIEWER_ORIGINS = new Set(["null", "http://mozilla.github.io", "https://mozilla.github.io"]);
+  // OpenNerve (2026-08-03): hand-edit, see docs/javascripts/pdfjs/VENDORED.txt
+  // "Local patches". Every data-pdf-src on this site is an author-set URL in
+  // our own markdown, not visitor input, and always points at this one host
+  // (see docs-sources.yml / CLAUDE.md §7 "PDF viewer") — so allow-listing it
+  // here keeps pdf.js's own anti-open-redirect guard intact for every other
+  // origin instead of disabling it outright.
+  const ON_ALLOWED_FILE_ORIGINS = new Set(["https://raw.githubusercontent.com"]);
   var validateFileURL = function (file) {
     if (!file) {
       return;
@@ -20263,7 +20270,7 @@ PDFPrintServiceFactory.initGlobals(PDFViewerApplication);
       return;
     }
     const fileOrigin = URL.parse(file, window.location)?.origin;
-    if (fileOrigin === viewerOrigin) {
+    if (fileOrigin === viewerOrigin || ON_ALLOWED_FILE_ORIGINS.has(fileOrigin)) {
       return;
     }
     const ex = new Error("file origin does not match viewer's");

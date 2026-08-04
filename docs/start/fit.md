@@ -21,6 +21,4 @@ OpenNerve can replace a custom build for their study.
 - A pointer to [Platform architecture](architecture.md) for how the pieces
   fit together, and to each component's maturity table for specifics.
 
-This page should be written after the maturity table (`CLAUDE.md` §6 in this
-repository) is filled in — a fit assessment that doesn't cite real D/E/M
-levels would be guessing.
+This page should be written after the maturity table is filled in — a fit assessment that doesn't cite real D/E/M levels would be guessing.

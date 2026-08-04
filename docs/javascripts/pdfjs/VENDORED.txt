@@ -7,9 +7,10 @@
 - **Why:** in-page PDF viewing — see `CLAUDE.md` §7, "PDF viewer"
 
 This is the official release zip with the following removed to cut footprint
-(21 MB → 8.3 MB). Nothing under `build/` or `web/` was hand-edited — only
-whole files/directories deleted, so re-vendoring a newer version is just
-"repeat this list against the new zip":
+(21 MB → 8.3 MB). Nothing under `build/` or `web/` was deleted-and-not-also-
+tracked below without being either a plain deletion or the one hand-edit
+recorded in "Local patches" — so re-vendoring a newer version is "repeat the
+deletions against the new zip, then reapply the patch":
 
 - All `.map` sourcemap files (`build/*.map`, `web/viewer.mjs.map`)
 - `web/compressed.tracemonkey-pldi-09.pdf` (pdf.js's own demo file — unused;
@@ -22,7 +23,33 @@ whole files/directories deleted, so re-vendoring a newer version is just
   a future maintainer)
 
 To upgrade: download the new version's `-dist.zip`, apply the same
-deletions, diff against this directory, and update the version/date above.
+deletions, reapply the patch below (diff against this directory to see
+exactly what it touches), and update the version/date above.
+
+## Local patches (deviation from "no hand-edits")
+
+- **`web/viewer.mjs`, `validateFileURL` (2026-08-03).** Every `.on-pdf__embed`
+  on this site was rendering blank — confirmed via a real headless-browser
+  console/network capture, not guessed — because pdf.js's own generic viewer
+  refuses to open a `?file=` URL whose origin doesn't match the viewer
+  page's own (`Error: file origin does not match viewer's`). That guard is a
+  real Mozilla anti-abuse fix: without it, anyone could link to
+  `<this site>/javascripts/pdfjs/web/viewer.html?file=https://evil.example/x.pdf`
+  and have it render as if this site were hosting arbitrary attacker
+  content. Since every `data-pdf-src` on this site is an author-set URL in
+  our own markdown (not visitor input) and always points at
+  `raw.githubusercontent.com` (see `docs-sources.yml` / `CLAUDE.md` §7 "PDF
+  viewer"), the patch narrows the guard rather than removing it: a
+  `ON_ALLOWED_FILE_ORIGINS` allow-list containing only
+  `https://raw.githubusercontent.com`, checked alongside the existing
+  same-origin check. Every other origin is still rejected exactly as
+  upstream intends. Verified end-to-end (a real PDF renders inside the
+  `<details>` embed on a live component page, in both `mkdocs serve` and a
+  built site) before landing, not just that the exception stopped firing.
+
+  Re-verify this patch still applies (and still targets the same function
+  and behavior) on every future re-vendor — a `validateFileURL` rewrite
+  upstream would need the same review this one got, not a blind carry-over.
 
 ## How this is used
 

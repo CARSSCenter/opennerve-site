@@ -17,7 +17,7 @@ this board is the enclosure, tracked separately below.
 !!! warning "Illustrative maturity values — not assigned"
     The badges below show placeholder levels so the page layout can be reviewed.
     **These are not real assessments.** Actual levels are assigned by project
-    maintainers per `CLAUDE.md` §6 and have not been set for this revision. Treat
+    maintainers and have not been set for this revision. Treat
     every filled-in level on this page as a mockup, not a claim.
 
 ## Maturity
@@ -116,7 +116,7 @@ schematics, layout, fab drawings, BOM, process and test procedures):**
 
 `Docs/Testing-Protocols/` contains eight PDFs, each named "Hornet IPG … DVT
 Protocol". Each viewer below fetches its PDF live from the repo's default
-branch (`CLAUDE.md` §7, "PDF viewer") — click a title to expand it:
+branch — click a title to expand it:
 
 <details class="on-pdf-details" markdown>
 <summary>Accelerated aging DVT protocol</summary>
@@ -288,8 +288,7 @@ of groups for acute and chronic preclinical studies, with plan to transition to
 clinical studies when ready." No group, species, study duration, protocol, or
 publication is named, and the claim is not scoped to Gen1 vs. Gen2.
 
-Per `CLAUDE.md` §3 ("never state a capability without a source"), this is
-recorded here as an **unverified claim, not evidence** — it cannot support any
+This is recorded here as an **unverified claim, not evidence** — it cannot support any
 Evidence (E) level above E0 until it can be linked to a specific protocol, report,
 or publication naming the revision, species, and duration involved. See
 [Animal data](../data/animal-data.md) and [Publications](../data/publications.md)

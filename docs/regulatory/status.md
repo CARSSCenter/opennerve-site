@@ -15,7 +15,7 @@ OpenNerve components are used today in acute and chronic preclinical
 (animal) studies. Some components are intended to eventually support human
 studies; none has reached that point. See each component's maturity table for
 what evidence currently exists, and note that evidence does not carry across
-hardware revisions (`CLAUDE.md` §5).
+hardware revisions.
 
 ## Terminology
 
@@ -43,6 +43,6 @@ This is a stub. It still needs:
   reviewed language of its own — that's a decision for the team, not this
   draft.)
 - A link to each component's Evidence (E) citations once the maturity table
-  in `CLAUDE.md` §6 is filled in.
+  is filled in.
 
 See also [Maturity level definitions](maturity.md).

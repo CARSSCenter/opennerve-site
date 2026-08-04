@@ -27,7 +27,7 @@ surface. Definitions: [Maturity level definitions](../regulatory/maturity.md).
 | [Android app](../software/android.md) | [OpenNerve-Android-App](https://github.com/CARSSCenter/OpenNerve-Android-App) | ? | ? | ? | ? |
 
 Mechanical Sensors and Chemical Sensors were added to the site nav alongside
-this table; see the note in `CLAUDE.md` §7.
+this table.
 
 The IPG's two hardware revisions (Gen1, Gen2) each carry their own maturity
 badges rather than sharing the single row above — see the
@@ -43,6 +43,6 @@ that value doesn't depend on a maintainer assessment the way D/E/M do: boards
 are available on request today, regardless of what levels get assigned later.
 
 Every component page carries **Applies to revision** and **Last reviewed**
-fields, and the same standing disclaimer required by `CLAUDE.md` §5: these
+fields, and the same standing disclaimer: these
 levels describe testing history and documentation state. They are not
 regulatory clearance and not a safety endorsement.

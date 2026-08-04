@@ -65,8 +65,7 @@ form factor that gets you access to it on a bench:
 
 The frame itself — the parts that only exist on the development board, not on
 an implantable unit — is described in an internal project write-up rather
-than a published repo file. It is recorded here, marked accordingly per
-`CLAUDE.md` §3, rather than left out:
+than a published repo file. It is recorded here, marked accordingly:
 
 !!! warning "Not yet linked to a public source"
     The list below comes from an internal document, not a file in the IPG

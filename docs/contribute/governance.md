@@ -14,18 +14,16 @@ Autonomic Recording and Stimulation Systems), funded under NIH SPARC award
 
 "CARSS" is the administrative/funding entity name and is used only on this
 page and in funding acknowledgments; "OpenNerve" is the public brand
-everywhere else on this site (`CLAUDE.md` §1).
+everywhere else on this site.
 
 ## Open questions
 
-This page is a stub. The following are unresolved — see `CLAUDE.md` §9:
+This page is a stub. The following are unresolved:
 
 - **Who assigns maturity levels?** Currently assumed to be the board of
   directors; not confirmed.
 - **Licensing.** All repos are currently CC-BY-4.0, including firmware and
   application code. This may be revisited on a repo-by-repo basis.
-- **Dropping "CARSS" from public branding entirely** has been proposed but
-  needs consortium sign-off.
 - **What counts as a hardware contribution and how it's reviewed** — see
   [Hardware contributions](hardware.md).
 

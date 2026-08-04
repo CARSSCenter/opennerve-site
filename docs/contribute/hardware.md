@@ -4,7 +4,7 @@ title: Hardware contributions
 
 # Hardware contributions
 
-This page is intentionally a stub of open questions, per `CLAUDE.md` §9. None
+This page is intentionally a stub of open questions. None
 of these has been decided; do not treat anything below as settled process.
 If your work touches one of these, raise it with the team rather than
 resolving it unilaterally.
@@ -46,7 +46,7 @@ resolving it unilaterally.
 
 ## Licensing
 
-All repos are currently CC-BY-4.0 (`CLAUDE.md` §9). Does a hardware
+All repos are currently CC-BY-4.0. Does a hardware
 contribution need any additional agreement (e.g. a contributor license
 agreement) beyond what CC-BY-4.0 already implies? This is unresolved and may
 be revisited on a repo-by-repo basis.

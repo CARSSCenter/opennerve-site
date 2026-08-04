@@ -24,8 +24,6 @@ platform:
 
 ([source](https://github.com/CARSSCenter/Mechanical-Sensors/blob/main/README.md))
 
-This component was added to the site nav alongside the sensor row already
-present in `CLAUDE.md` §6; see the note in `CLAUDE.md` §7.
 
 ## Documentation synced from the upstream repo
 

@@ -23,8 +23,6 @@ Chemical sensing leads for OpenNerve. Two sensors are described in the repo:
 
 ([source](https://github.com/CARSSCenter/Chemical-Sensors/blob/main/README.md))
 
-This component was added to the site nav alongside the sensor row already
-present in `CLAUDE.md` §6; see the note in `CLAUDE.md` §7.
 
 ## Documentation synced from the upstream repo
 

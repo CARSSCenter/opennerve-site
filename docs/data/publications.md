@@ -15,33 +15,34 @@ revision.
 
 ## 2026
 
-1. Li, M., et al. **"Scaling beyond the vagus nerve: historical and
+Li, M., et al. **"Scaling beyond the vagus nerve: historical and
    contemporary progress on electrode-based small-diameter peripheral nerve
    interfaces."** *Bioelectronic Medicine* (2026).
    [PMC12949514](https://pmc.ncbi.nlm.nih.gov/articles/PMC12949514/)
-2. Fleting, C. R., et al. **"Proceedings of the 13th annual deep brain
+Fleting, C. R., et al. **"Proceedings of the 13th annual deep brain
    stimulation think tank: the evolving landscape."** *Frontiers in Human
    Neuroscience* (2026).
    [doi.org/10.3389/fnhum.2026.1770451](https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2026.1770451/full)
 
 ## 2025
-
-3. Baldwin, A., et al. **"Building and sustaining open source medical device
+Elyahoodayan, S., et al. **"OpenNerve: An Open-Source Modular Platform for Bioelectronic Medicine"** *12th International IEEE/EMBS Conference on Neural Engineering* (2025).
+   [https://ieeexplore.ieee.org/abstract/document/11589049](https://ieeexplore.ieee.org/abstract/document/11589049)
+Baldwin, A., et al. **"Building and sustaining open source medical device
    projects."** *IEEE Transactions on Biomedical Engineering* (2025).
    [ieeexplore.ieee.org/document/10971951](https://ieeexplore.ieee.org/abstract/document/10971951)
-4. Huang, X., et al. **"Stretchable encapsulation for implantable strain
+Huang, X., et al. **"Stretchable encapsulation for implantable strain
    sensors."** *ACS Applied Materials & Interfaces* (2025).
    [doi.org/10.1021/acsami.5c06101](https://pubs.acs.org/doi/full/10.1021/acsami.5c06101)
-5. Li, X., et al. **"Implantable physical sensors for in vivo organ
+Li, X., et al. **"Implantable physical sensors for in vivo organ
    monitoring."** *Med-X* 3.1 (2025): 1–32.
    [doi.org/10.1007/s44258-024-00047-x](https://link.springer.com/article/10.1007/s44258-024-00047-x)
-6. Elyahoodayan, S., et al. **"Acute stimulation, EMG, and neural recording
+Elyahoodayan, S., et al. **"Acute stimulation, EMG, and neural recording
    from a rat sciatic nerve using a self-sizing and soft closing polymer
    cuff electrode."** protocols.io (2025).
    [protocols.io/view/acute-stimulation-emg-and-neural-recording-from-a-dukp6uvn](https://slack.protocols.io:8443/view/acute-stimulation-emg-and-neural-recording-from-a-dukp6uvn.html)
    — the underlying protocol for the [animal data](animal-data.md) sciatic
    nerve dataset below.
-7. Rezard, Q., et al. **"An open source, microfabricated, self closing cuff
+Rezard, Q., et al. **"An open source, microfabricated, self closing cuff
    electrode with conductive polymer coating for improved electrochemical
    performance."** IEEE International Conference on Solid-State Sensors and
    Actuators (TRANSDUCERS) (2025).
@@ -49,34 +50,34 @@ revision.
 
 ## 2024
 
-8. Baldwin, A., et al. **"Recent advances in facilitating the translation of
+Baldwin, A., et al. **"Recent advances in facilitating the translation of
    bioelectronic medicine therapies."** *Current Opinion in Biomedical
    Engineering* (2024): 100575.
    [doi.org/10.1016/j.cobme.2024.100575](https://www.sciencedirect.com/science/article/pii/S2468451124000552)
-9. Amirghasemi, F., et al. **"Flexible Acetylcholine Neural Probe with a
+Amirghasemi, F., et al. **"Flexible Acetylcholine Neural Probe with a
    Hydrophobic Laser-Induced Graphene Electrode and a Fluorous-Phase Sensing
    Membrane."** *ACS Materials Letters* 6.9 (2024): 4158–4167.
    [pubmed.ncbi.nlm.nih.gov/39309214](https://pubmed.ncbi.nlm.nih.gov/39309214/)
 
 ## 2023
 
-10. Thielen, B., and Meng, E. **"Characterization of thin film Parylene C
+Thielen, B., and Meng, E. **"Characterization of thin film Parylene C
     device curvature and the formation of helices via thermoforming."**
     *Journal of Micromechanics and Microengineering* 33.9 (2023): 095007.
     [pubmed.ncbi.nlm.nih.gov/37520061](https://pubmed.ncbi.nlm.nih.gov/37520061/)
-11. Amirghasemi, F., et al. **"FAST (Flexible Acetylcholine Sensing Thread):
+Amirghasemi, F., et al. **"FAST (Flexible Acetylcholine Sensing Thread):
     Real-Time Detection of Acetylcholine with a Flexible Solid-Contact
     Potentiometric Sensor."** *Bioengineering* 10.6 (2023): 655.
     [pubmed.ncbi.nlm.nih.gov/37370586](https://pubmed.ncbi.nlm.nih.gov/37370586/)
-12. Pikov, V. **"Vagus nerve stimulation and sacral nerve stimulation for
+Pikov, V. **"Vagus nerve stimulation and sacral nerve stimulation for
     inflammatory bowel disease: a systematic review."** *Journal of
     Translational Gastroenterology* 1.2 (2023): 94.
     [pubmed.ncbi.nlm.nih.gov/38606364](https://pubmed.ncbi.nlm.nih.gov/38606364/)
-13. Woo, J. Y., Pikov, V., and Chen, J. D. Z. **"Neuromodulation for
+Woo, J. Y., Pikov, V., and Chen, J. D. Z. **"Neuromodulation for
     Gastroesophageal Reflux Disease: A Systematic Review."** *Journal of
     Translational Gastroenterology* 1.1 (2023): 47.
     [pubmed.ncbi.nlm.nih.gov/38009094](https://pubmed.ncbi.nlm.nih.gov/38009094/)
-14. Pikov, V. **"Bioelectronic medicine for restoring autonomic balance in
+Pikov, V. **"Bioelectronic medicine for restoring autonomic balance in
     autoimmune diseases."** *Gut Microbiota and Integrative Wellness* 1.2
     (2023).
     [pubmed.ncbi.nlm.nih.gov/37155473](https://pubmed.ncbi.nlm.nih.gov/37155473/)

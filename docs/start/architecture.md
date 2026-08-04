@@ -88,8 +88,7 @@ Same diagram as the [landing page](../index.md#the-opennerve-platform).
 ## Two IPG hardware generations
 
 The IPG has two PCB revisions, and their capabilities differ — maturity
-claims on this site are tied to one revision, never averaged across both
-(`CLAUDE.md` §5):
+claims on this site are tied to one revision, never averaged across both:
 
 - **Gen1 PCBA** — eight pseudo-independent monopolar stimulation channels
   (configurable as four bipolar channels), two differential biosignal

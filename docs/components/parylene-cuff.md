@@ -26,8 +26,7 @@ These exist in the repo today; this page does not yet summarize their
 content; treat each as a primary source rather than relying on this
 description. Each viewer below fetches its PDF live from the repo's default
 branch, so upstream edits appear immediately with no rebuild — but also with
-no commit pin the way synced markdown pages get (see `CLAUDE.md` §7,
-"PDF viewer").
+no commit pin the way synced markdown pages get.
 
 <div class="on-pdf" markdown>
 <div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode/main/Design%20Selection%20Summary%20(Rev%201_updated).pdf" data-pdf-title="Design Selection Summary (Rev 1, updated)"></div>
