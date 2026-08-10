@@ -164,10 +164,11 @@ nav:
   - Software:
       - Windows App: software/windows.md
       - Android App: software/android.md
-  - Data & Publications:
+  - Resources:
       - Publications: data/publications.md
       - Animal data: data/animal-data.md
       - News: news.md
+      - Educational Resources: data/educational-resources.md
   - Community:
       - Overview: community/index.md
       - How to contribute: contribute/index.md

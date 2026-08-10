@@ -741,6 +741,33 @@
   color: var(--md-default-fg-color--light);
 }
 
+/*
+ * .on-video — a plain, aspect-ratio-locked YouTube embed. Unlike .on-pdf,
+ * this needs no wrapper script: YouTube's own embed iframe is designed to be
+ * framed cross-origin (no X-Frame-Options block, unlike raw.githubusercontent.com
+ * PDFs), so a plain <iframe src="https://www.youtube.com/embed/VIDEO_ID">
+ * works directly. `aspect-ratio: 16 / 9` plus `width: 100%` keeps it
+ * responsive without a padding-hack wrapper. Introduced 2026-08-10 for
+ * docs/data/educational-resources.md.
+ *
+ * Markup:
+ *   <div class="on-video" markdown>
+ *   <iframe class="on-video__frame" src="https://www.youtube.com/embed/VIDEO_ID"
+ *     title="..." loading="lazy" allowfullscreen></iframe>
+ *   </div>
+ */
+.on-video {
+  margin: 1.5rem 0;
+}
+
+.on-video__frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25rem;
+}
+
 @media (max-width: 600px) {
   /* No drawn grid connectors at this width — a ruled line at 5-6rem of
    * available width reads as noise, not signal. The diagram becomes a plain
@@ -941,7 +968,7 @@
  * of its own.
  *
  * A third case, found after the first pass looked inconsistent across tabs
- * (Hardware/Community read blue, Software/Data & Publications/Start here
+ * (Hardware/Community read blue, Software/Resources/Start here
  * stayed grey): Material has a *third*, higher-specificity rule reserved
  * for the top-level tab labels specifically —
  * `.md-nav--lifted>.md-nav__list>.md-nav__item>[for]` — which beats the
