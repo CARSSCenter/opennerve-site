@@ -1,0 +1,107 @@
+<svg viewBox="0 0 820 328" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Dimensioned side view of a lead proximal end compatible with the OpenNerve IPG header: 1.270 mm diameter, three 1.500 mm ring contacts on 2.745 mm pitch separated by 1.245 mm insulating gaps, a terminal 3.000 mm set-screw contact, and a 3.253 mm inactive tip segment, for a total proximal contact array length of 14.488 mm.">
+  <defs>
+    <marker id="byol-arrow-l" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 10 1 L 1 5 L 10 9 Z" fill="#5b6472" />
+    </marker>
+    <marker id="byol-arrow-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 Z" fill="#5b6472" />
+    </marker>
+  </defs>
+
+  <style>
+    .byol-title { font: 600 15px "IBM Plex Sans", system-ui, sans-serif; fill: #1f2430; }
+    .byol-foot  { font: 400 11px "IBM Plex Sans", system-ui, sans-serif; fill: #5b6472; }
+    .byol-dim   { font: 600 12px "IBM Plex Mono", ui-monospace, Menlo, monospace; fill: #1f2430; text-anchor: middle; }
+    .byol-note  { font: 400 10.5px "IBM Plex Sans", system-ui, sans-serif; fill: #5b6472; text-anchor: middle; }
+    .byol-lbl   { font: 600 10px "IBM Plex Mono", ui-monospace, Menlo, monospace; fill: #f4f5f7; text-anchor: middle; }
+    .byol-dimline { stroke: #5b6472; stroke-width: 1; }
+    .byol-ext   { stroke: #b7bcc4; stroke-width: 1; }
+  </style>
+
+  <text x="20" y="24" class="byol-title">Mating lead proximal end — OpenNerve IPG header (Bal Seal Sygnus, 2.8 mm pitch)</text>
+
+  <!-- diameter cross-section -->
+  <circle cx="40" cy="170" r="20" fill="#f4f5f7" stroke="#1f2430" stroke-width="1.5" />
+  <line x1="5" y1="150" x2="5" y2="190" class="byol-dimline" marker-start="url(#byol-arrow-l)" marker-end="url(#byol-arrow-r)" />
+  <text x="-30" y="174" class="byol-dim" transform="rotate(-90 5 170)">&#216; 1.270 mm</text>
+
+  <!-- lead body (symbolic, not to scale) -->
+  <rect x="90" y="150" width="130" height="40" fill="#f4f5f7" stroke="#1f2430" stroke-width="1.5" />
+  <line x1="105" y1="150" x2="97" y2="190" class="byol-dimline" />
+  <line x1="118" y1="150" x2="110" y2="190" class="byol-dimline" />
+  <text x="155" y="205" class="byol-note">lead body (not to scale)</text>
+
+  <!-- inactive tip segment -->
+  <rect x="220" y="150" width="117.108" height="40" fill="#eef0f3" stroke="#1f2430" stroke-width="1.5" />
+
+  <!-- ring contacts (3) -->
+  <rect x="337.108" y="150" width="54" height="40" fill="#445068" stroke="#1f2430" stroke-width="1.5" />
+  <text x="364.108" y="174" class="byol-lbl">C1</text>
+  <rect x="435.928" y="150" width="54" height="40" fill="#445068" stroke="#1f2430" stroke-width="1.5" />
+  <text x="462.928" y="174" class="byol-lbl">C2</text>
+  <rect x="534.748" y="150" width="54" height="40" fill="#445068" stroke="#1f2430" stroke-width="1.5" />
+  <text x="561.748" y="174" class="byol-lbl">C3</text>
+
+  <!-- insulating gaps -->
+  <rect x="391.108" y="150" width="44.82" height="40" fill="#eef0f3" stroke="#1f2430" stroke-width="1" />
+  <rect x="489.928" y="150" width="44.82" height="40" fill="#eef0f3" stroke="#1f2430" stroke-width="1" />
+  <rect x="588.748" y="150" width="44.82" height="40" fill="#eef0f3" stroke="#1f2430" stroke-width="1" />
+
+  <!-- terminal set-screw contact -->
+  <rect x="633.568" y="150" width="108" height="40" fill="#2b3990" stroke="#1f2430" stroke-width="1.5" />
+  <text x="687.568" y="174" class="byol-lbl">SS</text>
+  <circle cx="687.568" cy="140" r="4" fill="none" stroke="#1f2430" stroke-width="1.5" />
+  <line x1="687.568" y1="144" x2="687.568" y2="150" class="byol-dimline" />
+
+  <!-- overall length dimension (top band) -->
+  <line x1="220" y1="70" x2="220" y2="150" class="byol-ext" />
+  <line x1="741.568" y1="70" x2="741.568" y2="150" class="byol-ext" />
+  <line x1="220" y1="70" x2="741.568" y2="70" class="byol-dimline" marker-start="url(#byol-arrow-l)" marker-end="url(#byol-arrow-r)" />
+  <text x="480.784" y="60" class="byol-dim">14.488 mm — full proximal contact array (tip to end)</text>
+
+  <!-- pitch dimension (middle band) -->
+  <line x1="337.108" y1="112" x2="337.108" y2="150" class="byol-ext" />
+  <line x1="435.928" y1="112" x2="435.928" y2="150" class="byol-ext" />
+  <line x1="337.108" y1="112" x2="435.928" y2="112" class="byol-dimline" marker-start="url(#byol-arrow-l)" marker-end="url(#byol-arrow-r)" />
+  <text x="386.518" y="102" class="byol-dim">2.745 mm pitch</text>
+  <text x="386.518" y="128" class="byol-note">(uniform, &#215;3 — C1&#8211;C2&#8211;C3)</text>
+
+  <!-- gap dimension -->
+  <line x1="391.108" y1="112" x2="391.108" y2="150" class="byol-ext" />
+  <line x1="435.928" y1="112" x2="435.928" y2="150" class="byol-ext" />
+
+  <!-- contact-length dimensions (bottom band) -->
+  <line x1="337.108" y1="205" x2="337.108" y2="190" class="byol-ext" />
+  <line x1="391.108" y1="205" x2="391.108" y2="190" class="byol-ext" />
+  <line x1="337.108" y1="205" x2="391.108" y2="205" class="byol-dimline" marker-start="url(#byol-arrow-l)" marker-end="url(#byol-arrow-r)" />
+  <text x="364.108" y="222" class="byol-dim">1.500 mm</text>
+  <text x="364.108" y="236" class="byol-note">ring contact &#215;3</text>
+
+  <line x1="633.568" y1="205" x2="633.568" y2="190" class="byol-ext" />
+  <line x1="741.568" y1="205" x2="741.568" y2="190" class="byol-ext" />
+  <line x1="633.568" y1="205" x2="741.568" y2="205" class="byol-dimline" marker-start="url(#byol-arrow-l)" marker-end="url(#byol-arrow-r)" />
+  <text x="687.568" y="222" class="byol-dim">3.000 mm</text>
+  <text x="687.568" y="236" class="byol-note">set-screw contact (terminal, ×1)</text>
+
+  <!-- gap length dimension (offset to its own row below the contact-length
+       row so its label doesn't collide with the tip-segment label, which
+       shares this row too — see below) -->
+  <line x1="391.108" y1="255" x2="391.108" y2="190" class="byol-ext" />
+  <line x1="435.928" y1="255" x2="435.928" y2="190" class="byol-ext" />
+  <line x1="391.108" y1="255" x2="435.928" y2="255" class="byol-dimline" marker-start="url(#byol-arrow-l)" marker-end="url(#byol-arrow-r)" />
+  <text x="413.518" y="272" class="byol-dim">1.245 mm</text>
+  <text x="413.518" y="286" class="byol-note">insulating gap</text>
+
+  <!-- inactive tip segment dimension — same row as the gap dimension above
+       (not the contact-length row above that), since "inactive tip segment"
+       is wide enough to collide with the C1 label if placed in that row -->
+  <line x1="220" y1="255" x2="220" y2="190" class="byol-ext" />
+  <line x1="337.108" y1="255" x2="337.108" y2="190" class="byol-ext" />
+  <line x1="220" y1="255" x2="337.108" y2="255" class="byol-dimline" marker-start="url(#byol-arrow-l)" marker-end="url(#byol-arrow-r)" />
+  <text x="278.554" y="272" class="byol-dim">3.253 mm</text>
+  <text x="278.554" y="286" class="byol-note">inactive tip segment</text>
+
+  <text x="20" y="306" class="byol-foot">Redrawn from published dimensions (Nest 3 — Leads Design File Set, drawing 3019; Nest 1/Nest 3 mechanical specifications).</text>
+  <text x="20" y="320" class="byol-foot">Not a reproduction of the source drawing. Not to scale on the lead-body segment.</text>
+</svg>

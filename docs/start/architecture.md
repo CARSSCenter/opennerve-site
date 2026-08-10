@@ -51,6 +51,15 @@ title: Platform architecture
 [![Sub-mm Parylene Cuff electrode](../images/lead-cuff.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Sub-mm Parylene Cuff</span>](../components/parylene-cuff.md){: .on-diagram__node }
 </div>
 
+<div class="on-diagram--byolc on-diagram__connector" markdown>
+<span class="on-diagram__connector-rule"></span>
+<span class="on-diagram__connector-label">Bal Seal header</span>
+</div>
+
+<div class="on-diagram--byol" markdown>
+[<span class="on-diagram__node-body">Bring your own lead<span class="on-diagram__node-tag">third-party</span></span>](../components/byo-lead.md){: .on-diagram__node }
+</div>
+
 <div class="on-diagram--i2c on-diagram__connector" markdown>
 <span class="on-diagram__connector-rule"></span>
 <span class="on-diagram__connector-label">I2C</span>
@@ -75,7 +84,9 @@ Same diagram as the [landing page](../index.md#the-opennerve-platform).
   ([source](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/README.md))
 - **Leads** connect to the IPG for stimulation, recording, or sensing,
   depending on the target nerve and study. See
-  [Components](../components/index.md) for the library.
+  [Components](../components/index.md) for the library, or
+  [Bring your own lead](../components/byo-lead.md) for the header's mating
+  geometry if you want to use a different one.
 - **Mechanical and chemical sensors** connect over the same I2C bus as
   third-party digital sensors.
 - The **charger** inductively charges the IPG at 300 kHz and is not

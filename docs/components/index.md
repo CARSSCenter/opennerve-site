@@ -20,6 +20,7 @@ surface. Definitions: [Maturity level definitions](../regulatory/maturity.md).
 | [Development board](dev-board.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | Purchasable — contact the consortium |
 | [Standard Leads](standard-leads.md) | [OpenNerve-Standard-Leads](https://github.com/CARSSCenter/OpenNerve-Standard-Leads) | ? | ? | ? | ? |
 | [Sub-mm Parylene Cuff](parylene-cuff.md) | [Sub-mm-Parylene-Cuff-Electrode](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode) | ? | ? | ? | ? |
+| [Bring your own lead](byo-lead.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | Not applicable |
 | [Charger](charger.md) | [OpenNerve-Charger](https://github.com/CARSSCenter/OpenNerve-Charger) | ? | ? | ? | ? |
 | [Mechanical Sensors](mechanical-sensors.md) | [Mechanical-Sensors](https://github.com/CARSSCenter/Mechanical-Sensors) | ? | ? | ? | ? |
 | [Chemical Sensors](chemical-sensors.md) | [Chemical-Sensors](https://github.com/CARSSCenter/Chemical-Sensors) | ? | ? | ? | ? |
@@ -41,6 +42,13 @@ manufacturing frame rather than trimmed for implantation — see
 [Development board](dev-board.md). Its Availability cell is filled in because
 that value doesn't depend on a maintainer assessment the way D/E/M do: boards
 are available on request today, regardless of what levels get assigned later.
+
+**[Bring your own lead](byo-lead.md)** documents the IPG header's connector
+interface rather than a product OpenNerve ships, so its Availability reads
+"Not applicable" instead of `?` or a real availability value — D/E/M remain
+unassigned like every other row, since filling in one field on this page must
+not read as progress on the other two (same principle as the development
+board row above).
 
 Every component page carries **Applies to revision** and **Last reviewed**
 fields, and the same standing disclaimer: these

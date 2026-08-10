@@ -37,19 +37,14 @@ theme:
   # and header palette").
   logo: images/logo.png
   font: false
+  # Light-mode only, for now (2026-08-06): single palette entry, no `toggle`
+  # and no `media` query, so Material renders no light/dark switch and the
+  # site ignores the visitor's OS color-scheme preference. Revisit if/when
+  # dark mode is ready to ship — see CLAUDE.md §7's header-palette entry for
+  # why `primary: white` was chosen in the first place.
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: white
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -60,7 +55,6 @@ theme:
     - content.action.edit
     - content.code.copy
     - search.highlight
-    - search.suggest
     - toc.follow
 
 # Keep this list minimal — every plugin here is a piece of future breakage
@@ -126,13 +120,13 @@ validation:
 
 nav:
   - Home: index.md
-  - Start here:
-      - What is OpenNerve: start/overview.md
+  - About:
+      - Who we are: start/overview.md
       - Is this right for my work: start/fit.md
       - Platform architecture: start/architecture.md
       - Regulatory status and disclaimers: regulatory/status.md
       - Maturity level definitions: regulatory/maturity.md
-  - Components:
+  - Hardware:
       - Overview & maturity table: components/index.md
       - Implantable Pulse Generator:
           - Overview: components/ipg.md
@@ -153,6 +147,7 @@ nav:
       - Development board: components/dev-board.md
       - Standard Leads: components/standard-leads.md
       - Sub-mm Parylene Cuff: components/parylene-cuff.md
+      - Bring your own lead: components/byo-lead.md
       - Charger:
           - Overview: components/charger.md
           - Firmware report: components/charger/firmware-report.md

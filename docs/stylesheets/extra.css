@@ -367,9 +367,20 @@
   grid-template-columns:
     minmax(7rem, 1fr) minmax(3rem, auto) 1.5rem
     minmax(8rem, 1.1fr) minmax(3rem, auto) minmax(7rem, 1fr);
+  /* 2026-08-10: a fifth row (`byolc`/`byol`, "Bring your own lead") was added
+   * between `stim` and `i2c` rather than appended after `sensors`. The hub
+   * spans every device row and centers within that span, so the row it sits
+   * beside matters: a short row inserted between the two existing device
+   * rows keeps `byolc` roughly centered on the hub the same way `stim` and
+   * `i2c` already are (see the align-self comment below), instead of adding
+   * a fourth connector that would need its own alignment special-case.
+   * `skin` and `hub` both extend their span by one row to match; the
+   * trailing empty row is unchanged and still exists only so `skin`'s rule
+   * can run past the last content row. */
   grid-template-areas:
     "lab-out lab-out .    lab-in lab-in  lab-in "
     "sw      ble      skin hub    stim    leads  "
+    ".       .        skin hub    byolc   byol   "
     "chg     pwr      skin hub    i2c     sensors"
     ".       .        skin .      .       .      ";
   align-items: center;
@@ -390,6 +401,8 @@
 .on-diagram--skin { grid-area: skin; }
 .on-diagram--hub { grid-area: hub; }
 .on-diagram--stim { grid-area: stim; }
+.on-diagram--byolc { grid-area: byolc; }
+.on-diagram--byol { grid-area: byol; }
 .on-diagram--i2c { grid-area: i2c; }
 .on-diagram--leads { grid-area: leads; }
 .on-diagram--sensors { grid-area: sensors; }
@@ -533,7 +546,8 @@
  * two-node groups. Zero margin/padding on both, deliberately — see the
  * connector-rule comment above for why that matters. */
 .on-diagram--hub,
-.on-diagram--chg {
+.on-diagram--chg,
+.on-diagram--byol {
   display: flex;
   justify-content: center;
 }
@@ -769,7 +783,9 @@
   .on-diagram--chg,
   .on-diagram--pwr,
   .on-diagram--i2c,
-  .on-diagram--sensors {
+  .on-diagram--sensors,
+  .on-diagram--byolc,
+  .on-diagram--byol {
     align-self: stretch;
   }
 
@@ -899,4 +915,77 @@
   .md-sidebar--primary[hidden] {
     display: block;
   }
+}
+
+/*
+ * Left-sidebar section headers (e.g. "Implantable Pulse Generator", the
+ * category above "Gen2 PCBA"/"Gen1 PCBA") vs. the plain page links under
+ * them. Material already bolds these via its own
+ * `.md-nav__item--section > .md-nav__link` rule, but both header and page
+ * links otherwise share the same muted --md-default-fg-color--light grey,
+ * so at the sidebar's small (0.7rem) font size the weight difference alone
+ * doesn't read as "this is a category" at a glance. Recolored to --on-accent
+ * (the same scheme-aware brand navy/cyan used for the diagram hub border
+ * and badge numerals) instead, so headers are unambiguously distinct from
+ * the grey child links regardless of theme.
+ *
+ * Two DOM shapes need covering: a section with no index page renders as
+ * `<label class="md-nav__link" for="...">` (matched by the `[for]` variant
+ * below — needed to out-specificity Material's own `[for]` rule, which is
+ * otherwise more specific than a plain `.md-nav__link` selector and would
+ * win); a section that IS also a page (e.g. Implantable Pulse Generator,
+ * via navigation.indexes) renders as
+ * `<div class="md-nav__link md-nav__container">` wrapping the real `<a>` —
+ * matched by the first, plain selector, with the accent color inherited
+ * down into the anchor since the anchor has no explicit resting-state color
+ * of its own.
+ *
+ * A third case, found after the first pass looked inconsistent across tabs
+ * (Hardware/Community read blue, Software/Data & Publications/Start here
+ * stayed grey): Material has a *third*, higher-specificity rule reserved
+ * for the top-level tab labels specifically —
+ * `.md-nav--lifted>.md-nav__list>.md-nav__item>[for]` — which beats the
+ * `[for]` selector above (one more class in the chain) and wins back to
+ * grey for any tab with no `index.md` child of its own. Hardware and
+ * Community only looked fixed by coincidence: `components/index.md` and
+ * `community/index.md` are literally named `index.md`, so those two tabs
+ * take the `.md-nav__container` branch instead and never hit this rule.
+ * Matching Material's own selector (rather than trying to out-specify it
+ * with `!important`) fixes every tab uniformly regardless of whether it
+ * happens to have an index page.
+ */
+.md-nav__item--section > .md-nav__link,
+.md-nav__item--section > .md-nav__link[for],
+.md-nav--lifted > .md-nav__list > .md-nav__item > [for] {
+  color: var(--on-accent);
+  font-weight: 700;
+}
+
+/*
+ * Development board, Standard Leads, and Sub-mm Parylene Cuff, under
+ * Hardware: major components that are currently single flat pages (no
+ * synced sub-pages yet, unlike Charger/Mechanical Sensors/Chemical Sensors,
+ * which already have children and so already pick up the section-header
+ * treatment above for free). Given the same bold/accent treatment as the
+ * section headers so they read as peers of those, ahead of getting their
+ * own sub-pages later.
+ *
+ * A flat leaf page has no nav_item.children, so Material's template never
+ * gives it a distinguishing class to hook (see nav-item.html) — there's no
+ * ".md-nav__item--section" here to reuse. Scoped instead by each page's own
+ * URL, via an ends-with attribute selector on the rendered href, which
+ * stays stable across every depth these links get rendered at (confirmed:
+ * "dev-board/", "standard-leads/", "parylene-cuff/" against both root-level
+ * and nested pages in the built site) without depending on relative-path
+ * prefixes. Deliberately by exact page, not by "every childless Components
+ * link" — Overview & maturity table is also childless and should stay a
+ * plain link, and this must not spread to same-shaped pages under other
+ * tabs (e.g. About's own leaf pages), which this selector already can't
+ * reach since none of them share these URLs.
+ */
+.md-nav__link[href$="dev-board/"],
+.md-nav__link[href$="standard-leads/"],
+.md-nav__link[href$="parylene-cuff/"] {
+  color: var(--on-accent);
+  font-weight: 700;
 }

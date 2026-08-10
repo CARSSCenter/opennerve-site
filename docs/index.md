@@ -35,11 +35,10 @@ Implantable pulse generator, stimulation and recording leads, digital sensors, w
 {: .on-hero__subhead }
 
 <div class="on-specs" markdown>
-<span class="on-specs__item">Up to <strong>1200 Hz</strong> square wave stimulation (current-driven)</span>
-<span class="on-specs__item">1 - 15 Hz <strong>sine wave</strong> for stimulation or block</span>
-<span class="on-specs__item">4 independent <strong>biosignal front-ends </strong>(EMG, ECG, eCAPs)</span>
-<span class="on-specs__item"><strong>Leads </strong> for stimulation, electrical recording, and biomarker sensing</span>
-<span class="on-specs__item"><strong>Fully Open Source</strong> (CC-BY-4.0)</span>
+<span class="on-specs__item">Reduce time and cost to develop neuromodulation systems</span>
+<span class="on-specs__item">Modular platform to build novel therapies</span>
+<span class="on-specs__item">Community-driven ecosystem</span>
+<span class="on-specs__item"><strong>Fully Open Source</strong> (CC-BY-4.0) for research and commercialization</span>
 </div>
 
 <!--
@@ -77,52 +76,11 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 
 <div class="on-section" markdown>
 
-## How to work with OpenNerve
-
-<div class="on-cols" markdown>
-
-<div class="on-col" markdown>
-<div class="on-col__heading">Learn about OpenNerve</div>
-
-Learn more about OpenNerve and explore the components and documentation.
-
-- [What is OpenNerve?](start/overview.md)
-- [Component overview](components/index.md)
-- [IPG specifications](components/ipg.md)
-
-</div>
-
-<div class="on-col" markdown>
-<div class="on-col__heading">Use OpenNerve Components</div>
-
-Contact us for development boards and hardware collaboration, or create your own system using our open-source files.
-
-- [Get a development board](components/dev-board.md)
-- [Contact us for collaborations](mailto:carss@usc.edu)
-- [Clone a repository](https://github.com/CARSSCenter)
-
-</div>
-
-<div class="on-col" markdown>
-<div class="on-col__heading">Join our Community</div>
-
-Contribute to OpenNerve, get technical support, and make neuroscience better. Hardware, firmware, software, and documentation all take contributions.
-
-- [How to contribute](contribute/index.md)
-
-</div>
-
-</div>
-
-</div>
-
-<div class="on-section" markdown>
-
 ## The OpenNerve platform
 
-The core implantable pulse generator (or equivalent development board) provides current-based stimulation, records analog biosignals such as EMG, ECG, and eCAPs, and has digital in-body communication for advanced biosensors or networked devices. 
-Several stimulation / recording leads and digital sensors are being development by OpenNerve, and the platform is compatible with commercial and newly developed leads.
-Bluetooth Low Energy (BLE)  allows real-time data streaming and control; a custom inductive charger allows safe recharging.
+The core implantable pulse generator (IPG) or equivalent development board provides <strong>current-driven stimulation</strong> (square waves up to 1.2kHz, low frequency sine waves 1-15 Hz), records analog biosignals such as <strong>EMG, ECG, and eCAPs,</strong> and has <strong>digital in-body communication</strong> for advanced biosensors or networked devices. 
+Several stimulation / recording leads and digital sensors are being developed by OpenNerve, and researchers are welcome to bring their own leads and sensors — see [Bring your own lead](components/byo-lead.md) for the IPG header's connector geometry.
+<strong>Bluetooth Low Energy (BLE)</strong>  allows real-time data streaming and control; a custom inductive charger allows safe recharging.
 Click on each component for documentation and open source code / engineering files.
 
 <div class="on-diagram" markdown>
@@ -170,6 +128,15 @@ Click on each component for documentation and open source code / engineering fil
 [![Sub-mm Parylene Cuff electrode](images/lead-cuff.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Sub-mm Parylene Cuff</span>](components/parylene-cuff.md){: .on-diagram__node }
 </div>
 
+<div class="on-diagram--byolc on-diagram__connector" markdown>
+<span class="on-diagram__connector-rule"></span>
+<span class="on-diagram__connector-label">Bal Seal header</span>
+</div>
+
+<div class="on-diagram--byol" markdown>
+[<span class="on-diagram__node-body">Bring your own lead<span class="on-diagram__node-tag">third-party</span></span>](components/byo-lead.md){: .on-diagram__node }
+</div>
+
 <div class="on-diagram--i2c on-diagram__connector" markdown>
 <span class="on-diagram__connector-rule"></span>
 <span class="on-diagram__connector-label">I2C</span>
@@ -189,6 +156,47 @@ skin (BLE and inductive charging); arrows show data or power direction. See
 including the two IPG hardware generations and their different channel
 counts.
 -->
+
+</div>
+
+<div class="on-section" markdown>
+
+## How to work with OpenNerve
+
+<div class="on-cols" markdown>
+
+<div class="on-col" markdown>
+<div class="on-col__heading">Learn about OpenNerve</div>
+
+Learn more about OpenNerve and explore the components and documentation.
+
+- [What is OpenNerve?](start/overview.md)
+- [Component overview](components/index.md)
+- [IPG specifications](components/ipg.md)
+
+</div>
+
+<div class="on-col" markdown>
+<div class="on-col__heading">Use OpenNerve Components</div>
+
+Contact us for development boards and hardware collaboration, or create your own system using our open-source files.
+
+- [Get a development board](components/dev-board.md)
+- [Contact us for collaborations](mailto:carss@usc.edu)
+- [Clone a repository](https://github.com/CARSSCenter)
+
+</div>
+
+<div class="on-col" markdown>
+<div class="on-col__heading">Join our Community</div>
+
+Contribute to OpenNerve, get technical support, and make neuroscience better. Hardware, firmware, software, and documentation all take contributions.
+
+- [How to contribute](contribute/index.md)
+
+</div>
+
+</div>
 
 </div>
 
@@ -300,7 +308,7 @@ assessed," not "zero." See the
 <div markdown>
 
 A genuine OpenNerve PCBA in a frame enabling USB-C power
-and control. Breakouts on all 16 feedthrough contacts for easy lab use, and
+and control, as well as built-in BLE communication for easy experimental setup. Breakouts on all 16 feedthrough contacts for easy lab use, and
 JTAG/SWD headers for flashing and debugging. Real
 hardware for firmware, software, and lead development, or for small-animal
 and acute large-animal studies.
@@ -316,7 +324,7 @@ and acute large-animal studies.
 <div class="on-hero__frame" markdown>
 ![Photograph of a green OpenNerve development board PCBA in its manufacturing frame, showing the labeled CH1–CH16 breakout header, a USB-C connector, and BLE/MCU JTAG and SWD header pins](images/dev-board.jpg){: .on-hero__photo }
 
-OpenNerve development board (Gen1) during an acute large animal study.
+OpenNerve Gen2 development board in frame, with header pins for stimulation and sensing channels, USB-C power and BLE or USB-C communication, and JTAG pins for debugging.
 {: .on-hero__caption }
 
 </div>
