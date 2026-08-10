@@ -71,7 +71,7 @@ than a published repo file. It is recorded here, marked accordingly:
     The list below comes from an internal document, not a file in the IPG
     repo. Treat it as accurate but currently unverifiable by a third party.
     Publishing an equivalent file upstream (e.g. `Docs/Dev-Board.md`) would
-    resolve this — see the open flag in `CLAUDE.md` §9.
+    resolve this.
 
 - 2 mm banana connectors for each of the 16 feedthrough contacts, plus
   enclosure ground

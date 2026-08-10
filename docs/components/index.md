@@ -5,7 +5,7 @@ title: Components — overview & maturity
 # Components: overview and maturity
 
 !!! warning "Levels not yet assigned"
-    Every cell below is unfilled. Per `CLAUDE.md` §6, an unfilled cell is
+    Every cell below is unfilled. An unfilled cell is
     better than a wrong one — do not treat a blank as "low" or "zero."
     Levels are assigned by project maintainers and must be recorded before
     this site is treated as authoritative.

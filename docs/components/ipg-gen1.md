@@ -18,7 +18,7 @@ tracked separately below.
 !!! warning "Illustrative maturity values — not assigned"
     The badges below show placeholder levels so the page layout can be reviewed.
     **These are not real assessments.** Actual levels are assigned by project
-    maintainers per `CLAUDE.md` §6 and have not been set for this revision. Treat
+    maintainers and have not been set for this revision. Treat
     every filled-in level on this page as a mockup, not a claim.
 
 ## Maturity
@@ -182,7 +182,7 @@ branch — click a title to expand it:
 </div>
 </details>
 
-Two things to be precise about, per `CLAUDE.md` §3:
+Two things to be precise about:
 
 - **These are protocols, not reports.** A protocol is a test plan; under
   21 CFR 820.30 it documents intended verification activity, not a completed
@@ -192,8 +192,8 @@ Two things to be precise about, per `CLAUDE.md` §3:
   the internal program codename, and the Gen1 Altium project is literally named
   `HORNET-1-IPG` — a stronger textual link to Gen1 than Gen2 has. Still, no
   filename or document explicitly says "Gen1," so this page treats the link as
-  suggestive, not confirmed, per `CLAUDE.md` §5 (maturity binds to a specific
-  revision — a plausible association isn't the same as a stated one).
+  suggestive, not confirmed — maturity binds to a specific
+  revision, and a plausible association isn't the same as a stated one.
 
 Additional documents in `Docs/`, listed as they appear in the repo — acronyms are
 **not** expanded here because their expansions aren't stated anywhere upstream:

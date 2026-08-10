@@ -182,7 +182,7 @@ branch — click a title to expand it:
 </div>
 </details>
 
-Two things to be precise about, per `CLAUDE.md` §3:
+Two things to be precise about:
 
 - **These are protocols, not reports.** A protocol is a test plan; under
   21 CFR 820.30 it documents intended verification activity, not a completed
@@ -194,8 +194,8 @@ Two things to be precise about, per `CLAUDE.md` §3:
   specifically — but nothing in the filenames or repo confirms that either
   way. Until a maintainer resolves this, the Gen1 and Gen2 pages cannot each
   claim these protocols as their own without over-stating what's verified —
-  which is exactly the failure mode `CLAUDE.md` §5 (maturity binds to a
-  specific revision) exists to prevent.
+  which is exactly the failure mode this site's maturity policy (maturity
+  binds to a specific revision) exists to prevent.
 
 Additional documents in `Docs/`, listed as they appear in the repo — acronyms are
 **not** expanded here because their expansions aren't stated anywhere upstream:

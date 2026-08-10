@@ -19,7 +19,7 @@ hardware revisions.
 
 ## Terminology
 
-This site uses regulatory vocabulary precisely, per `CLAUDE.md` §3:
+This site uses regulatory vocabulary precisely:
 
 - **GLP** (Good Laboratory Practice) governs the conduct of preclinical
   studies — not manufacturing.

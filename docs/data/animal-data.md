@@ -65,5 +65,5 @@ specific version/revision — not downloaded into this repo. That keeps this
 page from silently going stale if a dataset is revised, at the cost of this
 page needing network access to SPARC's asset host to render the images
 (consistent with how the PDF viewer already trades a commit-pin for
-freshness on other pages — see `CLAUDE.md` §7).
+freshness on other pages).
 -->

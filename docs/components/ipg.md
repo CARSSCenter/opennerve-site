@@ -7,7 +7,7 @@ title: Implantable Pulse Generator
 **Repo:** [CARSSCenter/OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator)
 **Applies to revision:** this page is revision-independent — maturity, evidence,
 and BOM/fab claims are made per-revision on the [Gen2 PCBA](ipg-gen2.md) and
-[Gen1 PCBA](ipg-gen1.md) pages, not here (`CLAUDE.md` §5).
+[Gen1 PCBA](ipg-gen1.md) pages, not here.
 **Last reviewed:** not yet reviewed
 
 !!! danger "Not approved for human use"

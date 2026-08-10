@@ -30,8 +30,8 @@ resolving it unilaterally.
 - Who has the domain expertise and authority to approve a design change per
   component (electrical vs. mechanical vs. materials/process)? Is this
   per-institution (USC / Med-Ally / Medipace) or a cross-consortium review?
-- Per `CLAUDE.md` §5, "a design change resets evidence claims to the last
-  re-verified revision." Who is responsible for re-verifying evidence after
+- Per this site's maturity policy, "a design change resets evidence claims to
+  the last re-verified revision." Who is responsible for re-verifying evidence after
   a hardware PR merges, and what's the minimum bar before the new revision
   can carry any Evidence (E) level at all?
 
@@ -42,7 +42,7 @@ resolving it unilaterally.
   drawings, BOM, process and test procedures")? Is there a checklist, or does
   a maintainer judge case by case?
 - Does a hardware PR need to state which hardware revision it targets and
-  update `CLAUDE.md` §6, or is that maintained separately?
+  update the component maturity table, or is that maintained separately?
 
 ## Licensing
 
