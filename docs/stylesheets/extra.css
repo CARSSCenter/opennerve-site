@@ -1009,10 +1009,39 @@
  * plain link, and this must not spread to same-shaped pages under other
  * tabs (e.g. About's own leaf pages), which this selector already can't
  * reach since none of them share these URLs.
+ *
+ * Bring your own lead joined this list 2026-08-11, same treatment, same
+ * reasoning (flat leaf page under Hardware, no children of its own yet).
  */
 .md-nav__link[href$="dev-board/"],
 .md-nav__link[href$="standard-leads/"],
-.md-nav__link[href$="parylene-cuff/"] {
+.md-nav__link[href$="parylene-cuff/"],
+.md-nav__link[href$="byo-lead/"] {
   color: var(--on-accent);
   font-weight: 700;
+}
+
+/*
+ * Platform architecture (start/architecture.md), hidden from navigation
+ * 2026-08-11 at the site owner's request, without deleting the page or
+ * pulling it out of mkdocs.yml's nav: list. Staying in nav: matters —
+ * removing the entry instead trips `validation.nav.omitted_files: warn`
+ * (an orphaned-page check this file's own working conventions rely on
+ * elsewhere) and fails `mkdocs build --strict` outright. CSS-hiding the
+ * rendered link is a menu-only hide: the page still builds, is still
+ * reachable by direct URL or search, and still appears in the prev/next
+ * footer strip on adjacent About pages (out of scope — the ask was the
+ * menu bar specifically).
+ *
+ * Two places render a link to this page and need hiding independently,
+ * same as the accent-color rule above: the left sidebar / mobile drawer
+ * (`.md-nav__item`, hidden here rather than just its `<a>` so no empty
+ * bullet is left behind) and nav-menu.js's header-tab dropdown, which
+ * builds its own `<li class="on-navmenu__link">`-wrapping markup from a
+ * DOM snapshot taken at page load — CSS on the original sidebar link has
+ * no effect on it, so it needs its own selector.
+ */
+.md-nav__item:has(> .md-nav__link[href$="architecture/"]),
+.on-navmenu__list li:has(> .on-navmenu__link[href$="architecture/"]) {
+  display: none;
 }

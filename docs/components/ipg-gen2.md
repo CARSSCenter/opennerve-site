@@ -70,6 +70,19 @@ The enclosure is shared across both PCB revisions and versioned independently
 [`8383, 12mm IPG, Rev 0.7.STEP`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Enclosure/8383%2C%2012mm%20IPG%2C%20Rev%200.7.STEP){ target="_blank" },
 [design file set PDF](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Enclosure/Nest%201%20-%20IPG%20-%20Design%20File%20Set.pdf){ target="_blank" }.
 
+## Documentation
+
+### Gen2 PCBA design files
+
+The schematic and layout PDF in `Gen2 PCBA/`, embedded below:
+
+<details class="on-pdf-details" markdown>
+<summary>Schematic + layout</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen2%20PCBA/IPG-schematic-layout.PDF" data-pdf-title="IPG schematic + layout"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen2%20PCBA/IPG-schematic-layout.PDF">Open directly &#8599;</a>
+</div>
+</details>
 
 ## Firmware Design Documentation
 

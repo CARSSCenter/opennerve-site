@@ -63,7 +63,44 @@ The enclosure is shared across both PCB revisions and versioned independently
 [`8383, 12mm IPG, Rev 0.7.STEP`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Enclosure/8383%2C%2012mm%20IPG%2C%20Rev%200.7.STEP){ target="_blank" },
 [design file set PDF](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Enclosure/Nest%201%20-%20IPG%20-%20Design%20File%20Set.pdf){ target="_blank" }.
 
+## Documentation
 
+### Gen1 PCBA design files
+
+The four PDFs in `Gen1 PCBA/` covering schematics, layout, and assembly/fab
+drawings, embedded below — click a title to expand it:
+
+<details class="on-pdf-details" markdown>
+<summary>Schematics</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20schematics.PDF" data-pdf-title="IPG-V1 schematics"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20schematics.PDF">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Layout</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20layout.PDF" data-pdf-title="IPG-V1 layout"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20layout.PDF">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Assembly drawing</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20assembly.PDF" data-pdf-title="IPG-V1 assembly"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20assembly.PDF">Open directly &#8599;</a>
+</div>
+</details>
+
+<details class="on-pdf-details" markdown>
+<summary>Fabrication drawing</summary>
+<div class="on-pdf" markdown>
+<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20fabrication.PDF" data-pdf-title="IPG-V1 fabrication"></div>
+<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Gen1%20PCBA/IPG-V1%20fabrication.PDF">Open directly &#8599;</a>
+</div>
+</details>
 
 ## Firmware and software
 
