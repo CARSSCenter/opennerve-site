@@ -5,28 +5,40 @@ title: Sub-mm Parylene Cuff
 # Sub-mm Parylene Cuff Electrode
 
 **Repo:** [CARSSCenter/Sub-mm-Parylene-Cuff-Electrode](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode)
-**Applies to revision:** not yet assigned (repo currently tracks "Rev 1"/"Rev 2" documents individually — see below)
-**Last reviewed:** not yet reviewed
 
 !!! danger "Not approved for human use"
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
-## What it is
+## About
 
-A nerve cuff for sub-millimeter diameter branch nerves, fabricated from
+A nerve cuff for sub-millimeter diameter branch nerves, microfabricated from
 thin-film Parylene C with platinum electrodes and contacts, using a unique
 three-dimensional geometry for surgical placement. Manufactured from
 thin-film Parylene C and platinum, then thermoformed into shape.
 ([source](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode/blob/main/README.md))
 
+## Maturity
+
+<div class="on-maturity" markdown>
+<div class="on-badge on-badge--illustrative" markdown>
+<span class="on-badge__axis">Evidence</span>
+<span class="on-badge__level">E3</span>
+<span class="on-badge__label">Chronic in vivo</span>
+</div>
+<div class="on-badge on-badge--illustrative" markdown>
+<span class="on-badge__axis">Manufacturing Readiness</span>
+<span class="on-badge__level">M1</span>
+<span class="on-badge__label">Lab-reproducible</span>
+</div>
+</div>
+
+See [Maturity level definitions](../regulatory/maturity.md).
+
+
 ## Supporting documents in the repo
 
-These exist in the repo today; this page does not yet summarize their
-content; treat each as a primary source rather than relying on this
-description. Each viewer below fetches its PDF live from the repo's default
-branch, so upstream edits appear immediately with no rebuild — but also with
-no commit pin the way synced markdown pages get.
+See below for documentation pulled from the OpenNerve repository describing fabrication protocols, design rationale, and benchtop testing.
 
 <div class="on-pdf" markdown>
 <div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode/main/Design%20Selection%20Summary%20(Rev%201_updated).pdf" data-pdf-title="Design Selection Summary (Rev 1, updated)"></div>
@@ -58,17 +70,4 @@ no commit pin the way synced markdown pages get.
 <a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode/main/Lifetime%20Testing%20Protocol%20(Rev%201).pdf">Lifetime Testing Protocol (Rev 1) — open directly &#8599;</a>
 </div>
 
-## Maturity
 
-| Axis | Level | Notes |
-|---|---|---|
-| Documentation (D) | ? | Not yet assigned by maintainers |
-| Evidence (E) | ? | Not yet assigned by maintainers |
-| Manufacturing readiness (M) | ? | Not yet assigned by maintainers |
-| Availability | ? | Not yet assigned |
-
-See [Maturity level definitions](../regulatory/maturity.md).
-
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are
-    not regulatory clearance and not a safety endorsement.

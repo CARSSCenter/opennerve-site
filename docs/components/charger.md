@@ -12,9 +12,9 @@ title: Charger
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
-## What it is
+## About
 
-A wireless charger that inductively charges the OpenNerve IPG at 300 kHz.
+A wireless charger that inductively charges the OpenNerve IPG.
 Firmware runs a state machine (`INITIALIZATION` → `WAIT` → `SCAN` →
 `SLOW_CHARGE_AND_SCAN`/`CHARGE`) with front-panel buttons for scan, MCU reset,
 and DFU (USB-C firmware update) mode, and LED indicators for charge state.
@@ -22,21 +22,25 @@ Charging includes thermal protection: it stops automatically if the IPG
 reports a temperature at or above 41 °C.
 ([source](https://github.com/CARSSCenter/OpenNerve-Charger/blob/main/README.md))
 
-## Documentation synced from the upstream repo
+## Firmware details and documentation
 
 - [Firmware report](charger/firmware-report.md)
 
 ## Maturity
 
-| Axis | Level | Notes |
-|---|---|---|
-| Documentation (D) | ? | Not yet assigned by maintainers |
-| Evidence (E) | ? | Not yet assigned by maintainers |
-| Manufacturing readiness (M) | ? | Not yet assigned by maintainers |
-| Availability | ? | Not yet assigned |
+<div class="on-maturity" markdown>
+<div class="on-badge on-badge--illustrative" markdown>
+<span class="on-badge__axis">Evidence</span>
+<span class="on-badge__level">E1</span>
+<span class="on-badge__label">Bench tested</span>
+</div>
+<div class="on-badge on-badge--illustrative" markdown>
+<span class="on-badge__axis">Manufacturing Readiness</span>
+<span class="on-badge__level">M2</span>
+<span class="on-badge__label">Manufacturable using PCBA suppliers and 3D printing</span>
+</div>
+</div>
 
 See [Maturity level definitions](../regulatory/maturity.md).
 
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are
-    not regulatory clearance and not a safety endorsement.
+

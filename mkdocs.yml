@@ -12,8 +12,8 @@ repo_url: https://github.com/axbaldwin1/opennerve-site
 edit_uri: edit/main/docs/
 
 copyright: >-
-  Content licensed CC-BY-4.0 unless noted otherwise. See CLAUDE.md §9 —
-  licensing is under active review and may change on a repo-by-repo basis.
+  Content licensed CC-BY-4.0 unless noted otherwise. Licensing is under
+  active review and may change on a repo-by-repo basis.
 
 # docs/images/CREDITS.md documents image provenance for maintainers (CLAUDE.md
 # §8) — not a published page. Excluding it here keeps it out of the built

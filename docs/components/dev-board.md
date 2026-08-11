@@ -5,10 +5,7 @@ title: Development board
 # OpenNerve development board
 
 **Repo:** [CARSSCenter/OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator){ target="_blank" } — same hardware and firmware as the [Gen2 PCBA](ipg-gen2.md)
-**Applies to revision:** Gen2 PCBA. Older internal documents refer to this same
-board as "Gen1.5" — the project settled on "Gen2" as the external name; no
-hardware difference is implied by the different names.
-**Last reviewed:** not yet reviewed by a maintainer.
+
 
 !!! danger "Not approved for human use"
     Nothing described on this page has regulatory clearance for human use. See
@@ -29,8 +26,7 @@ different, only what surrounds them.
 
 ![Photograph of a green OpenNerve development board PCBA in its manufacturing frame, showing the labeled CH1–CH16 breakout header, a USB-C connector, and BLE/MCU JTAG and SWD header pins](../images/dev-board.jpg)
 
-*HORNET-1-IPG development board, Rev A Ver 1.4. Illustrates the frame and
-connector layout; boards currently ship as the Gen2 PCBA.*
+*Gen2 dev board, with headers for stimulation, recording, and I2C communication as well as USB-C for power and communication.*
 
 ## What you can do with it
 
@@ -39,11 +35,11 @@ documentation already on this site — the development board is simply the
 form factor that gets you access to it on a bench:
 
 - **Stimulation and impedance measurement** — set square-wave (to 1200 Hz) or
-  low-frequency sine-wave stimulation parameters and read channel impedance
+  low-frequency sine-wave (1-15 Hz) stimulation parameters and read channel impedance
   from the Windows control app. See the synced
   [Getting started guide](ipg/getting-started.md).
-- **Biosignal recording** — four configurable analog front ends (AFEs) for
-  ECG, EMG, and eCAP/ENG recording; filter, gain, and sampling-rate figures
+- **Biosignal recording** — two of the four configurable analog front ends (AFEs) are exposed as header pins for easy
+  ECG, EMG, or eCAP/ENG recording; filter, gain, and sampling-rate figures
   for each are in the [Getting started guide](ipg/getting-started.md#sensing).
 - **Firmware development** — flash the STM32 MCU firmware or the shared
   nRF52810 BLE firmware directly over JTAG/SWD. See the
@@ -61,47 +57,11 @@ form factor that gets you access to it on a bench:
   motion-sensing lead today, and is open to other digital sensors under
   development. See [Standard Leads](standard-leads.md).
 
-## What the frame adds
 
-The frame itself — the parts that only exist on the development board, not on
-an implantable unit — is described in an internal project write-up rather
-than a published repo file. It is recorded here, marked accordingly:
-
-!!! warning "Not yet linked to a public source"
-    The list below comes from an internal document, not a file in the IPG
-    repo. Treat it as accurate but currently unverifiable by a third party.
-    Publishing an equivalent file upstream (e.g. `Docs/Dev-Board.md`) would
-    resolve this.
-
-- 2 mm banana connectors for each of the 16 feedthrough contacts, plus
-  enclosure ground
-- JTAG, SWD, and serial headers for both the main and BLE microcontrollers
-- Power and control over USB-C, with no battery required
-- Test points for verifying and troubleshooting PCBA functionality
-- Connectors for a BLE antenna, batteries, and an inductive receive coil —
-  each supplied separately from the board itself
-
-## Maturity
-
-| Axis | Level | Notes |
-|---|---|---|
-| Documentation (D) | ? | Not yet assigned by maintainers |
-| Evidence (E) | ? | Not yet assigned by maintainers |
-| Manufacturing readiness (M) | ? | Not yet assigned by maintainers |
-| Availability | Purchasable — contact the consortium | See [How to get one](#how-to-get-one) |
-
-See [Maturity level definitions](../regulatory/maturity.md).
-
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are
-    not regulatory clearance and not a safety endorsement.
 
 ## How to get one
 
-Development boards are provided directly by the consortium rather than
-through an online store. Contact **carss@usc.edu** to ask about availability
-— the same address used for the firmware encryption key exchange described
-on the [IPG overview page](ipg.md#software).
+Development boards can be manufactured using the open source PCBA files available in the repository, or procured directly from OpenNerve (contact **Open.Nerve@usc.edu** to ask about availability).
 
 ## Documentation
 

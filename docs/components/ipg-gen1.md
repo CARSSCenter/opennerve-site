@@ -5,63 +5,32 @@ title: IPG — Gen1 PCBA
 # Implantable Pulse Generator — Gen1 PCBA
 
 **Repo:** [CARSSCenter/OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator){ target="_blank" } · `Gen1 PCBA/` and `Docs/`
-**Applies to revision:** Gen1 PCBA ("HORNET-1-IPG" in the Altium project name). No
-further hardware revision or version number is published upstream for the PCB
-itself — the only versioned artifact touching this board is the enclosure,
-tracked separately below.
-**Last reviewed:** not yet reviewed by a maintainer.
+
 
 !!! danger "Not approved for human use"
     Nothing described on this page has regulatory clearance for human use. See
     [Regulatory status and disclaimers](../regulatory/status.md).
 
-!!! warning "Illustrative maturity values — not assigned"
-    The badges below show placeholder levels so the page layout can be reviewed.
-    **These are not real assessments.** Actual levels are assigned by project
-    maintainers and have not been set for this revision. Treat
-    every filled-in level on this page as a mockup, not a claim.
+
 
 ## Maturity
 
 <div class="on-maturity" markdown>
 <div class="on-badge on-badge--illustrative" markdown>
-<span class="on-badge__axis">Documentation</span>
-<span class="on-badge__level">D2</span>
-<span class="on-badge__label">Reproducible — illustrative</span>
-</div>
-<div class="on-badge on-badge--illustrative" markdown>
 <span class="on-badge__axis">Evidence</span>
-<span class="on-badge__level">E1</span>
-<span class="on-badge__label">Bench — illustrative</span>
+<span class="on-badge__level">E3</span>
+<span class="on-badge__label">Acute in vivo</span>
 </div>
 <div class="on-badge on-badge--illustrative" markdown>
 <span class="on-badge__axis">Manufacturing</span>
-<span class="on-badge__level">M1</span>
-<span class="on-badge__label">Pilot — illustrative</span>
+<span class="on-badge__level">M2</span>
+<span class="on-badge__label">Manufacturable by most PCBA vendors</span>
 </div>
 </div>
 
-<div class="on-availability on-availability--illustrative" markdown>
-<span class="on-availability__label">Availability</span>
-Files only — illustrative, not assigned
-</div>
+See [Maturity level definitions](../regulatory/maturity.md) for more information.
 
-See [Maturity level definitions](../regulatory/maturity.md) for what each level
-means. Rationale for the illustrative values above is in
-[Design outputs and BOM/fab notes](#design-outputs-and-bomfab-notes) and
-[Testing and regulatory status](#testing-and-regulatory-status) below — D2 rather
-than D1 because, unlike Gen2, this revision has a separate assembly drawing,
-fabrication drawing, and test-point document (still short of D3, see below); E1
-for the same reason as Gen2 — nothing in the repo documents a completed bench,
-acute, or chronic study tied specifically to this revision (see
-[Evidence](#evidence)); M1 for the same contract-manufacturer/no-named-GMP-supplier
-reason as Gen2.
-
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are not
-    regulatory clearance and not a safety endorsement.
-
-## What this revision is
+## About Gen1 PCBA
 
 The Gen1 PCBA has eight pseudo-independent monopolar stimulation channels
 (configurable as four bipolar channels), two differential biosignal amplifiers for
@@ -94,184 +63,7 @@ The enclosure is shared across both PCB revisions and versioned independently
 [`8383, 12mm IPG, Rev 0.7.STEP`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Enclosure/8383%2C%2012mm%20IPG%2C%20Rev%200.7.STEP){ target="_blank" },
 [design file set PDF](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Enclosure/Nest%201%20-%20IPG%20-%20Design%20File%20Set.pdf){ target="_blank" }.
 
-Against the reproducibility bar in
-[Maturity level definitions](../regulatory/maturity.md) (D2 = complete package:
-schematics, layout, fab drawings, BOM, process and test procedures), this
-revision's package is more complete than Gen2's — it has separate assembly,
-fabrication, and test-point documents that Gen2's `Docs/` tree does not.
 
-**What's still missing, relative to D3** ("D2 plus versioned, tagged, DOI'd, with
-changelog" — see [Testing and regulatory status](#testing-and-regulatory-status)
-below for why D3 is currently unreachable):
-
-- Editable source is **Altium Designer**-only, a closed-source tool. The
-  [`Gen1 PCBA/README.md`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/Gen1%20PCBA/README.md){ target="_blank" }
-  itself recommends KiCad for outside developers and links a third-party
-  Altium→KiCad converter, explicitly flagged "use at your own risk." No converted
-  KiCad source exists in this repo. See the open questions on
-  [Hardware contributions](../contribute/hardware.md).
-- The BOM is `.xlsx`/`.BomDoc`, not a plain-text/versioned format.
-
-## Testing and regulatory status
-
-`Docs/Testing-Protocols/` contains eight PDFs, each named "Hornet IPG … DVT
-Protocol". Each viewer below fetches its PDF live from the repo's default
-branch — click a title to expand it:
-
-<details class="on-pdf-details" markdown>
-<summary>Accelerated aging DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Accelerated%20Aging%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Accelerated Aging DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Accelerated%20Aging%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Drop &amp; impact DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Drop%20%26%20Impact%20%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Drop & Impact DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Drop%20%26%20Impact%20%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Heating during normal operation DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Heating%20Test%20During%20Normal%20Operation%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Heating Test During Normal Operation DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Heating%20Test%20During%20Normal%20Operation%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Hermeticity DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Hermeticity%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Hermeticity DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Hermeticity%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Minor mechanical shock DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Minor%20Mechanical%20Shock%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Minor Mechanical Shock DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Minor%20Mechanical%20Shock%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>RGA DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20RGA%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG RGA DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20RGA%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Shear force DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Shear%20Force%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Shear Force DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Shear%20Force%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Vibration mechanical force DVT protocol</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Vibration%20Mechanical%20Force%20DVT%20Protocol.pdf" data-pdf-title="Hornet IPG Vibration Mechanical Force DVT Protocol"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Testing-Protocols/Hornet%20IPG%20Vibration%20Mechanical%20Force%20DVT%20Protocol.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-Two things to be precise about:
-
-- **These are protocols, not reports.** A protocol is a test plan; under
-  21 CFR 820.30 it documents intended verification activity, not a completed
-  verification result. No result/report document for any of these eight tests
-  is present in the repo.
-- **These plausibly target this revision, but it's not stated.** "Hornet" is
-  the internal program codename, and the Gen1 Altium project is literally named
-  `HORNET-1-IPG` — a stronger textual link to Gen1 than Gen2 has. Still, no
-  filename or document explicitly says "Gen1," so this page treats the link as
-  suggestive, not confirmed — maturity binds to a specific
-  revision, and a plausible association isn't the same as a stated one.
-
-Additional documents in `Docs/`, listed as they appear in the repo — acronyms are
-**not** expanded here because their expansions aren't stated anywhere upstream:
-
-<details class="on-pdf-details" markdown>
-<summary><code>CAR-206 IPG SAD.pdf</code></summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-206%20IPG%20SAD.pdf" data-pdf-title="CAR-206 IPG SAD"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-206%20IPG%20SAD.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary><code>CAR-207 IPG SDS.pdf</code></summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-207%20IPG%20SDS.pdf" data-pdf-title="CAR-207 IPG SDS"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-207%20IPG%20SDS.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary><code>CAR-211-VVT.pdf</code></summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-211-VVT.pdf" data-pdf-title="CAR-211-VVT"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/Firmware-Design-History-Files/CAR-211-VVT.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-`Docs/DHF-Files/`:
-
-<details class="on-pdf-details" markdown>
-<summary>Design Output Review</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Design%20Output%20Review.pdf" data-pdf-title="Nest 1 - IPG and Charger - Design Output Review"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Design%20Output%20Review.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Mechanical Specifications</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Mechanical%20Specifications.pdf" data-pdf-title="Nest 1 - IPG and Charger - Mechanical Specifications"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20-%20Mechanical%20Specifications.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Test Plan</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20Test%20Plan%20.pdf" data-pdf-title="Nest 1 - IPG and Charger Test Plan"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger%20Test%20Plan%20.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-<details class="on-pdf-details" markdown>
-<summary>Mechanical Design Images</summary>
-<div class="on-pdf" markdown>
-<div class="on-pdf__embed" data-pdf-src="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger-Mechanical%20Design%20Images.pdf" data-pdf-title="Nest 1 - IPG and Charger - Mechanical Design Images"></div>
-<a class="on-pdf__fallback" href="https://raw.githubusercontent.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/main/Docs/DHF-Files/Nest%201-IPG%20and%20Charger-Mechanical%20Design%20Images.pdf">Open directly &#8599;</a>
-</div>
-</details>
-
-The `Nest 1` naming in these documents and in the enclosure file set is the same
-naming family as the enclosure files above, and appears to be shared across the
-IPG and charger rather than IPG-only — worth confirming with whoever wrote them.
-The folder name `DHF-Files` does not by itself establish that a QMS-controlled
-Design History File exists per 21 CFR 820.30 — that's a claim only a maintainer
-with visibility into the actual quality system can confirm.
-
-**Why Documentation level D3 is currently unreachable, regardless of D2:** D3
-requires "versioned, tagged, DOI'd, with changelog." Checked directly against
-the repo (2026-07-28): **zero GitHub releases**, **one tag**
-(`archive/feature/wireless-charging` — not a version tag), and **no DOI**. The
-repo's [`CITATION.cff`](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/CITATION.cff){ target="_blank" }
-declares `version: '1.0'`, `date-released: '2025-01-01'`, but that's citation
-metadata, not a corresponding git tag or release artifact, and it isn't scoped to
-Gen1 vs. Gen2 either — so it doesn't satisfy "versioned, tagged" for this
-revision as written.
 
 ## Firmware and software
 
@@ -283,19 +75,4 @@ revision as written.
 - Control software (Windows now, Android in development) is the same across both
   revisions — see [Software](../software/windows.md).
 
-## Evidence
 
-The upstream repo's `README` states the IPG "is currently being used by a number
-of groups for acute and chronic preclinical studies, with plan to transition to
-clinical studies when ready." No group, species, study duration, protocol, or
-publication is named, and the claim is not scoped to Gen1 vs. Gen2.
-
-This is recorded here as an **unverified claim, not evidence** — it cannot support any
-Evidence (E) level above E0 until it can be linked to a specific protocol, report,
-or publication naming the revision, species, and duration involved. See
-[Animal data](../data/animal-data.md) and [Publications](../data/publications.md)
-for what is currently linkable.
-
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are not
-    regulatory clearance and not a safety endorsement.

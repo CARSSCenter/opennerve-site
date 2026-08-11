@@ -53,7 +53,7 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 </div>
 
 <div class="on-hero__ctas" markdown>
-[Meet the community](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button .md-button--primary }
+[Meet the community](https://github.com/CARSSCenter/Admin/discussions){ .md-button .md-button--primary }
 [View on GitHub](https://github.com/CARSSCenter){ .md-button }
 </div>
 
@@ -79,9 +79,11 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 ## The OpenNerve platform
 
 The core implantable pulse generator (IPG) or equivalent development board provides <strong>current-driven stimulation</strong> (square waves up to 1.2kHz, low frequency sine waves 1-15 Hz), records analog biosignals such as <strong>EMG, ECG, and eCAPs,</strong> and has <strong>digital in-body communication</strong> for advanced biosensors or networked devices. 
-Several stimulation / recording leads and digital sensors are being developed by OpenNerve, and researchers are welcome to bring their own leads and sensors — see [Bring your own lead](components/byo-lead.md) for the IPG header's connector geometry.
+Several stimulation / recording leads and digital sensors are being developed by OpenNerve, or researchers are welcome to bring their own leads ([Bring your own leads](components/byo-lead.md)).
 <strong>Bluetooth Low Energy (BLE)</strong>  allows real-time data streaming and control; a custom inductive charger allows safe recharging.
-Click on each component for documentation and open source code / engineering files.
+
+
+<span class="on-specs__item">Click on each component for documentation and open source code / engineering files.</span>
 
 <div class="on-diagram" markdown>
 
@@ -130,11 +132,11 @@ Click on each component for documentation and open source code / engineering fil
 
 <div class="on-diagram--byolc on-diagram__connector" markdown>
 <span class="on-diagram__connector-rule"></span>
-<span class="on-diagram__connector-label">Bal Seal header</span>
+<!--  <span class="on-diagram__connector-label">Bal-Seal Header</span> -->
 </div>
 
 <div class="on-diagram--byol" markdown>
-[<span class="on-diagram__node-body">Bring your own lead<span class="on-diagram__node-tag">third-party</span></span>](components/byo-lead.md){: .on-diagram__node }
+[<span class="on-diagram__node-body">Bring your own leads<span class="on-diagram__node-tag"></span></span>](components/byo-lead.md){: .on-diagram__node }
 </div>
 
 <div class="on-diagram--i2c on-diagram__connector" markdown>
@@ -193,6 +195,7 @@ Contact us for development boards and hardware collaboration, or create your own
 Contribute to OpenNerve, get technical support, and make neuroscience better. Hardware, firmware, software, and documentation all take contributions.
 
 - [How to contribute](contribute/index.md)
+- [Chat with users](https://github.com/CARSSCenter/Admin/discussions)
 
 </div>
 

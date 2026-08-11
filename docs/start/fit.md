@@ -4,21 +4,27 @@ title: Is this right for my work
 
 # Is this right for my work
 
-This page is a stub. It should give a bench researcher or translational group
-enough information to decide, without reading every component page, whether
-OpenNerve can replace a custom build for their study.
+OpenNerve was designed to support research at all stages of therapy development, from small animal exploratory studies to larger chronic animal studies to first in human. In addition, the documentation and design files released by OpenNerve are meant to serve as a reference and template for any group designing their own devices.
 
-**Not yet written.** Content should cover, at minimum:
+### Are you doing research in small animals? 
+Many OpenNerve components, from the development board to the thin-film nerve cuffs, have been used by researchers to quickly and efficiently perform electrophysiology research or test potential therapies. 
 
-- What kind of study OpenNerve is currently suited to (acute vs. chronic,
-  species, implant duration) — this depends on the evidence (E) levels once
-  they're assigned; see [component overview](../components/index.md).
-- What a group needs to supply themselves (surgical expertise, animal
-  protocols, a compatible lead if the built-in library doesn't cover their
-  target nerve).
-- What isn't available yet (e.g., the Android app is under active
-  development, not released).
-- A pointer to [Platform architecture](architecture.md) for how the pieces
-  fit together, and to each component's maturity table for specifics.
+### Are you doing large animal research? 
+OpenNerve was designed from day 1 to support chronic implantable studies. Our IPG has wireless charging and BLE communication for data streaming and stimulation settings, and is compatible with a broad library of leads (or create your own!). 
 
-This page should be written after the maturity table is filled in — a fit assessment that doesn't cite real D/E/M levels would be guessing.
+### Are you starting a startup company? 
+All of OpenNerve's design files, code, and documentation is free for commercial use, and you are welcome to build proprietary solutions on top of OpenNerve. For example, you could partner with us to quickly and cheaply perform your first large animal studies that allow you to validate your therapy, then develop a custom implant with only the features you need using OpenNerve as a starting point.
+
+### Are you looking to make the leap from animals to first in humans? 
+Right now, no group has used OpenNerve in humans. However, OpenNerve was developed with clinical translation in mind and in partnership with companies that have a track record of successfully developing IPGs for human use (Med-Ally, CoForce, and Focus). We'd love to support you through the regulatory path to first in human use.
+
+### Are you a teacher or a student group? 
+OpenNerve provides an excellent open-source platform to learn how a real medical device works. University courses have already used OpenNerve for biomedical engineering and electrical engineering education. If you're a student, consider using OpenNerve as the basis for a senior project or as part of a club or student org.
+
+**Search through OpenNerve's documentation and repositories to learn more, or reach out at [Open.Nerve@usc.edu](mailto:open.nerve@usc.edu).**
+
+!!! danger "Not approved for human use"
+    As of this writing, no components of OpenNerve have been approved for use in humans.
+    See [Regulatory status and disclaimers](../regulatory/status.md) for more information
+
+

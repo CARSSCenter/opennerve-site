@@ -4,45 +4,25 @@ title: Status and disclaimers
 
 # Regulatory status and disclaimers
 
-## Summary
+## Overview
 
-**No component of OpenNerve has regulatory clearance for human use.** Nothing
-on this site is clinical guidance, and nothing here is an offer of therapy.
-This site is written for bench researchers, translational groups, and
-contributors — not for patients or anyone seeking treatment.
-
-OpenNerve components are used today in acute and chronic preclinical
+**No component of OpenNerve has regulatory clearance for human use.** OpenNerve is under active development; OpenNerve components are used today in acute and chronic preclinical
 (animal) studies. Some components are intended to eventually support human
-studies; none has reached that point. See each component's maturity table for
-what evidence currently exists, and note that evidence does not carry across
-hardware revisions.
+studies, however none has reached that point .Nothing
+on this site is clinical guidance, and nothing here is an offer of therapy.
+This site is written for bench researchers, translational groups, educators, and
+contributors — **not for patients or anyone seeking treatment**.
 
-## Terminology
+## Disclaimer
 
-This site uses regulatory vocabulary precisely:
+The contents of this repository are subject to revision. No representation or warranty, express or implied, is provided in relation to the accuracy, correctness, completeness, or reliability of the information, opinions, or conclusions expressed in this repository.
 
-- **GLP** (Good Laboratory Practice) governs the conduct of preclinical
-  studies — not manufacturing.
-- **GMP** (Good Manufacturing Practice) governs manufacturing — not study
-  conduct.
-- **Verification** and **validation** carry the specific meanings defined in
-  21 CFR 820.30 and ISO 13485, not colloquial usage.
+The contents of this repository (the “Materials”) are experimental in nature and should be used with prudence and appropriate caution. Any use is voluntary and at your own risk.
 
-If a page on this site uses one of these terms loosely, that's a bug — flag
-it.
+The Materials are made available “as is” by USC (the University of Southern California and its trustees, directors, officers, employees, faculty, students, agents, affiliated organizations and their insurance carriers, if any), its collaborators Med-Ally LLC and Medipace Inc., and any other contributors to this repository (collectively, “Providers”). Providers expressly disclaim all warranties, express or implied, arising in connection with the Materials, or arising out of a course of performance, dealing, or trade usage, including, without limitation, any warranties of title, noninfringement, merchantability, or fitness for a particular purpose.
 
-## This page is incomplete
+Any user of the Materials agrees to forever indemnify, defend, and hold harmless Providers from and against, and to waive any and all claims against Providers for any and all claims, suits, demands, liability, loss or damage whatsoever, including attorneys' fees, whether direct or consequential, on account of any loss, injury, death or damage to any person or (including without limitation all agents and employees of Providers and all property owned by, leased to or used by either Providers) or on account of any loss or damages to business or reputations or privacy of any persons, arising in whole or in part in any way from use of the Materials or in any way connected therewith or in any way related thereto.
 
-This is a stub. It still needs:
-
-- The project's actual position on IDE/IRB status for any planned human
-  studies, if and when that exists.
-- Final legal-review language for liability and use-at-your-own-risk terms.
-  (Upstream component repos each carry their own liability disclaimer from
-  USC/Med-Ally/Medipace; this site should either link to those or carry
-  reviewed language of its own — that's a decision for the team, not this
-  draft.)
-- A link to each component's Evidence (E) citations once the maturity table
-  is filled in.
+The Materials, any related materials, and all intellectual property therein, are owned by Providers.
 
 See also [Maturity level definitions](maturity.md).

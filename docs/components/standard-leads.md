@@ -5,16 +5,14 @@ title: Standard Leads
 # Standard Leads
 
 **Repo:** [CARSSCenter/OpenNerve-Standard-Leads](https://github.com/CARSSCenter/OpenNerve-Standard-Leads)
-**Applies to revision:** not yet assigned
-**Last reviewed:** not yet reviewed
 
 !!! danger "Not approved for human use"
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
-## What it is
+## What they are
 
-A library of leads meant to interface with the OpenNerve IPG, designed to be
+A library of leads that interface with the OpenNerve IPG, designed to be
 manufacturable under GMP by Med-Ally LLC using standard manufacturing
 processes:
 
@@ -36,15 +34,17 @@ processes:
 
 ## Maturity
 
-| Axis | Level | Notes |
-|---|---|---|
-| Documentation (D) | ? | Not yet assigned by maintainers |
-| Evidence (E) | ? | Not yet assigned by maintainers |
-| Manufacturing readiness (M) | ? | Not yet assigned by maintainers |
-| Availability | ? | Not yet assigned |
+<div class="on-maturity" markdown>
+<div class="on-badge on-badge--illustrative" markdown>
+<span class="on-badge__axis">Evidence</span>
+<span class="on-badge__level">E3</span>
+<span class="on-badge__label">Chronic in vivo</span>
+</div>
+<div class="on-badge on-badge--illustrative" markdown>
+<span class="on-badge__axis">Manufacturing Readiness</span>
+<span class="on-badge__level">M3</span>
+<span class="on-badge__label">GMP-capable</span>
+</div>
+</div>
 
-See [Maturity level definitions](../regulatory/maturity.md).
 
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are
-    not regulatory clearance and not a safety endorsement.
