@@ -12,6 +12,10 @@ title: Charger
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
+![PCAD model of charger, showing inductive charging coil and PCBA.](../images/charger.jpg)
+
+*CAD model of charger, showing inductive charging coil and PCBA.*
+
 ## About
 
 A wireless charger that inductively charges the OpenNerve IPG.

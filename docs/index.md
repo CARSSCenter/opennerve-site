@@ -117,6 +117,8 @@ Several stimulation / recording leads and digital sensors are being developed by
 
 <div class="on-diagram--hub" markdown>
 [![Photograph of an assembled OpenNerve implantable pulse generator, unit 00000162](images/hero-ipg.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">IPG</span>](components/ipg.md){: .on-diagram__node .on-diagram__node--hub }
+
+[![Photograph of a green OpenNerve development board PCBA in its manufacturing frame, showing the labeled CH1–CH16 breakout header, a USB-C connector, and BLE/MCU JTAG and SWD header pins](images/dev-board.jpg){: .on-diagram__node-media } <span class="on-diagram__node-body">Development board</span>](components/dev-board.md){: .on-diagram__node .on-diagram__node--dev }
 </div>
 
 <div class="on-diagram--stim on-diagram__connector" markdown>

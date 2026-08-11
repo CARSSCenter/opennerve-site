@@ -10,6 +10,12 @@ title: Standard Leads
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
+
+![Image of standard leads with scale bar](../images/lead-standard.jpg)
+
+*Three of the standard leads manufactured by Med-Ally. Top: a 2mm diameter bipolar nerve cuff. Middle: an intramuscular EMG lead with integrated suture. Bottom: a linear array for SNS or SCS.*
+
+
 ## What they are
 
 A library of leads that interface with the OpenNerve IPG, designed to be

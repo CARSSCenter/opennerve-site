@@ -4,11 +4,11 @@ title: Components — overview & maturity
 
 # Components: overview and maturity
 
-!!! warning "Levels not yet assigned"
-    Every cell below is unfilled. An unfilled cell is
-    better than a wrong one — do not treat a blank as "low" or "zero."
-    Levels are assigned by project maintainers and must be recorded before
-    this site is treated as authoritative.
+The OpenNerve platform consists of several hardware and software components, which are listed in the table below. The core of OpenNerve is the implantable pulse generator (IPG), which itself consists of a hermetic enclosure and an internal PCBA. Two generations of the IPG's PCBA have been developed and released, and the Gen2 PCBA is available as a Development Board to aid in development and benchtop or acute / percutaneous animal research. The OpenNerve IPG is designed to be modular with a user's stimulation and measurement leads; several groups have developed leads for OpenNerve and released them as open source, and a user is welcome to develop new leads or use existing commercial leads. 
+
+!!! danger "Not approved for human use"
+    Nothing described on this page has regulatory clearance for human use.
+    See [Regulatory status and disclaimers](../regulatory/status.md).
 
 Three independent axes, always shown separately — never collapsed into one
 score, because a composite hides exactly the information this table exists to
@@ -18,14 +18,14 @@ surface. Definitions: [Maturity level definitions](../regulatory/maturity.md).
 |---|---|---|---|---|---|
 | [Implantable Pulse Generator](ipg.md) — [Gen2](ipg-gen2.md) / [Gen1](ipg-gen1.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | ? |
 | [Development board](dev-board.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | Purchasable — contact the consortium |
+| [Windows app](../software/windows.md) | [OpenNerve-Windows-App](https://github.com/CARSSCenter/OpenNerve-Windows-App) | ? | ? | ? | ? |
+| [Android app](../software/android.md) | [OpenNerve-Android-App](https://github.com/CARSSCenter/OpenNerve-Android-App) | ? | ? | ? | ? |
 | [Standard Leads](standard-leads.md) | [OpenNerve-Standard-Leads](https://github.com/CARSSCenter/OpenNerve-Standard-Leads) | ? | ? | ? | ? |
 | [Sub-mm Parylene Cuff](parylene-cuff.md) | [Sub-mm-Parylene-Cuff-Electrode](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode) | ? | ? | ? | ? |
-| [Bring your own lead](byo-lead.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | Not applicable |
 | [Charger](charger.md) | [OpenNerve-Charger](https://github.com/CARSSCenter/OpenNerve-Charger) | ? | ? | ? | ? |
 | [Mechanical Sensors](mechanical-sensors.md) | [Mechanical-Sensors](https://github.com/CARSSCenter/Mechanical-Sensors) | ? | ? | ? | ? |
 | [Chemical Sensors](chemical-sensors.md) | [Chemical-Sensors](https://github.com/CARSSCenter/Chemical-Sensors) | ? | ? | ? | ? |
-| [Windows app (ONrecorder)](../software/windows.md) | [OpenNerve-Windows-App](https://github.com/CARSSCenter/OpenNerve-Windows-App) | ? | ? | ? | ? |
-| [Android app](../software/android.md) | [OpenNerve-Android-App](https://github.com/CARSSCenter/OpenNerve-Android-App) | ? | ? | ? | ? |
+| [Bring your own lead](byo-lead.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | ? | Not applicable |
 
 Mechanical Sensors and Chemical Sensors were added to the site nav alongside
 this table.

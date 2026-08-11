@@ -18,6 +18,10 @@ three-dimensional geometry for surgical placement. Manufactured from
 thin-film Parylene C and platinum, then thermoformed into shape.
 ([source](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode/blob/main/README.md))
 
+![Photo of a Parylene C nerve cuff](../images/lead-cuff.jpg)
+
+*A sub-mm nerve cuff microfabricated from Parylene C and platinum and packaged for integration with OpenNerve IPG. Scale bar is 1 cm.*
+
 ## Maturity
 
 <div class="on-maturity" markdown>

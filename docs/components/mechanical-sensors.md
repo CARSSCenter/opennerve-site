@@ -24,6 +24,9 @@ platform:
 
 ([source](https://github.com/CARSSCenter/Mechanical-Sensors/blob/main/README.md))
 
+![Photograph of a strain sensor](../images/sensor-mechanical.jpg)
+
+*A capacitive implantable strain sensor designed for integration with OpenNerve.*
 
 ## Documentation synced from the upstream repo
 

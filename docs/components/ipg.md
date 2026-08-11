@@ -10,6 +10,10 @@ title: Implantable Pulse Generator
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
+![Exploded view of IPG](../images/IPG_Exploded_view_2.jpg)
+
+*Exploded view of IPG.*
+
 ## What it is
 
 The IPG provides current-based bipolar electrical stimulation, records

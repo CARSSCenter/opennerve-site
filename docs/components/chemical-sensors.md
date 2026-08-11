@@ -23,6 +23,9 @@ Chemical sensing leads for OpenNerve. Two sensors are described in the repo:
 
 ([source](https://github.com/CARSSCenter/Chemical-Sensors/blob/main/README.md))
 
+![Microfabricated chemical sensor](../images/sensor-chemical.jpg)
+
+*A prototype chemical sensor platform microfabricated on a Parylene C substrate.*
 
 ## Documentation synced from the upstream repo
 

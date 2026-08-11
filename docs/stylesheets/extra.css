@@ -317,7 +317,7 @@
  *     of a normal card. It's centered within its span instead, the same way
  *     the leads/sensors groups are centered within theirs.
  *
- * Grid structure: 6 columns × 4 rows, named via `grid-template-areas`
+ * Grid structure: 6 columns × 5 rows, named via `grid-template-areas`
  * (keeping the self-documenting single-source-of-truth the previous rebuild
  * introduced, instead of hand-kept `grid-column`/`grid-row` line numbers).
  * `align-items: center` applies to every item, including `--hub` (spans
@@ -352,14 +352,14 @@
  *
  * Markup order is deliberately the mobile reading order (outside-the-body
  * region → software → BLE → charger → inductive → skin → inside-the-body
- * region → IPG → stim/record → leads → I2C → sensors), not the desktop
- * visual order — grid placement is by named area regardless of source
- * order, but the mobile fallback below is a plain flex column with no
- * `order` property, so DOM order is what visitors tab through and what a
- * screen reader encounters. One resulting, accepted tradeoff: on desktop,
- * keyboard tab order reaches the charger link before the IPG link, because
- * the hub spans two grid rows and DOM order is optimized for the mobile
- * stack instead.
+ * region → IPG [+ development board, nested in the same cell] → stim/record
+ * → leads → I2C → sensors), not the desktop visual order — grid placement is
+ * by named area regardless of source order, but the mobile fallback below is
+ * a plain flex column with no `order` property, so DOM order is what
+ * visitors tab through and what a screen reader encounters. One resulting,
+ * accepted tradeoff: on desktop, keyboard tab order reaches the charger link
+ * before the IPG link, because the hub spans two grid rows and DOM order is
+ * optimized for the mobile stack instead.
  */
 
 .on-diagram {
@@ -376,7 +376,18 @@
    * a fourth connector that would need its own alignment special-case.
    * `skin` and `hub` both extend their span by one row to match; the
    * trailing empty row is unchanged and still exists only so `skin`'s rule
-   * can run past the last content row. */
+   * can run past the last content row.
+   *
+   * 2026-08-11: the development board box was added inside the `hub` cell
+   * itself (a second stacked node under the IPG photo, see `.on-diagram--hub`
+   * below) rather than as its own grid row. A standalone row was tried first
+   * and rejected: since a CSS grid row's height is shared by every column in
+   * it, the development-board row only started once the *tallest* column
+   * finished (the leads/sensors photo columns spanning rows 2-4), leaving it
+   * visually stranded well below the IPG box instead of directly beneath it.
+   * Nesting it in the hub cell ties its position to the IPG photo's own
+   * height regardless of what the flanking columns are doing. No new grid
+   * row or area was needed for it. */
   grid-template-areas:
     "lab-out lab-out .    lab-in lab-in  lab-in "
     "sw      ble      skin hub    stim    leads  "
@@ -508,6 +519,14 @@
   aspect-ratio: 992 / 1000;
 }
 
+/* The dev board photo (dev-board.jpg, 1553×1255 — see docs/images/CREDITS.md)
+ * gets the same own-ratio treatment as the hub's, for the same reason: it's
+ * a full product shot, not a cropped detail, so the shared 5/2 banner crop
+ * would slice off the top and bottom of the board. */
+.on-diagram__node--dev .on-diagram__node-media {
+  aspect-ratio: 1553 / 1255;
+}
+
 .on-diagram__node-body {
   display: block;
   padding: 0.55rem 0.75rem;
@@ -534,7 +553,7 @@
   margin-top: 0.15rem;
 }
 
-/* .on-diagram--hub and .on-diagram--chg wrap a single node each (unlike the
+/* .on-diagram--chg and .on-diagram--byol wrap a single node each (unlike the
  * group areas above, which hold two) — the wrapper itself must be the grid
  * item, not the <a> inside it: markdown wraps a bare link that isn't already
  * inside a block-level <div> in its own <p>, and `grid-area` only has any
@@ -545,11 +564,28 @@
  * — the same job `.on-diagram__group`'s `align-items: center` does for the
  * two-node groups. Zero margin/padding on both, deliberately — see the
  * connector-rule comment above for why that matters. */
-.on-diagram--hub,
 .on-diagram--chg,
 .on-diagram--byol {
   display: flex;
   justify-content: center;
+}
+
+/* .on-diagram--hub holds two stacked nodes (IPG, then the development
+ * board directly beneath it, added 2026-08-11) rather than the single node
+ * every other wrapper above holds — so it needs `flex-direction: column`
+ * plus `align-items: center` (which centers each child horizontally, the
+ * cross axis once the main axis is vertical) instead of the single-child
+ * `justify-content: center` pattern above. `gap` separates the two cards.
+ * The development board deliberately sits inside the hub's own cell instead
+ * of getting its own grid row: a standalone row's height is shared across
+ * every column, so it only started once the tallest column (leads/sensors)
+ * finished, landing well below the IPG box instead of directly under it —
+ * see the grid-template-areas comment above `.on-diagram`. */
+.on-diagram--hub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 /* The skin boundary: a dashed vertical rule (`::before`, flex-grow so it
@@ -772,10 +808,11 @@
   /* No drawn grid connectors at this width — a ruled line at 5-6rem of
    * available width reads as noise, not signal. The diagram becomes a plain
    * top-to-bottom flex stack in DOM order (outside-the-body label, software,
-   * BLE, charger, inductive, skin, inside-the-body label, IPG hub,
-   * stim/record, leads, I2C, sensors) — already the correct reading order,
-   * per the markup-order comment above `.on-diagram`. No `order` property is
-   * used here, so visual order and tab/reading order always match. */
+   * BLE, charger, inductive, skin, inside-the-body label, IPG hub [with the
+   * development board stacked directly beneath it], stim/record, leads,
+   * I2C, sensors) — already the correct reading order, per the markup-order
+   * comment above `.on-diagram`. No `order` property is used here, so
+   * visual order and tab/reading order always match. */
   .on-diagram {
     display: flex;
     flex-direction: column;
