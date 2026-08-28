@@ -9,21 +9,11 @@ attached to the relevant page rather than a generic forum tab.
 
 <div class="grid" markdown>
 
-[Ask a technical question](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=q-a){ .md-button }
-[Propose a design change](https://github.com/axbaldwin1/opennerve-site/discussions/new?category=design-proposals){ .md-button }
+[Join the discussion](https://github.com/CARSSCenter/OpenNerve-Community/discussions){ .md-button }
 
 </div>
 
 <!--
-!!! warning "Provisional links"
-    These buttons point at `axbaldwin1/opennerve-site` — the repo this site
-    currently builds from during the draft phase. Confirm before launch:
-    which repo actually hosts Discussions (this one, or a
-    `CARSSCenter`-org repo once the project moves there),
-    and whether the `q-a` and `design-proposals` category slugs above have
-    actually been created — `design-proposals` in particular is a guess,
-    not yet confirmed.
-
 ## Recent conversations
 
 **Not yet built.** This section should be populated by a
@@ -32,11 +22,10 @@ the results to JSON, and renders a "Recent conversations" list here.
 
 ## Per-page discussion threads
 
-Individual pages (e.g. the
-[Sub-mm Parylene Cuff](../components/parylene-cuff.md) page) should carry an
-embedded giscus thread rather than sending readers to a separate tab. **Not
-yet wired in.** giscus needs a repo ID and category ID from
-[giscus.app](https://giscus.app), which requires Discussions to already be
-enabled on the target repo — do that first, then add the giscus theme
-override and script tag to the relevant page templates.
+As of 2026-08-28, three pages carry an embedded giscus thread rather than
+sending readers to a separate tab — Development board, Bring your own lead,
+and the Sub-mm Parylene Cuff — as a trial rather than a site-wide rollout, so
+the empty-thread cost of extending this everywhere is bounded until it's
+clear people actually use it. See CLAUDE.md §7/§9 for the trial's reasoning
+and the criteria for extending it further or rolling it back.
 -->

@@ -53,7 +53,7 @@ human use. [Full status and disclaimers →](regulatory/status.md)
 </div>
 
 <div class="on-hero__ctas" markdown>
-[Meet the community](https://github.com/CARSSCenter/Admin/discussions){ .md-button .md-button--primary }
+[Meet the community](https://github.com/CARSSCenter/OpenNerve-Community/discussions){ .md-button .md-button--primary }
 [View on GitHub](https://github.com/CARSSCenter){ .md-button }
 </div>
 
@@ -197,7 +197,7 @@ Contact us for development boards and hardware collaboration, or create your own
 Contribute to OpenNerve, get technical support, and make neuroscience better. Hardware, firmware, software, and documentation all take contributions.
 
 - [How to contribute](contribute/index.md)
-- [Chat with users](https://github.com/CARSSCenter/Admin/discussions)
+- [Chat with users](https://github.com/CARSSCenter/OpenNerve-Community/discussions)
 
 </div>
 

@@ -1,5 +1,6 @@
 ---
 title: Development board
+comments: true
 ---
 
 # OpenNerve development board

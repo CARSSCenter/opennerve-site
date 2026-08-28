@@ -31,6 +31,15 @@ hooks:
 
 theme:
   name: material
+  # overrides/partials/comments.html — the ONE custom_dir override in this
+  # repo, added 2026-08-28 for the giscus trial (CLAUDE.md §7 "Community
+  # forum repo confirmed"). Every other header/nav customization here is
+  # plain JS specifically to avoid custom_dir's maintenance-mode risk; this
+  # partial is the one designated, permanently-empty extension point
+  # Material ships for exactly this purpose, so the risk that avoidance
+  # exists for doesn't apply to it. See the file itself for the full
+  # reasoning.
+  custom_dir: overrides
   # Header goes white rather than a primary colour, and Material's Google Fonts
   # loading is disabled in favour of a self-hosted stack — both are asset-driven
   # decisions, not stylistic preference. Reasoning in CLAUDE.md §7 ("Visual identity

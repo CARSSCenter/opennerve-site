@@ -1,5 +1,6 @@
 ---
 title: Bring your own lead
+comments: true
 ---
 
 # Bring your own lead

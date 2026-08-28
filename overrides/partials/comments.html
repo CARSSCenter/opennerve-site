@@ -1,0 +1,49 @@
+{#-
+  Overrides Material's own partials/comments.html, which ships as a
+  deliberately empty stub meant to be replaced this way (see
+  material/templates/partials/comments.html in the installed package,
+  included unconditionally from partials/content.html). This is the one
+  custom_dir override in this repo — CLAUDE.md §7 has otherwise avoided
+  custom_dir three times (nav-menu.js, the PDF viewer, header-icons.js) in
+  favor of plain JS, because those cases would have overridden partials
+  containing real Material markup that can shift on a theme upgrade. This
+  partial is different: it's a designated, permanently-empty extension
+  point, so there's nothing here for an upgrade to break out from under us.
+
+  giscus (CLAUDE.md §7 "Community forum repo confirmed", 2026-08-28): a
+  comment widget that stores every comment as a GitHub Discussion in
+  CARSSCenter/OpenNerve-Community, no database of its own. Trial on three
+  pages only (each sets `comments: true` in front matter) rather than
+  site-wide — see CLAUDE.md §9 for why.
+
+  TODO before this can go live: register at https://giscus.app against
+  CARSSCenter/OpenNerve-Community, using a NEW category of type
+  "Announcements" (suggested name: "Page comments") so only maintainers and
+  giscus itself can open threads there — do not point this at the existing
+  📣 Announcements category, which already holds real welcome/announcement
+  posts. giscus.app will generate the exact <script> tag with the real
+  data-repo-id/data-category-id values; replace the placeholders below with
+  that output verbatim rather than hand-editing the placeholders.
+
+  This block is a Jinja comment ({# #}), not an HTML comment, specifically
+  so it does NOT get emitted into every page's HTML output — only the
+  guarded block below renders, and only on the three trial pages.
+-#}
+{% if page.meta and page.meta.comments %}
+<h2 id="__comments">Comments</h2>
+<script src="https://giscus.app/client.js"
+        data-repo="CARSSCenter/OpenNerve-Community"
+        data-repo-id="REPLACE_WITH_REPO_ID_FROM_GISCUS_APP"
+        data-category="Page comments"
+        data-category-id="REPLACE_WITH_CATEGORY_ID_FROM_GISCUS_APP"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+{% endif %}
