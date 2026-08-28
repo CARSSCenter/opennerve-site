@@ -30,9 +30,12 @@
   otherwise-light page would look like a bug, not a feature; revisit this
   value together with dark-mode support if that's ever added).
 
-  This block is a Jinja comment ({# #}), not an HTML comment, specifically
-  so it does NOT get emitted into every page's HTML output — only the
-  guarded block below renders, and only on the three trial pages.
+  This block is a Jinja comment, not an HTML comment, specifically so it
+  does NOT get emitted into every page's HTML output — only the guarded
+  block below renders, and only on the three trial pages. (Careful editing
+  this comment: writing out Jinja's own comment-delimiter characters in
+  here closes it early and leaks the rest as literal page text — this bit
+  you're reading now used to say so explicitly and broke exactly that way.)
 -#}
 {% if page.meta and page.meta.comments %}
 <h2 id="__comments">Comments</h2>
