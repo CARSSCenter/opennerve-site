@@ -237,7 +237,10 @@
 /* Illustrative: placeholder values used only for layout review (see the
  * ILLUSTRATIVE ONLY banner that must accompany any use of this modifier).
  * Dashed border + tint so the badge alone still reads as provisional even if
- * screenshotted apart from the banner text. */
+ * screenshotted apart from the banner text. Currently unused — every
+ * component page that had placeholder levels now carries real,
+ * maintainer-assigned ones (2026-08-28) — kept for the next page-design
+ * review that needs it. */
 .on-badge--illustrative {
   border-style: dashed;
   border-color: var(--on-accent);

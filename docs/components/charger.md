@@ -33,13 +33,13 @@ reports a temperature at or above 41 °C.
 ## Maturity
 
 <div class="on-maturity" markdown>
-<div class="on-badge on-badge--illustrative" markdown>
+<div class="on-badge" markdown>
 <span class="on-badge__axis">Evidence</span>
 <span class="on-badge__level">E1</span>
 <span class="on-badge__label">Bench tested</span>
 </div>
-<div class="on-badge on-badge--illustrative" markdown>
-<span class="on-badge__axis">Manufacturing Readiness</span>
+<div class="on-badge" markdown>
+<span class="on-badge__axis">Manufacturing readiness</span>
 <span class="on-badge__level">M2</span>
 <span class="on-badge__label">Manufacturable using PCBA suppliers and 3D printing</span>
 </div>

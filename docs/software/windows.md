@@ -47,15 +47,17 @@ original document, not on this website!
 
 ## Maturity
 
-| Axis | Level | Notes |
-|---|---|---|
-| Documentation (D) | ? | Not yet assigned by maintainers |
-| Evidence (E) | ? | Not yet assigned by maintainers |
-| Manufacturing readiness (M) | ? | Not yet assigned by maintainers |
-| Availability | ? | Not yet assigned |
+<div class="on-maturity" markdown>
+<div class="on-badge" markdown>
+<span class="on-badge__axis">Evidence</span>
+<span class="on-badge__level">E3</span>
+<span class="on-badge__label">Chronic in vivo</span>
+</div>
+<div class="on-badge" markdown>
+<span class="on-badge__axis">Manufacturing readiness</span>
+<span class="on-badge__level">N/A</span>
+<span class="on-badge__label">Not applicable to software</span>
+</div>
+</div>
 
 See [Maturity level definitions](../regulatory/maturity.md).
-
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are
-    not regulatory clearance and not a safety endorsement.

@@ -40,15 +40,17 @@ commit it reflects. Edit them upstream, not here.
 
 ## Maturity
 
-| Axis | Level | Notes |
-|---|---|---|
-| Documentation (D) | ? | Not yet assigned by maintainers |
-| Evidence (E) | ? | Not yet assigned by maintainers |
-| Manufacturing readiness (M) | ? | Not yet assigned by maintainers |
-| Availability | ? | Not yet assigned |
+<div class="on-maturity" markdown>
+<div class="on-badge" markdown>
+<span class="on-badge__axis">Evidence</span>
+<span class="on-badge__level">E2</span>
+<span class="on-badge__label">Acute in vivo</span>
+</div>
+<div class="on-badge" markdown>
+<span class="on-badge__axis">Manufacturing readiness</span>
+<span class="on-badge__level">M1</span>
+<span class="on-badge__label">Lab reproducible</span>
+</div>
+</div>
 
 See [Maturity level definitions](../regulatory/maturity.md).
-
-!!! note "Standing disclaimer"
-    These levels describe testing history and documentation state. They are
-    not regulatory clearance and not a safety endorsement.

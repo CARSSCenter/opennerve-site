@@ -48,20 +48,20 @@ rev 0.7 — see either revision page) and the same BLE firmware. **Note:** as of
 ## Maturity
 
 <div class="on-maturity" markdown>
-<div class="on-badge on-badge--illustrative" markdown>
+<div class="on-badge" markdown>
 <span class="on-badge__axis">Evidence</span>
 <span class="on-badge__level">E2</span>
 <span class="on-badge__label">Acute in vivo</span>
 </div>
-<div class="on-badge on-badge--illustrative" markdown>
-<span class="on-badge__axis">Manufacturing Readiness</span>
+<div class="on-badge" markdown>
+<span class="on-badge__axis">Manufacturing readiness</span>
 <span class="on-badge__level">M3</span>
 <span class="on-badge__label">GMP-capable</span>
 </div>
 </div>
 
-[Maturity levels](../regulatory/maturity.md). refer to the packaged IPG. For maturity levels when using the PCBA as a development board, see [Gen2 PCBA maturity](ipg-gen2.md#maturity) and
-[Gen1 PCBA maturity](ipg-gen1.md#maturity). 
+[Maturity levels](../regulatory/maturity.md) refer to the packaged IPG. For maturity levels when using the PCBA as a development board, see [Gen2 PCBA maturity](ipg-gen2.md#maturity) and
+[Gen1 PCBA maturity](ipg-gen1.md#maturity).
 
 !!! note "Standing disclaimer"
     These levels describe testing history and documentation state. They are

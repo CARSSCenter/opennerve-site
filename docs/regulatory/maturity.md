@@ -25,7 +25,7 @@ Each component is assigned maturity levels based on the evidence collected / wha
 | M0 | Bespoke — hand-made or custom made in laboratory setting, no manufacturing protocol released |
 | M1 | Lab reproducible — research fabrication, mfg protocol and source files released |
 | M2 | Manufacturable — manufacturing can be outsourced to multiple suppliers, if not under QMS. Source files available |
-| M3 | GMP-capable — capable of being built inder a QMS, but some manufacturer-specific engineering work may be necessary before production, or full manufacturing protocol not yet released |
+| M3 | GMP-capable — capable of being built under a QMS, but some manufacturer-specific engineering work may be necessary before production, or full manufacturing protocol not yet released |
 | M4 | GMP-ready — all design files and protocols released, design can be entered into QMS and manufactured without major design or engineering work |
 
 ## Rules and requests for updating maturity levels

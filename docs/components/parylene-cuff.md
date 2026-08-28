@@ -26,13 +26,13 @@ thin-film Parylene C and platinum, then thermoformed into shape.
 ## Maturity
 
 <div class="on-maturity" markdown>
-<div class="on-badge on-badge--illustrative" markdown>
+<div class="on-badge" markdown>
 <span class="on-badge__axis">Evidence</span>
 <span class="on-badge__level">E3</span>
 <span class="on-badge__label">Chronic in vivo</span>
 </div>
-<div class="on-badge on-badge--illustrative" markdown>
-<span class="on-badge__axis">Manufacturing Readiness</span>
+<div class="on-badge" markdown>
+<span class="on-badge__axis">Manufacturing readiness</span>
 <span class="on-badge__level">M1</span>
 <span class="on-badge__label">Lab-reproducible</span>
 </div>
