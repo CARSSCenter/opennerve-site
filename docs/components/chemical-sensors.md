@@ -5,14 +5,13 @@ title: Chemical Sensors
 # Chemical Sensors
 
 **Repo:** [CARSSCenter/Chemical-Sensors](https://github.com/CARSSCenter/Chemical-Sensors)
-**Applies to revision:** not yet assigned
-**Last reviewed:** not yet reviewed
+
 
 !!! danger "Not approved for human use"
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
-## What it is
+## About Chemical Sensors
 
 Chemical sensing leads for OpenNerve. Two sensors are described in the repo:
 

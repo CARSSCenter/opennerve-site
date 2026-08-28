@@ -38,7 +38,7 @@ Implantable pulse generator, stimulation and recording leads, digital sensors, w
 <span class="on-specs__item">Reduce time and cost to develop neuromodulation systems</span>
 <span class="on-specs__item">Modular platform to build novel therapies</span>
 <span class="on-specs__item">Community-driven ecosystem</span>
-<span class="on-specs__item"><strong>Fully Open Source</strong> (CC-BY-4.0) for research and commercialization</span>
+<span class="on-specs__item"><strong>Fully Open Source</strong> [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) for research and commercialization</span>
 </div>
 
 <!--

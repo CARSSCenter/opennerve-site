@@ -5,14 +5,13 @@ title: Mechanical Sensors
 # Mechanical Sensors
 
 **Repo:** [CARSSCenter/Mechanical-Sensors](https://github.com/CARSSCenter/Mechanical-Sensors)
-**Applies to revision:** not yet assigned
-**Last reviewed:** not yet reviewed
+
 
 !!! danger "Not approved for human use"
     Nothing described on this page has regulatory clearance for human use.
     See [Regulatory status and disclaimers](../regulatory/status.md).
 
-## What it is
+## About Mechanical Sensors
 
 Sensors for mechanical biomarkers designed to interface with the OpenNerve
 platform:

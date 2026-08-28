@@ -24,7 +24,7 @@ polymer cuff electrode.
 - **Files:** 99 files, 367 MB
 - **License:** CC-BY
 - **DOI:** [10.26275/6fxa-8gef](https://doi.org/10.26275/6fxa-8gef)
-- **Protocol:** [protocols.io/10.17504/protocols.io.q26g7m17qgwz](https://doi.org/10.17504/protocols.io.q26g7m17qgwz)
+- **Protocol:** [protocols.io/10.17504/protocols.io.q26g7m17qgwz/v1](https://doi.org/10.17504/protocols.io.q26g7m17qgwz/v1)
   (see also publication #6 in [Publications](publications.md))
 - **SPARC dataset page:** [sparc.science/datasets/430](https://sparc.science/datasets/430)
 
@@ -47,7 +47,7 @@ neurotransmitters.
 - **Files:** 216 files, 2.08 GB
 - **License:** CC-BY
 - **DOI:** [10.26275/fqxr-szi4](https://doi.org/10.26275/fqxr-szi4)
-- **Protocol:** [protocols.io/10.17504/protocols.io.36wgq14pxvk5](https://doi.org/10.17504/protocols.io.36wgq14pxvk5)
+- **Protocol:** [protocols.io/10.17504/protocols.io.36wgq14pxvk5/v1](https://doi.org/10.17504/protocols.io.36wgq14pxvk5/v1)
 - **SPARC dataset page:** [sparc.science/datasets/653](https://sparc.science/datasets/653)
 
 **Citation:**
