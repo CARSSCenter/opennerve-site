@@ -60,6 +60,51 @@ form factor that gets you access to it on a bench:
 
 
 
+## Specifications
+
+Stimulation and AFE (analog front end) specifications for the Gen2 PCBA, as sourced
+in the OpenNerve IPG flyer (internal document, not yet published to a public repo —
+see the note below).
+
+### Stimulation parameters
+
+| Stimulation parameter | Minimum | Maximum | Step |
+|---|---|---|---|
+| Amplitude, mA | 0.2 | 5 | 0.1 |
+| Pulse width, µs | 100 | 800 | 50 |
+| Frequency, Hz | 1 | 1200 | 1 |
+| Output limits, V | 0 | 11 | — |
+| Ramp up/down duration, s | 0 | 10 | 1 |
+| Train on/off duration, s | 10 | 300 | 10 |
+
+### AFE specifications
+
+| AFE specification | ECG HR | ECG RR | eCAP | EMG |
+|---|---|---|---|---|
+| High-pass filter, Hz | 0.5 | 0.09 | 7.97 | 0.4 |
+| Low-pass filter, Hz | 83.8 | 0.73 | 1,750 | 665 |
+| Amplitude min LSB, ±µV | 2.8 | 2.8 | 0.37 | 1.4 |
+| Amplitude max at 14 bit, ±mV | 24 | 24 | 3 | 48 |
+| Gain for ADC V<sub>ref</sub> = ±3V | 125 | 117 | 1,005 | 250 |
+| Recommended ADC freq., Hz | 256 | 256 | 6,400 | 2,560 |
+
+ECG: electrocardiography. RR: respiratory rate. eCAP: evoked compound action
+potential.
+
+A subset of this AFE data (high-pass/low-pass filter and min/max amplitude only,
+without the gain and recommended-ADC-frequency rows) is also in the synced
+[Getting started guide](../software/windows/getting-started.md#sensing), which labels
+the same third column **ENG** rather than **eCAP**. Both describe the same
+AFE — the values match — but the naming is inconsistent between the two sources;
+not resolved here.
+
+!!! note "Source"
+    These tables are transcribed from an internal flyer
+    (`OpenNerve IPG flyer v2.pptx`), not a public repo file. Per this site's sourcing
+    policy, that's flagged rather than silently presented as equivalent to a linked,
+    version-controlled source — see the open question on dev board sourcing in
+    `CLAUDE.md`.
+
 ## How to get one
 
 Development boards can be manufactured using the open source PCBA files available in the repository, or procured directly from OpenNerve (contact **Open.Nerve@usc.edu** to ask about availability).

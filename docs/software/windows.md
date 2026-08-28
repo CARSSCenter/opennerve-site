@@ -30,7 +30,7 @@ the Gen2 board but can target Gen1 by changing a constant in `Form1.cs`.
 *The Windows app for OpenNerve allows control of stimulation and real-time streaming of data from both analog front-ends and I2C sensors.*
 
 Admin authentication requires a private key file placed locally (not
-committed to the repo); contact carss@usc.edu for the shared development key,
+committed to the repo); contact open.nerve@usc.edu for the shared development key,
 or generate your own — see the encryption guide on the
 [IPG component page](../components/ipg.md#documentation-synced-from-the-upstream-repo).
 

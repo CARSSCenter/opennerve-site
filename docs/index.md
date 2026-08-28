@@ -186,7 +186,7 @@ Learn more about OpenNerve and explore the components and documentation.
 Contact us for development boards and hardware collaboration, or create your own system using our open-source files.
 
 - [Get a development board](components/dev-board.md)
-- [Contact us for collaborations](mailto:carss@usc.edu)
+- [Contact us for collaborations](mailto:open.nerve@usc.edu)
 - [Clone a repository](https://github.com/CARSSCenter)
 
 </div>
@@ -320,7 +320,7 @@ and acute large-animal studies.
 
 <div class="on-hero__ctas" markdown>
 [Development board specifications](components/dev-board.md){ .md-button .md-button--primary }
-[Contact us about a board](mailto:carss@usc.edu){ .md-button }
+[Contact us about a board](mailto:open.nerve@usc.edu){ .md-button }
 </div>
 
 </div>
