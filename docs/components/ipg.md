@@ -193,7 +193,10 @@ branch — click a title to expand it:
 
 The following documentation is available in the IPG's repository and has been mirrored here for convenience. Please submit pull requests for edits in the original document, not on this website!
 
-- [Getting started](ipg/getting-started.md)
+For hands-on setup and usage instructions (power-up, the Windows control app,
+stimulation and recording workflows), see the Windows app's synced
+[Getting started guide](../software/windows/getting-started.md).
+
 - [MCU flashing guide](ipg/mcu-flashing.md)
 - [BLE flashing guide](ipg/ble-flashing.md)
 - [OTA firmware update guide](ipg/ota-updates.md)

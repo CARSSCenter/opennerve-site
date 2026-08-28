@@ -132,7 +132,6 @@ nav:
           - Overview: components/ipg.md
           - Gen2 PCBA: components/ipg-gen2.md
           - Gen1 PCBA: components/ipg-gen1.md
-          - Getting started: components/ipg/getting-started.md
           - MCU flashing guide: components/ipg/mcu-flashing.md
           - BLE flashing guide: components/ipg/ble-flashing.md
           - OTA firmware update guide: components/ipg/ota-updates.md

@@ -41,8 +41,8 @@ configurable analog front ends (AFEs) for biosignal recording, and one I2C port 
 third-party digital sensors.
 ([source](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator/blob/main/README.md))
 
-Detailed AFE filter/gain/sampling-rate specifications are in the synced
-[Getting started](ipg/getting-started.md) guide.
+Detailed AFE filter/gain/sampling-rate specifications are in the Windows app's
+synced [Getting started](../software/windows/getting-started.md) guide.
 
 Two microcontrollers are used, shared with Gen1: an nRF52810 for BLE
 (`FW-BLE/`, same firmware across both revisions) and an STM32U5 for stimulation,

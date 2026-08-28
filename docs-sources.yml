@@ -16,15 +16,11 @@ sources:
     ref: main
     files:
       # Docs/Getting-Started.md: REMOVED upstream in commit de50024
-      # ("Reorganized documentation", 2026-07-29) with no replacement file —
-      # not a rename, `git log --follow` shows nothing later touches this
-      # content. Left commented out rather than silently dropped: this repo's
-      # `docs/components/ipg/getting-started.md` still holds the last-synced
-      # content, and the nav entry ("Getting started") still points at it, so
-      # the page keeps displaying stale content with no live source behind it
-      # until the team confirms whether the removal was intentional. Flagged
-      # in CLAUDE.md §9 2026-07-29 — do not silently re-add or delete this
-      # without that confirmation.
+      # ("Reorganized documentation", 2026-07-29). Resolved 2026-08-28: the
+      # same content is still live, relocated to OpenNerve-Windows-App's root
+      # Getting-Started.md — see that source block below. No entry needed
+      # here; do not re-add one pointing at this repo without confirming the
+      # content came back upstream too.
       Docs/MCU-Flashing-Guide.md: components/ipg/mcu-flashing.md
       Docs/BLE-Flashing-Guide.md: components/ipg/ble-flashing.md
       Docs/OTA-Firmware-Update-Guide.md: components/ipg/ota-updates.md
@@ -46,11 +42,10 @@ sources:
     repo: OpenNerve-Windows-App
     ref: main
     files:
-      # Confirmed 2026-08-28 to be the same content as the IPG repo's
-      # Docs/Getting-Started.md (frozen at docs/components/ipg/getting-started.md,
-      # commit b6a0f9d, 2026-07-27) — the file was not deleted, it was relocated
-      # here. See CLAUDE.md §9 "Docs/Getting-Started.md was deleted upstream"
-      # for the original flag; this entry gives that content a live source again.
+      # Confirmed 2026-08-28 to be the same content as the IPG repo's old
+      # Docs/Getting-Started.md — not deleted, relocated here. The stale
+      # IPG-side copy (docs/components/ipg/getting-started.md) was removed
+      # 2026-08-28 once this live source took over; see CLAUDE.md §9.
       Getting-Started.md: software/windows/getting-started.md
 
   - org: CARSSCenter

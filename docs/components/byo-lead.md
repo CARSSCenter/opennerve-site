@@ -12,7 +12,7 @@ You are not limited to OpenNerve's own [Standard Leads](standard-leads.md) and
 **On the benchtop** — the [development board](dev-board.md) breaks out
 feedthrough contacts to header pins. Any electrode with a wire
 can be connected directly, with no connector compatibility question at all. See
-[Getting started](ipg/getting-started.md).
+[Getting started](../software/windows/getting-started.md).
 
 **Implanted** — using a third-party lead with the packaged OpenNerve IPG requires it to
 match the header pitch and diameter of the Bal-Seal connectors used.

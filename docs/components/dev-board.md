@@ -37,10 +37,10 @@ form factor that gets you access to it on a bench:
 - **Stimulation and impedance measurement** — set square-wave (to 1200 Hz) or
   low-frequency sine-wave (1-15 Hz) stimulation parameters and read channel impedance
   from the Windows control app. See the synced
-  [Getting started guide](ipg/getting-started.md).
+  [Getting started guide](../software/windows/getting-started.md).
 - **Biosignal recording** — two of the four configurable analog front ends (AFEs) are exposed as header pins for easy
   ECG, EMG, or eCAP/ENG recording; filter, gain, and sampling-rate figures
-  for each are in the [Getting started guide](ipg/getting-started.md#sensing).
+  for each are in the [Getting started guide](../software/windows/getting-started.md#sensing).
 - **Firmware development** — flash the STM32 MCU firmware or the shared
   nRF52810 BLE firmware directly over JTAG/SWD. See the
   [MCU flashing guide](ipg/mcu-flashing.md) and
@@ -65,7 +65,7 @@ Development boards can be manufactured using the open source PCBA files availabl
 
 ## Documentation
 
-- [Getting started](ipg/getting-started.md)
+- [Getting started](../software/windows/getting-started.md)
 - [MCU flashing guide](ipg/mcu-flashing.md)
 - [BLE flashing guide](ipg/ble-flashing.md)
 - [OTA firmware update guide](ipg/ota-updates.md)
