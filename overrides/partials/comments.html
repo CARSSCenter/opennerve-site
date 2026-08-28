@@ -16,14 +16,19 @@
   pages only (each sets `comments: true` in front matter) rather than
   site-wide — see CLAUDE.md §9 for why.
 
-  TODO before this can go live: register at https://giscus.app against
-  CARSSCenter/OpenNerve-Community, using a NEW category of type
-  "Announcements" (suggested name: "Page comments") so only maintainers and
-  giscus itself can open threads there — do not point this at the existing
-  📣 Announcements category, which already holds real welcome/announcement
-  posts. giscus.app will generate the exact <script> tag with the real
-  data-repo-id/data-category-id values; replace the placeholders below with
-  that output verbatim rather than hand-editing the placeholders.
+  Registered at https://giscus.app 2026-08-28 against the "Page comments"
+  category (Announcements format) on CARSSCenter/OpenNerve-Community —
+  repo-id/category-id below are real, not placeholders. Two values were
+  deliberately kept different from giscus.app's own generated defaults
+  rather than pasted verbatim: `data-strict="1"` (exact pathname match
+  only — giscus.app defaults to "0", a looser title-based fallback match
+  this site doesn't need since every page has a distinct path) and
+  `data-theme="light"` (giscus.app defaults to
+  `preferred_color_scheme`, which would follow the visitor's OS setting —
+  but mkdocs.yml's `theme.palette` is single-entry with no toggle, i.e.
+  this site is light-mode only today, so a dark giscus widget on an
+  otherwise-light page would look like a bug, not a feature; revisit this
+  value together with dark-mode support if that's ever added).
 
   This block is a Jinja comment ({# #}), not an HTML comment, specifically
   so it does NOT get emitted into every page's HTML output — only the
@@ -33,9 +38,9 @@
 <h2 id="__comments">Comments</h2>
 <script src="https://giscus.app/client.js"
         data-repo="CARSSCenter/OpenNerve-Community"
-        data-repo-id="REPLACE_WITH_REPO_ID_FROM_GISCUS_APP"
+        data-repo-id="R_kgDOI3vRyg"
         data-category="Page comments"
-        data-category-id="REPLACE_WITH_CATEGORY_ID_FROM_GISCUS_APP"
+        data-category-id="DIC_kwDOI3vRys4DEaVs"
         data-mapping="pathname"
         data-strict="1"
         data-reactions-enabled="1"
