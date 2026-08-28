@@ -162,7 +162,9 @@ nav:
           - Characterization of echem sensors: components/chemical-sensors/characterization.md
           - Fabrication of echem sensors: components/chemical-sensors/fabrication.md
   - Software:
-      - Windows App: software/windows.md
+      - Windows App:
+          - Overview: software/windows.md
+          - Getting started: software/windows/getting-started.md
       - Android App: software/android.md
   - Resources:
       - Publications: data/publications.md

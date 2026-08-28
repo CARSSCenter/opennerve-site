@@ -30,6 +30,14 @@ or generate your own — see the encryption guide on the
 
 Licensed CC-BY-4.0.
 
+## Documentation synced from the upstream repo
+
+The following documentation is available in the Windows app's repository and has
+been mirrored here for convenience. Please submit pull requests for edits in the
+original document, not on this website!
+
+- [Getting started](windows/getting-started.md)
+
 ## Maturity
 
 | Axis | Level | Notes |

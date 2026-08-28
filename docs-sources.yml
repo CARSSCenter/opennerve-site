@@ -43,6 +43,17 @@ sources:
       Tools/ota_updater/user-guide.md: components/ipg/tools-ota-updater.md
 
   - org: CARSSCenter
+    repo: OpenNerve-Windows-App
+    ref: main
+    files:
+      # Confirmed 2026-08-28 to be the same content as the IPG repo's
+      # Docs/Getting-Started.md (frozen at docs/components/ipg/getting-started.md,
+      # commit b6a0f9d, 2026-07-27) — the file was not deleted, it was relocated
+      # here. See CLAUDE.md §9 "Docs/Getting-Started.md was deleted upstream"
+      # for the original flag; this entry gives that content a live source again.
+      Getting-Started.md: software/windows/getting-started.md
+
+  - org: CARSSCenter
     repo: OpenNerve-Charger
     ref: main
     files:
