@@ -164,6 +164,7 @@ nav:
       - Windows App:
           - Overview: software/windows.md
           - Getting started: software/windows/getting-started.md
+          - Developer guide: software/windows/developer-guide.md
       - Android App: software/android.md
   - Resources:
       - Publications: data/publications.md

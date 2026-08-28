@@ -47,6 +47,8 @@ sources:
       # IPG-side copy (docs/components/ipg/getting-started.md) was removed
       # 2026-08-28 once this live source took over; see CLAUDE.md §9.
       Getting-Started.md: software/windows/getting-started.md
+      # Pushed upstream 2026-08-28 (commit 641159f).
+      Developer-Guide.md: software/windows/developer-guide.md
 
   - org: CARSSCenter
     repo: OpenNerve-Charger
