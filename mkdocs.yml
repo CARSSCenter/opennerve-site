@@ -183,7 +183,6 @@ nav:
   - Community:
       - Overview: community/index.md
       - How to contribute: contribute/index.md
-      - Hardware contributions: contribute/hardware.md
       - Governance: contribute/governance.md
 
   

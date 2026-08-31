@@ -4,30 +4,12 @@ title: Governance
 
 # Governance
 
-OpenNerve is developed by a three-institution consortium, CARSS (Center for
-Autonomic Recording and Stimulation Systems), funded under NIH SPARC award
-[1U41NS129514](https://reporter.nih.gov/project-details/10557000):
+OpenNerve was developed at the University of Southern California under the direction of lead PI Ellis Meng. We are currently transitioning to open source governance based on the [MVG model](https://github.com/github/MVG). 
 
-- **University of Southern California** — project lead
-- **Med-Ally LLC**
-- **Medipace Inc.**
+If you are interested in joining our steering committe, becoming a maintainer of one of OpenNerve's repositories, or getting involved with OpenNerve's governance in any way, please reach out! Open.Nerve@usc.edu
 
-"CARSS" is the administrative/funding entity name and is used only on this
-page and in funding acknowledgments; "OpenNerve" is the public brand
-everywhere else on this site.
-
-## Open questions
-
-This page is a stub. The following are unresolved:
-
-- **Who assigns maturity levels?** Currently assumed to be the board of
-  directors; not confirmed.
-- **Licensing.** All repos are currently CC-BY-4.0, including firmware and
-  application code. This may be revisited on a repo-by-repo basis.
-- **What counts as a hardware contribution and how it's reviewed** — see
-  [Hardware contributions](hardware.md).
 
 ## Funding acknowledgment
 
-Development is funded by the US National Institutes of Health's SPARC
-program, award 1U41NS129514.
+Initial development was funded by the US National Institutes of Health's SPARC
+program, award 1U41NS129514. Open source organization was funded in part by the National Science Foundation's Pathways to Open Source Ecosystems (POSE) award 2449357.
