@@ -6,11 +6,7 @@ title: News
 
 Press coverage, talks, and community write-ups about CARSS/OpenNerve.These are third-party or informal items, not peer-reviewed sources — see [Publications](data/publications.md) for
 those.
-<!--
-Sourced from the consortium's existing publications page,
-[sites.usc.edu/carss/carss-in-publications](https://sites.usc.edu/carss/carss-in-publications/),
-last checked 2026-07-29. 
--->
+
 
 
 - **["Healthware Highlights: OpenNerve"](https://oshwa.org/announcements/healthware-highlights-opennerve/)**

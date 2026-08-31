@@ -16,7 +16,7 @@ OpenNerve was designed from day 1 to support chronic implantable studies. Our IP
 All of OpenNerve's design files, code, and documentation is free for commercial use, and you are welcome to build proprietary solutions on top of OpenNerve. For example, you could partner with us to quickly and cheaply perform your first large animal studies that allow you to validate your therapy, then develop a custom implant with only the features you need using OpenNerve as a starting point.
 
 ### Are you looking to make the leap from animals to first in humans? 
-Right now, no group has used OpenNerve in humans. However, OpenNerve was developed with clinical translation in mind and in partnership with companies that have a track record of successfully developing IPGs for human use (Med-Ally, CoForce, and Focus). We'd love to support you through the regulatory path to first in human use.
+Right now, no group has used OpenNerve in humans. However, OpenNerve was developed with clinical translation in mind and in partnership with companies that have a track record of successfully developing IPGs for human use (Med-Ally, CoForce, and Focus). We'd love to support you as you navigate the regulatory path to first in human use.
 
 ### Are you a teacher or a student group? 
 OpenNerve provides an excellent open-source platform to learn how a real medical device works. University courses have already used OpenNerve for biomedical engineering and electrical engineering education. If you're a student, consider using OpenNerve as the basis for a senior project or as part of a club or student org.

@@ -18,7 +18,7 @@ title: IPG — Gen1 PCBA
 <div class="on-maturity" markdown>
 <div class="on-badge" markdown>
 <span class="on-badge__axis">Evidence</span>
-<span class="on-badge__level">E3</span>
+<span class="on-badge__level">E2</span>
 <span class="on-badge__label">Acute in vivo</span>
 </div>
 <div class="on-badge" markdown>

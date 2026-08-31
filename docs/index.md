@@ -5,12 +5,6 @@ hide:
   - toc
 ---
 
-<div class="on-draftbar" markdown>
-**Draft — internal review.** This site is a working draft circulated for
-feedback. Do
-not distribute outside the review group.
-</div>
-
 <div class="on-hero" markdown>
 
 <div class="on-hero__field" markdown>
@@ -42,8 +36,7 @@ Implantable pulse generator, stimulation and recording leads, digital sensors, w
 </div>
 
 <!--
-Figures per [Platform architecture](start/architecture.md#two-ipg-hardware-generations)
-and [IPG: Gen1 vs. Gen2](components/ipg.md#gen1-vs-gen2).
+Figures per [IPG: Gen1 vs. Gen2](components/ipg.md#gen1-vs-gen2).
 {: .on-specs__cite }
 -->
 
@@ -156,9 +149,8 @@ Several stimulation / recording leads and digital sensors are being developed by
 <!--
 Solid lines are wired connections inside the body; dashed lines cross the
 skin (BLE and inductive charging); arrows show data or power direction. See
-[Platform architecture](start/architecture.md) for the full write-up,
-including the two IPG hardware generations and their different channel
-counts.
+[IPG: Gen1 vs. Gen2](components/ipg.md#gen1-vs-gen2) for the two IPG
+hardware generations and their different channel counts.
 -->
 
 </div>
@@ -204,105 +196,6 @@ Contribute to OpenNerve, get technical support, and make neuroscience better. Ha
 </div>
 
 </div>
-
-<!--
-
-<div class="on-section" markdown>
-
-## What is actually published
-
-<div class="on-cols" markdown>
-
-<div class="on-col" markdown>
-<div class="on-col__heading">Ships today</div>
-
-- Schematics, PCB layout, and BOM for both IPG PCBAs (`Gen1`, `Gen2`)
-- STEP models for both boards and the shared enclosure (rev 0.7)
-- Assembly drawing, fabrication drawing, and test-point deck — **Gen1 only**
-- MCU firmware for each generation, plus BLE firmware shared by both
-- Windows control app source (`ONrecorder`)
-- All of the above, CC-BY-4.0
-
-</div>
-
-<div class="on-col" markdown>
-<div class="on-col__heading">Known gaps</div>
-
-- Gen2 has no separate assembly drawing, fabrication drawing, or test-point
-  document — Gen1 does
-- Designed in Altium Designer V25 (closed source); a third-party KiCad
-  converter exists, "use at your own risk"
-- BOMs are `.xlsx`, not a machine-readable open format
-- No tagged release and no DOI on the IPG repo — see
-  [maturity level definitions](regulatory/maturity.md) for why that blocks D3
-- Android app is prototype code, not a released application
-
-</div>
-
-</div>
-
-Detail and sourcing: [Gen2 PCBA](components/ipg-gen2.md),
-[Gen1 PCBA](components/ipg-gen1.md).
-
-</div>
-
--->
-
-<!--
-<div class="on-section" markdown>
-
-## How maturity is tracked
-
-Every component is assessed on three independent axes, always shown
-separately — never combined into one score, because a composite hides
-exactly the information a reader needs.
-
-<div class="on-scale" markdown>
-
-<div class="on-scale__row" markdown>
-<span class="on-scale__axis">Documentation</span>
-<div class="on-scale__steps" markdown>
-<span class="on-scale__step">D0 Concept</span>
-<span class="on-scale__step">D1 Partial</span>
-<span class="on-scale__step">D2 Reproducible</span>
-<span class="on-scale__step">D3 Released</span>
-</div>
-</div>
-
-<div class="on-scale__row" markdown>
-<span class="on-scale__axis">Evidence</span>
-<div class="on-scale__steps" markdown>
-<span class="on-scale__step">E0 None</span>
-<span class="on-scale__step">E1 Bench</span>
-<span class="on-scale__step">E2 Acute in vivo</span>
-<span class="on-scale__step">E3 Chronic in vivo</span>
-<span class="on-scale__step">E4 GLP safety</span>
-<span class="on-scale__step">E5 Clinical</span>
-</div>
-</div>
-
-<div class="on-scale__row" markdown>
-<span class="on-scale__axis">Manufacturing</span>
-<div class="on-scale__steps" markdown>
-<span class="on-scale__step">M0 Lab build</span>
-<span class="on-scale__step">M1 Pilot</span>
-<span class="on-scale__step">M2 GMP-capable</span>
-<span class="on-scale__step">M3 GMP-built</span>
-</div>
-</div>
-
-</div>
-
-Availability is tracked separately, not as a fourth level: files only,
-purchasable, fabricate-to-order, or not currently available.
-
-**Most levels are not yet assigned.** An unfilled cell means "not yet
-assessed," not "zero." See the
-[component overview and maturity table](components/index.md) and
-[maturity level definitions](regulatory/maturity.md).
-
-</div>
--->
 
 <div class="on-section" markdown>
 

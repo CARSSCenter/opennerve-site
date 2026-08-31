@@ -5,8 +5,7 @@ title: Windows (ONrecorder)
 # Windows app (ONrecorder)
 
 **Repo:** [CARSSCenter/OpenNerve-Windows-App](https://github.com/CARSSCenter/OpenNerve-Windows-App)
-**Applies to revision:** not yet assigned
-**Last reviewed:** not yet reviewed
+
 
 ## What it is
 

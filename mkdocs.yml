@@ -12,15 +12,7 @@ repo_url: https://github.com/axbaldwin1/opennerve-site
 edit_uri: edit/main/docs/
 
 copyright: >-
-  Content licensed CC-BY-4.0 unless noted otherwise. Licensing is under
-  active review and may change on a repo-by-repo basis.
-
-# docs/images/CREDITS.md documents image provenance for maintainers (CLAUDE.md
-# §8) — not a published page. Excluding it here keeps it out of the built
-# site without needing a nav entry, so --strict's orphaned-page check doesn't
-# flag it.
-exclude_docs: |
-  images/CREDITS.md
+  Content licensed CC-BY-4.0 unless noted otherwise.
 
 # Local build-time hook. Not a plugin dependency (no pip package, no
 # requirements.txt entry) — this is the mechanism CLAUDE.md §7 asks for so
@@ -45,6 +37,12 @@ theme:
   # decisions, not stylistic preference. Reasoning in CLAUDE.md §7 ("Visual identity
   # and header palette").
   logo: images/logo.png
+  # Isolated starburst+dot glyph, cropped from a site owner-supplied template
+  # with a transparent background — unlike the flattened wordmark, which
+  # couldn't be cropped cleanly (rays and the "p" in "OpenNerve" overlap with
+  # no clean cut), this one has no overlapping letterforms to fight. See
+  # CLAUDE.md §7's 2026-08-31 entry.
+  favicon: images/favicon.png
   font: false
   # Light-mode only, for now (2026-08-06): single palette entry, no `toggle`
   # and no `media` query, so Material renders no light/dark switch and the
@@ -132,7 +130,6 @@ nav:
   - About:
       - Who we are: start/overview.md
       - Is this right for my work: start/fit.md
-      - Platform architecture: start/architecture.md
       - Regulatory status and disclaimers: regulatory/status.md
       - Maturity level definitions: regulatory/maturity.md
   - Hardware:

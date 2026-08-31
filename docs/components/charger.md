@@ -5,8 +5,6 @@ title: Charger
 # Charger
 
 **Repo:** [CARSSCenter/OpenNerve-Charger](https://github.com/CARSSCenter/OpenNerve-Charger)
-**Applies to revision:** not yet assigned
-**Last reviewed:** not yet reviewed
 
 !!! danger "Not approved for human use"
     Nothing described on this page has regulatory clearance for human use.

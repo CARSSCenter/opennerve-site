@@ -16,25 +16,21 @@ surface. Definitions: [Maturity level definitions](../regulatory/maturity.md).
 
 | Component | Repo | Evidence (E) | Manufacturing readiness (M) | Availability |
 |---|---|---|---|---|
-| [Implantable Pulse Generator](ipg.md) — [Gen2](ipg-gen2.md) / [Gen1](ipg-gen1.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | E2 | M3 | ? |
-| [Development board](dev-board.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | E3 | M2 | Purchasable — contact the consortium |
-| [Windows app](../software/windows.md) | [OpenNerve-Windows-App](https://github.com/CARSSCenter/OpenNerve-Windows-App) | E3 | N/A | ? |
-| [Android app](../software/android.md) | [OpenNerve-Android-App](https://github.com/CARSSCenter/OpenNerve-Android-App) | E0 | N/A | ? |
-| [Standard Leads](standard-leads.md) | [OpenNerve-Standard-Leads](https://github.com/CARSSCenter/OpenNerve-Standard-Leads) | E3 | M3 | ? |
-| [Sub-mm Parylene Cuff](parylene-cuff.md) | [Sub-mm-Parylene-Cuff-Electrode](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode) | E3 | M1 | ? |
-| [Charger](charger.md) | [OpenNerve-Charger](https://github.com/CARSSCenter/OpenNerve-Charger) | E1 | M2 | ? |
-| [Mechanical Sensors](mechanical-sensors.md) | [Mechanical-Sensors](https://github.com/CARSSCenter/Mechanical-Sensors) | E2 | M1 | ? |
-| [Chemical Sensors](chemical-sensors.md) | [Chemical-Sensors](https://github.com/CARSSCenter/Chemical-Sensors) | E2 | M1 | ? |
-| [Bring your own lead](byo-lead.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | ? | ? | Not applicable |
+| [Implantable Pulse Generator](ipg.md) — [Gen2](ipg-gen2.md) / [Gen1](ipg-gen1.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | E2 | M3 |  |
+| [Development board](dev-board.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) | E3 | M2 |  |
+| [Windows app](../software/windows.md) | [OpenNerve-Windows-App](https://github.com/CARSSCenter/OpenNerve-Windows-App) | E3 | N/A |  |
+| [Android app](../software/android.md) | [OpenNerve-Android-App](https://github.com/CARSSCenter/OpenNerve-Android-App) | E0 | N/A |  |
+| [Standard Leads](standard-leads.md) | [OpenNerve-Standard-Leads](https://github.com/CARSSCenter/OpenNerve-Standard-Leads) | E3 | M3 |  |
+| [Sub-mm Parylene Cuff](parylene-cuff.md) | [Sub-mm-Parylene-Cuff-Electrode](https://github.com/CARSSCenter/Sub-mm-Parylene-Cuff-Electrode) | E3 | M1 |  |
+| [Charger](charger.md) | [OpenNerve-Charger](https://github.com/CARSSCenter/OpenNerve-Charger) | E1 | M2 |  |
+| [Mechanical Sensors](mechanical-sensors.md) | [Mechanical-Sensors](https://github.com/CARSSCenter/Mechanical-Sensors) | E2 | M1 |  |
+| [Chemical Sensors](chemical-sensors.md) | [Chemical-Sensors](https://github.com/CARSSCenter/Chemical-Sensors) | E2 | M1 |  |
+| [Bring your own lead](byo-lead.md) | [OpenNerve-Implantable-Pulse-Generator](https://github.com/CARSSCenter/OpenNerve-Implantable-Pulse-Generator) |  | |  |
 
-Mechanical Sensors and Chemical Sensors were added to the site nav alongside
-this table.
 
 E/M levels above are maintainer-assigned, current as of 2026-08-28 — see each
 component's own page for the full badge (with its descriptive label) and for
-`N/A` cases, why the axis doesn't apply. Availability is largely still `?`,
-tracked separately per component; fill it in as it's confirmed rather than
-inferring it from E/M.
+`N/A` cases, why the axis doesn't apply.
 
 The IPG's two hardware revisions (Gen1, Gen2) each carry their own maturity
 badges rather than sharing the single row above — see the

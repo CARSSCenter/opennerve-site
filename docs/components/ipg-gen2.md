@@ -17,7 +17,7 @@ title: IPG — Gen2 PCBA
 <div class="on-maturity" markdown>
 <div class="on-badge" markdown>
 <span class="on-badge__axis">Evidence</span>
-<span class="on-badge__level">E3</span>
+<span class="on-badge__level">E2</span>
 <span class="on-badge__label">Acute in vivo</span>
 </div>
 <div class="on-badge" markdown>
@@ -81,20 +81,6 @@ see the note below).
 
 ECG: electrocardiography. RR: respiratory rate. eCAP: evoked compound action
 potential.
-
-A subset of this AFE data (high-pass/low-pass filter and min/max amplitude only,
-without the gain and recommended-ADC-frequency rows) is also in the synced
-[Getting started guide](../software/windows/getting-started.md#sensing), which labels
-the same third column **ENG** rather than **eCAP**. Both describe the same
-AFE — the values match — but the naming is inconsistent between the two sources;
-not resolved here.
-
-!!! note "Source"
-    These tables are transcribed from an internal flyer
-    (`OpenNerve IPG flyer v2.pptx`), not a public repo file. Per this site's sourcing
-    policy, that's flagged rather than silently presented as equivalent to a linked,
-    version-controlled source — see the open question on dev board sourcing in
-    `CLAUDE.md`.
 
 ## Design outputs and BOM/fab notes
 

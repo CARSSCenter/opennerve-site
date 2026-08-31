@@ -160,8 +160,8 @@
 }
 
 /* The spec strip: sourced figures, not adjectives (CLAUDE.md §4). Every
-   figure here must trace to start/architecture.md or components/ipg.md —
-   see the (source) link at the end of the strip. */
+   figure here must trace to components/ipg.md — see the (source) link at
+   the end of the strip. */
 .on-specs {
   display: flex;
   flex-wrap: wrap;

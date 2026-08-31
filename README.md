@@ -145,10 +145,10 @@ what's already there.
 
 One thing worth knowing: a handful of images on this site (the platform
 diagram on the home page, for one) are photos of real hardware sourced from
-outside this repository, and `docs/images/CREDITS.md` keeps a record of
-where each one came from. If you add a photo that isn't yours — something
-pulled from a paper, a poster, or another repo — add a line there too, so
-nobody has to guess later whether it's safe to reuse.
+outside this repository. If you add a photo that isn't yours — something
+pulled from a paper, a poster, or another repo — say where it came from and
+whether it's cleared for reuse in your commit message or pull request, so
+nobody has to guess later whether it's safe to keep.
 
 ## 5. Previewing your changes before publishing
 

@@ -1,6 +1,7 @@
 ---
 title: What is OpenNerve
 ---
+OpenNerve is a group of engineers, researchers, and users developing open-source platforms for neural recording and stimulation. Our goal is to lower the barrier for translating therapies using neuromodulation from lab to clinic. To date (August 2026), we have developed the OpenNerve Implantable Pulse Generator (IPG), several leads for stimulation and sensing, and infrastructure for its use (e.g. a wireless charger and control software) and are testing it preclinically alongside our community. 
 
 ## How OpenNerve started
 

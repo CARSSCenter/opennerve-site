@@ -272,11 +272,11 @@
 /*
  * Platform block diagram.
  *
- * Used on two pages — the landing page (docs/index.md) and
- * start/architecture.md — so it lives in the shared stylesheet rather than
- * home.css, per the split rule documented in CLAUDE.md §7: extra.css holds
- * anything used on more than one page, home.css holds landing-page-only
- * rules.
+ * Used only on the landing page (docs/index.md) since start/architecture.md
+ * was removed 2026-08-31 — per the split rule documented in CLAUDE.md §7,
+ * this now technically qualifies for home.css rather than extra.css, but it
+ * was left here to avoid an unrelated file-move as part of that page's
+ * removal; flagged in CLAUDE.md §9.
  *
  * The IPG is the hub; every other block is a link to its component page, so
  * this diagram doubles as navigation. Signal paths are distinguished by line
@@ -466,11 +466,13 @@
 }
 
 /* margin-inline is a safety margin, not decoration: on a narrower content
- * column (e.g. start/architecture.md, which has a sidebar and a table of
- * contents eating into the available width), the leads/sensors columns can
- * shrink close to their own content width, leaving little to no centering
- * slack — without this, the label can end up sitting close enough to the
- * neighboring connector's arrowhead that they visually touch. */
+ * column, the leads/sensors columns can shrink close to their own content
+ * width, leaving little to no centering slack — without this, the label can
+ * end up sitting close enough to the neighboring connector's arrowhead that
+ * they visually touch. Originally motivated by start/architecture.md's
+ * sidebar+table-of-contents layout (removed 2026-08-31); kept as a cheap
+ * defensive default even though the diagram's only remaining page
+ * (docs/index.md) has no sidebar eating into its width. */
 .on-diagram__group-label {
   margin-inline: 0.4rem;
   font-size: 0.68rem;
@@ -1059,29 +1061,4 @@
 .md-nav__link[href$="byo-lead/"] {
   color: var(--on-accent);
   font-weight: 700;
-}
-
-/*
- * Platform architecture (start/architecture.md), hidden from navigation
- * 2026-08-11 at the site owner's request, without deleting the page or
- * pulling it out of mkdocs.yml's nav: list. Staying in nav: matters —
- * removing the entry instead trips `validation.nav.omitted_files: warn`
- * (an orphaned-page check this file's own working conventions rely on
- * elsewhere) and fails `mkdocs build --strict` outright. CSS-hiding the
- * rendered link is a menu-only hide: the page still builds, is still
- * reachable by direct URL or search, and still appears in the prev/next
- * footer strip on adjacent About pages (out of scope — the ask was the
- * menu bar specifically).
- *
- * Two places render a link to this page and need hiding independently,
- * same as the accent-color rule above: the left sidebar / mobile drawer
- * (`.md-nav__item`, hidden here rather than just its `<a>` so no empty
- * bullet is left behind) and nav-menu.js's header-tab dropdown, which
- * builds its own `<li class="on-navmenu__link">`-wrapping markup from a
- * DOM snapshot taken at page load — CSS on the original sidebar link has
- * no effect on it, so it needs its own selector.
- */
-.md-nav__item:has(> .md-nav__link[href$="architecture/"]),
-.on-navmenu__list li:has(> .on-navmenu__link[href$="architecture/"]) {
-  display: none;
 }

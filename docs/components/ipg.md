@@ -82,9 +82,9 @@ Two software platforms exist for sending control signals to and streaming data f
 
 The IPG can be charged inductively using the [OpenNerve Charger](charger.md).
 
-# Documentation
+## IPG Documentation
 
-## Design History Files
+### Design History Files
 
 <details class="on-pdf-details" markdown>
 <summary>Design Output Review</summary>
@@ -118,7 +118,7 @@ The IPG can be charged inductively using the [OpenNerve Charger](charger.md).
 </div>
 </details>
 
-## DVT Protocols
+### DVT Protocols
 
 `Docs/Testing-Protocols/` contains eight PDFs, each named "Hornet IPG … DVT
 Protocol". Each viewer below fetches its PDF live from the repo's default
@@ -189,7 +189,7 @@ branch — click a title to expand it:
 </details>
 
 
-## Documentation synced from the upstream repo
+### Documentation synced from the upstream repo
 
 The following documentation is available in the IPG's repository and has been mirrored here for convenience. Please submit pull requests for edits in the original document, not on this website!
 

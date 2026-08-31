@@ -5,8 +5,7 @@ title: Android
 # Android app
 
 **Repo:** [CARSSCenter/OpenNerve-Android-App](https://github.com/CARSSCenter/OpenNerve-Android-App)
-**Applies to revision:** not yet assigned
-**Last reviewed:** not yet reviewed
+
 
 ## What it is
 
