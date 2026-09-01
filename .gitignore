@@ -4,3 +4,9 @@ site/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Internal working notes for AI coding assistants — not part of the
+# published site or the public repo. See DESIGN-NOTES.md for the public
+# equivalent of this file's durable rationale.
+CLAUDE.md
+.claude/

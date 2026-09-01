@@ -2,13 +2,10 @@ site_name: OpenNerve
 site_description: >-
   Open source bioelectronic medicine platform: an implantable pulse generator,
   stimulation/recording/sensing leads, wireless charger, and control software.
-# site_url: TBD. During the draft phase this is served from Cloudflare Pages
-# behind Cloudflare Access; set this once a public URL is settled (see
-# CLAUDE.md §7, Hosting).
+site_url: https://opennerve.org/
 
-repo_name: opennerve-site
-repo_url: https://github.com/axbaldwin1/opennerve-site
-# NOTE: update repo_url/edit_uri if/when this repo moves to the CARSSCenter org.
+repo_name: CARSSCenter/opennerve-site
+repo_url: https://github.com/CARSSCenter/opennerve-site
 edit_uri: edit/main/docs/
 
 copyright: >-
@@ -102,7 +99,7 @@ extra_javascript:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/axbaldwin1/opennerve-site
+      link: https://github.com/CARSSCenter/opennerve-site
       name: opennerve-site on GitHub
 
 markdown_extensions:

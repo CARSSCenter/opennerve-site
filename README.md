@@ -4,9 +4,9 @@ This file explains how to edit and update this website, written for someone
 with no web design background. If you can edit a text file, you can maintain
 this site.
 
-For deeper technical background (why things are built this way, open
-questions, etc.), see `CLAUDE.md` in this same folder. This README only
-covers the "how do I do X" basics.
+For deeper technical background — why things are built this way, tradeoffs that were
+deliberately made — see `DESIGN-NOTES.md` in this same folder. This README only covers
+the "how do I do X" basics.
 
 ---
 
@@ -175,13 +175,11 @@ Press `Ctrl+C` in the terminal to stop the preview when you're done.
 
 ## 6. Making a change live
 
-Right now, this repository is **not yet connected** to a live, public
-website — pushing to GitHub does not automatically publish anything yet.
-(Once that one-time hosting connection is set up, this section should be
-updated to say exactly what "going live" involves.)
-
-Until then, "publishing" your work means committing and pushing it to
-GitHub, the same as any other change to this repository:
+Pushing to the `main` branch on GitHub **automatically publishes the site** —
+there's nothing else to do. A GitHub Actions workflow
+(`.github/workflows/deploy.yml`) builds the site and deploys it to
+[opennerve.org](https://opennerve.org) on every push, usually finishing within
+2–3 minutes.
 
 ```
 git add <the files you changed>
@@ -192,7 +190,31 @@ git push
 If you're not comfortable with git commands, GitHub's website lets you edit
 files and commit changes directly in the browser — open the file on
 github.com, click the pencil (edit) icon, make your change, and use the
-"Commit changes" button at the bottom.
+"Commit changes" button at the bottom. That commit triggers the same
+automatic build.
+
+**If your change doesn't appear on the live site after a few minutes:**
+check the **Actions** tab on the repo on github.com. A red X there means the
+build failed — click into it to see why. The most common cause is a broken
+link or a page missing from `mkdocs.yml`'s `nav:` list, which is exactly what
+running `mkdocs build --strict` locally (see §8, below) would have caught
+before you pushed. A failed build does not take the live site down; it just
+means your latest change isn't published until the build succeeds.
+
+### Where the site is hosted
+
+- **Repository:** `github.com/CARSSCenter/opennerve-site`
+- **Domain:** `opennerve.org`, with DNS records pointed at GitHub Pages.
+  There is no separate hosting account to manage — GitHub serves the site
+  directly once those DNS records exist and the domain is configured under
+  the repo's **Settings → Pages**.
+- **HTTPS certificate:** issued and renewed automatically by GitHub Pages.
+- Publishing a page or workflow change requires push access to this repo;
+  changing the domain's DNS or transferring the repo to a different org
+  requires access to whoever manages `opennerve.org`'s registrar/DNS and
+  admin rights on the `CARSSCenter` GitHub organization. If you need either
+  and don't have it, ask the current maintainers rather than guessing at
+  workarounds.
 
 ## 7. Special case: pages copied in from other repos
 
