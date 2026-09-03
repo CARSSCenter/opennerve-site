@@ -1,0 +1,34 @@
+{#-
+  Overrides Material's own main.html, which ships as a pass-through
+  containing nothing but `{% extends "base.html" %}` (see
+  material/templates/main.html in the installed package) — so replacing it
+  loses no theme markup, and the only thing added here is the extrahead
+  block below.
+
+  `extrahead` is Material's designated extension point for injecting into
+  <head>: base.html defines it as an empty block on the line immediately
+  before </head>. Same reasoning as overrides/partials/comments.html — this
+  is a permanently-empty hook, not a partial full of real Material markup
+  that a theme upgrade could shift under us, which is why custom_dir is
+  acceptable here after CLAUDE.md §7 avoided it for nav-menu.js, the PDF
+  viewer, and header-icons.js.
+
+  Umami (cloud-hosted, Hobby plan) — privacy-focused analytics: no cookies,
+  no cross-site tracking, no personal data collected, so no consent banner
+  is needed. It has to go in <head> with its `data-website-id` attribute
+  intact, which mkdocs.yml's `extra_javascript:` cannot express (that list
+  emits plain <script src> tags at the end of <body> and supports only
+  async/defer/type, no arbitrary data-* attributes) — hence this template
+  override rather than a config line.
+
+  This is a runtime network dependency on cloud.umami.is, the third on the
+  site alongside the PDF viewer's raw.githubusercontent.com fetch and
+  giscus. It fails silently and harmlessly if unreachable: nothing on any
+  page depends on the script loading, and `defer` keeps it off the render
+  path. `mkdocs build` itself still needs no network access.
+-#}
+{% extends "base.html" %}
+
+{% block extrahead %}
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="2fd14368-098f-450e-88b7-88d2008a54b4"></script>
+{% endblock %}
