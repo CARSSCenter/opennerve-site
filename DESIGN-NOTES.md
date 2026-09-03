@@ -1,11 +1,62 @@
 # Design notes for maintainers
 
 This file explains *why* the site is built the way it is — the decisions a future
-maintainer might otherwise "fix" by accident. For the practical "how do I edit a page"
-guide, see `README.md`. For day-to-day content, `README.md` is almost always the file
+maintainer might otherwise "fix" by accident. The quick start immediately below covers
+the commands for publishing a change; for the fuller "how do I edit a page" guide, see
+`README.md`. For day-to-day content, `README.md` is almost always the file
 you want; come here when you're about to change something structural (a plugin, the
 theme, the federated-docs mechanism, the deploy pipeline) and want to know if there's a
 reason it's not done the obvious way.
+
+## Quick start: updating the documentation
+
+The short version, for someone who just needs to get a change published.
+
+**One-time setup on a new machine.** Everything below assumes a virtualenv at
+`.venv/` (it's gitignored, so it's yours to create):
+
+```
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
+
+Then run every command through `.venv/bin/...`, as written below. A bare `python
+tools/sync_docs.py` or `mkdocs serve` uses your *system* Python, which doesn't have
+PyYAML or MkDocs installed and will fail with `ModuleNotFoundError`. (`source
+.venv/bin/activate` first, then plain `mkdocs serve`, works equally well — just don't
+mix the two.)
+
+**If you edited a page in this repo** (anything under `docs/` that isn't a synced page):
+
+```
+.venv/bin/mkdocs serve                  # preview at http://127.0.0.1:8000
+.venv/bin/mkdocs build --strict         # catches broken links and nav mistakes
+git add -A && git commit -m "..." && git push
+```
+
+Pushing to `main` publishes the site. There is no separate deploy step.
+
+**If you edited a doc in one of the component repos** (IPG, Windows app, Charger,
+sensors — anything listed in `docs-sources.yml`), the site keeps a *committed copy*, so
+push your change upstream first, then pull it in here:
+
+```
+.venv/bin/python tools/sync_docs.py     # refreshes docs/ from upstream
+git add -A && git commit -m "Sync upstream docs" && git push
+```
+
+Nothing on the site changes until you run that sync and push the result — the deploy
+workflow deliberately doesn't run it for you (see the federated-docs section below for
+why).
+
+**Adding a brand-new upstream file** takes two edits before syncing: a line in
+`docs-sources.yml` (exact path, never a glob) and a matching `nav:` entry in
+`mkdocs.yml`. Without the nav entry, `mkdocs build --strict` fails on the orphaned page.
+`.venv/bin/python tools/sync_docs.py --check` validates the manifest offline.
+
+**Embedded PDFs need none of this.** They're fetched live from
+`raw.githubusercontent.com` when a reader opens the page, so editing one upstream
+updates the site with no sync, no rebuild, and no deploy.
 
 ## Generator: MkDocs + Material
 
