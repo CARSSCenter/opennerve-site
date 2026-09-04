@@ -14,7 +14,8 @@ scope before citing it as evidence for a specific OpenNerve component or
 revision.
 
 ## 2026
-
+- Patel, B., Pikov, V., Damaser, M.S. et al. **"Accelerating the development of bioelectronic medicine: outcomes and innovations from the NIH SPARC initiative."** *Bioelectronic Medicine* (2026).
+   [doi.org/10.1186/s42234-026-00213-z](https://link.springer.com/article/10.1186/s42234-026-00213-z)
 - Li, M., et al. **"Scaling beyond the vagus nerve: historical and
    contemporary progress on electrode-based small-diameter peripheral nerve
    interfaces."** *Bioelectronic Medicine* (2026).
