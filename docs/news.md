@@ -8,7 +8,8 @@ Press coverage, talks, and community write-ups about CARSS/OpenNerve.These are t
 those.
 
 
-
+- **["What If the Device Changing Brain Medicine Was Free for Anyone to Build?"](https://viterbischool.usc.edu/news/2026/09/what-if-the-device-changing-brain-medicine-was-free-for-anyone-to-build/)**
+  — USC Viterbi School of Engineering (2026)
 - **["Healthware Highlights: OpenNerve"](https://oshwa.org/announcements/healthware-highlights-opennerve/)**
   — Open Source Hardware Association (OSHWA) (2025)
 - **["Could Open-Source Medical Devices Transform Healthcare?"](https://viterbischool.usc.edu/news/2025/06/could-open-source-medical-devices-transform-healthcare/)**
