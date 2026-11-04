@@ -8,6 +8,8 @@ Press coverage, talks, and community write-ups about CARSS/OpenNerve.These are t
 those.
 
 
+- **["Focus with its OpenNerve platform is a winner of the 2026 edition of the PwC Uruguay Innovation Award"](https://www.pwc.com.uy/es/premio-innovacion.html)**
+  — PricewaterhouseCoopers International Limited (2026)
 - **["What If the Device Changing Brain Medicine Was Free for Anyone to Build?"](https://viterbischool.usc.edu/news/2026/09/what-if-the-device-changing-brain-medicine-was-free-for-anyone-to-build/)**
   — USC Viterbi School of Engineering (2026)
 - **["Healthware Highlights: OpenNerve"](https://oshwa.org/announcements/healthware-highlights-opennerve/)**
